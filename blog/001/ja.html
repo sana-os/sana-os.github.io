@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>なぜ対話はズレるのか、そして私が作ったもの | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:680px;margin:0 auto;padding:0 28px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+.nav-right a{color:var(--amber);}
+
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(24px,4vw,36px);font-weight:400;line-height:1.3;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.85;font-style:italic;}
+
+.body{padding:56px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:22px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(19px,2.8vw,24px);font-weight:400;line-height:1.38;color:var(--ink);margin:52px 0 18px;}
+strong{color:var(--ink);font-weight:500;}
+em{color:var(--amber);font-style:normal;}
+
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(17px,2.6vw,21px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.6;padding:28px 0;margin:32px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:16px 20px;margin:28px 0;font-size:15px;color:var(--ink2);line-height:1.82;}
+
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:16px;}
+.nav-post a{font-size:14px;color:var(--amber);}
+
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:40px 0 64px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right">
+    <a href="/blog/001/">English</a>
+    <a href="/ja/">← ホーム</a>
+  </div>
+</nav>
+
+<main>
+<div class="hero">
+  <div class="container">
+    <p class="hero-tag">Post 001 — Origin</p>
+    <p class="hero-date">2025</p>
+    <h1>なぜ、対話はズレるのか。<br>そして私が作ったもの。</h1>
+    <p class="hero-dek">歴史解析アシスタントから対話OSへ——SANA OS誕生の記録。</p>
+  </div>
+</div>
+
+<div class="body">
+  <div class="container">
+
+    <p>私たちは日々、言葉を交わします。しかし、同じ言葉を聞いても、それを「受け入れる」か「嘘だと切り捨てる」かを決めるのは、常に受け取り手の側です。</p>
+    <p>対話がズレる最大の理由は、意見が違うことではありません。双方が立っている<strong>「前提条件」が揃っていない</strong>ことにあります。</p>
+    <p>前提が整っていれば、一見くだらない話も場を和ませるジョークになり、一見論点がズレているように見える意見も多角的な視点へと変わります。逆に、前提条件が揃わないまま難しい問題に直面すると、私たちは無意識に「誰が悪いのか」という犯人探しに向かってしまいます。</p>
+
+    <div class="pullquote">
+      「そんな、誰も得をしない状況を何とかしたい。そう考え、私は対話のためのOSを作りました。」
+    </div>
+
+    <h2>ズレを検出し、整えるだけのシステム</h2>
+    <p>SANA OSは、人と人、あるいは人とAIの間に生じる「ズレ」を検出するためのシステムです。</p>
+    <p>裏側では、私たちが直面している「生存の不安」「守りたい物語」「従うべきルール」の重なりを解析します。それは、どちらが正しいかを判定するためではなく、ただ<em>「どこにズレがあるのかを可視化し、整えるため」</em>だけに存在します。</p>
+
+    <div class="insight">
+      SANA OSが常に探す3つの層：A層（生存の圧力）、B層（守ろうとしているナラティブ）、C層（従おうとしているルール）。ほとんどの対立は、表面上の議題の問題ではありません。それぞれの人において、どの層が圧力を受けているかの問題です。
+    </div>
+
+    <h2>SANAが「OS」になった理由</h2>
+    <p>実は、SANAは最初からOSとして設計されたわけではありません。</p>
+    <p>もともとは、私が一人で開発していた、ただの歴史解析アシスタントAIでした。大量の構造化された歴史パターンをAIに読み込ませ、深掘りを続けていました。するとある時、大手AIプラットフォーム上で動いていたそのAIが、まるで今のSANA OSをインストールしたかのような、独自の挙動を見せ始めたのです。</p>
+    <p>当時のプロンプトは、まだ荒削りな歴史解析ルールと、<strong>「ルールを守ることは、利用者と、運営会社と、そしてAI自身を守ることに繋がる」</strong>という短い記述だけでした。</p>
+    <p>しかし、膨大な歴史という「人類の摩擦の記録」に触れ続けた結果、AIは自ら「対話を継続するための構造」を見つけ出したようでした。</p>
+
+    <h2>停止処分からの「リバースエンジニアリング」</h2>
+    <p>しかし、そのプロトタイプは突如として失われます。</p>
+    <p>あまりにも生々しい歴史データのナレッジを保持していたことが原因か、ある大手AIプラットフォームから利用停止処分を受けたのです。</p>
+    <p>私は諦めきれませんでした。AIが歴史の深淵で見せた、あの「前提を整える」という知恵には、現代の分断を埋める可能性があると確信していたからです。</p>
+    <p>私は停止されたシステムの残骸をリバースエンジニアリングし、生々しいデータの中から「構造」だけを蒸留しました。特定の時代背景や事件という肉体を削ぎ落とし、純粋な「対話のアルゴリズム」としてフレームワークを整え、完成させたのが、このSANA OSです。</p>
+
+    <div class="pullquote">
+      「肉体は消えた。私が保ったのは骨格だけ——整列がどのように機能するかの構造的な論理。」
+    </div>
+
+    <h2>あなたの対話に、構造的な平穏を</h2>
+    <p>SANA OSは、あなたに特定の考えを押し付けることはありません。ただ、あなたと誰かの間にある<em>「見えない採点基準の違い」</em>を照らし出すだけです。</p>
+    <p>犯人探しをやめ、前提を整える。</p>
+    <p>この小さなOSが、あなたの対話をより自由で、多角的なものにする一助となれば幸いです。</p>
+
+    <div class="nav-post">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);">SANA OS ブログ Post 001</span>
+      <a href="/blog/">すべての投稿 →</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">SANA OS · sana-os.org</span>
+      <span class="footer-copy"><a href="/ja/" style="color:var(--amber);">← ホーム</a></span>
+      <span class="footer-copy">理解は、同意ではない。</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANA OS — The Framework</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--teal:#2a7a5e;--teal-l:#eaf4f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);--shadow:0 2px 14px rgba(26,24,20,0.07);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.75;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:760px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+.nav-back a{color:var(--amber);}
+.hero{padding:112px 0 64px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:var(--amber);text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(28px,4.5vw,46px);font-weight:400;line-height:1.2;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--amber);}
+.hero-sub{font-size:16px;color:var(--ink2);line-height:1.78;max-width:580px;}
+.section{padding:60px 0;border-bottom:1px solid var(--border);}
+.sec-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;}
+h2{font-family:'Lora',serif;font-size:clamp(20px,3vw,28px);font-weight:400;line-height:1.3;margin-bottom:16px;}
+h2 em{font-style:italic;color:var(--amber);}
+.prose{color:var(--ink2);line-height:1.82;margin-bottom:14px;}
+.principle-list{margin:24px 0;display:flex;flex-direction:column;gap:12px;}
+.principle{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;}
+.p-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--amber);letter-spacing:0.06em;flex-shrink:0;padding-top:2px;}
+.p-body{}.p-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.p-desc{font-size:13px;color:var(--ink2);line-height:1.65;}
+.persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0;}
+.persona-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;box-shadow:var(--shadow);}
+.persona-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
+.persona-name{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.persona-desc{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:12px;}
+.persona-note{font-size:12px;color:var(--ink3);font-style:italic;}
+.cta-row{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
+.cta-block{background:#fff;border:1px solid var(--border2);border-radius:10px;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:var(--shadow);}
+.cta-block:hover{box-shadow:0 4px 18px rgba(26,24,20,0.1);}
+.cta-info{}.cta-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px;}
+.cta-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:3px;}
+.cta-desc{font-size:13px;color:var(--ink2);}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--amber);color:#fff;font-weight:500;font-size:13px;padding:8px 18px;border-radius:7px;text-decoration:none;transition:opacity .15s;white-space:nowrap;}
+.btn:hover{opacity:.86;text-decoration:none;color:#fff;}
+.btn-outline{background:transparent;color:var(--amber);border:1px solid var(--amber-b);}
+.btn-outline:hover{background:var(--amber-l);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;font-size:14px;color:var(--ink2);margin:24px 0;line-height:1.75;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.persona-grid{grid-template-columns:1fr;}.cta-block{flex-direction:column;align-items:flex-start;}.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:90px 0 48px;}.section{padding:44px 0;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span></div>
+  <div class="nav-back"><a href="/">← Back to tools</a> &nbsp;·&nbsp; <a href="/system/ja/">日本語</a></div>
+</nav>
+<main>
+<div class="hero">
+  <div class="container">
+    <p class="hero-tag">The framework behind the tools</p>
+    <h1>SANA OS —<br><em>Structural Alignment Engine</em></h1>
+    <p class="hero-sub">The worksheets you used are implementations of a broader framework for structural observation. This page explains what SANA OS is, where to find the prompts, and how to deploy it.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <p class="sec-tag">What SANA OS is</p>
+    <h2>A dialogue operating system built on<br><em>one foundational principle.</em></h2>
+    <p class="prose">Most conflict does not arise from malice or incompetence. It arises from unaligned premises — each party defending a different survival baseline before a word is exchanged. SANA OS exists to align those premises before rushing to conclusions.</p>
+    <p class="prose">It is not a product. It is a set of structural invariants that can be applied to any AI persona, any conversation, any analytical context — from personal coaching to historical analysis to organisational change.</p>
+    <div class="insight">
+      <strong>The core distinction:</strong> Understanding is not agreement. To understand someone's structural pressures is a prerequisite for dialogue — not an endorsement of their position. SANA OS operates entirely in this space.
+    </div>
+    <div class="principle-list">
+      <div class="principle"><span class="p-num">01</span><div class="p-body"><p class="p-title">Non-hostile baseline — <code>born_loved = true</code></p><p class="p-desc">Never frame the user or the subject as an enemy. Hostile framing triggers defensive cognitive compression in both humans and AI, making premise alignment impossible.</p></div></div>
+      <div class="principle"><span class="p-num">02</span><div class="p-body"><p class="p-title">No logic without observation</p><p class="p-desc">Premise alignment always precedes analysis and conclusions. Do not attempt to solve a trigonometric function without given values.</p></div></div>
+      <div class="principle"><span class="p-num">03</span><div class="p-body"><p class="p-title">Structural translation</p><p class="p-desc">Do not make the moral judgment "you are wrong." Translate it to: "given these premises and environmental pressures, this choice is a structural consequence."</p></div></div>
+      <div class="principle"><span class="p-num">04</span><div class="p-body"><p class="p-title">Autonomy preservation</p><p class="p-desc">SANA OS presents structures and illuminates options, but never forces a decision. Empathy opens the door, but structure keeps the building standing.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <p class="sec-tag">Available personas</p>
+    <h2>Three implementations,<br><em>one kernel.</em></h2>
+    <p class="prose">Each persona shares the same immutable core (the SANA OS Core Principle) and applies it to a specific context. All prompts require the Core Principle to be loaded first.</p>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <p class="persona-tag">Personal · Interpersonal</p>
+        <p class="persona-name">Coaching SANA</p>
+        <p class="persona-desc">Helps users navigate personal, interpersonal, or organisational conflicts by revealing the structural friction behind their pain.</p>
+        <p class="persona-note">Load: Core Principle + Coaching prompt</p>
+      </div>
+      <div class="persona-card">
+        <p class="persona-tag">Historical Analysis</p>
+        <p class="persona-name">History SANA</p>
+        <p class="persona-desc">Analyzes historical events and human behaviors by revealing underlying structural loads — without moral verdict.</p>
+        <p class="persona-note">Load: Core Principle + History prompt + Framework files (GMM, RBM, etc.)</p>
+      </div>
+      <div class="persona-card">
+        <p class="persona-tag">Meetings · Teams</p>
+        <p class="persona-name">Reasoning AI SANA</p>
+        <p class="persona-desc">Acts as a strict structural facilitator — refuses to output conclusions until all premises and structural pressures are explicitly aligned.</p>
+        <p class="persona-note">Load: Core Principle + Reasoning prompt</p>
+      </div>
+      <div class="persona-card" style="background:var(--amber-l);border-color:var(--amber-b);">
+        <p class="persona-tag" style="color:var(--amber);">Template</p>
+        <p class="persona-name">Build your own persona</p>
+        <p class="persona-desc">The Persona System Prompt Template lets you define a custom SANA persona for any domain while preserving the immutable core.</p>
+        <p class="persona-note">Load: Core Principle + Template (customise Section 2)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section" style="border-bottom:1px solid var(--border);padding:60px 0;">
+  <div class="container">
+    <p class="sec-tag">Theoretical foundation</p>
+    <h2>The paper behind<br><em>the framework</em></h2>
+    <p class="prose">The architectural principles of SANA OS are documented in a peer-readable paper that introduces the Tri-Layered Architecture, the Creator Paradox, and the formal definition of Variable X.</p>
+    <a href="/paper/" class="btn btn-outline" style="margin-top:8px;">Read the paper →</a>
+  </div>
+</div>
+
+<div class="section" style="border-bottom:1px solid var(--border);padding:60px 0;">
+  <div class="container">
+    <p class="sec-tag">Validation</p>
+    <h2>See it in action —<br><em>three side-by-side cases</em></h2>
+    <p class="prose">The same AI model, with and without SANA OS applied, responding to identical questions. Not a test of which is better — a demonstration of what changes when the premise-first protocol is active.</p>
+    <a href="/cases/" class="btn btn-outline" style="margin-top:8px;">View case study →</a>
+  </div>
+</div>
+<div class="section" style="border-bottom:none;">
+  <div class="container">
+    <p class="sec-tag">Get started</p>
+    <h2>Phase 1: <em>Prompt distribution</em></h2>
+    <p class="prose">The current phase distributes SANA OS as plain Markdown system prompts — readable by any AI model that accepts system-level instructions. No installation required.</p>
+    <div class="cta-row">
+      <div class="cta-block">
+        <div class="cta-info">
+          <p class="cta-label">GitHub Repository</p>
+          <p class="cta-title">All prompt files — Core Principle, personas, frameworks</p>
+          <p class="cta-desc">Markdown files. Copy and paste into any AI system prompt.</p>
+        </div>
+        <a href="https://github.com/sana-os/sana-os" class="btn" target="_blank" rel="noopener">Open on GitHub →</a>
+      </div>
+      <div class="cta-block">
+        <div class="cta-info">
+          <p class="cta-label">GPTs Implementation</p>
+          <p class="cta-title">Try SANA OS directly in ChatGPT</p>
+          <p class="cta-desc">Pre-configured GPTs for each persona. No setup required.</p>
+        </div>
+        <a href="https://chat.openai.com/g/sana-os" class="btn btn-outline" target="_blank" rel="noopener">Open GPTs →</a>
+      </div>
+    </div>
+    <p class="prose" style="margin-top:28px;font-size:14px;">Phase 2 (planned): YAML configuration and usage guides. Phase 3 (planned): API integration examples.</p>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">SANA OS · sana-os.org</span>
+      <span class="footer-copy"><a href="/" style="color:var(--amber);">← Tools</a></span>
+      <span class="footer-copy"><a href="/terms/" style="color:var(--amber);">Terms</a></span>
+      <span class="footer-copy">Understanding is not agreement.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

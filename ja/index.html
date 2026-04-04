@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANA OS — 構造的対話ツール</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--purple:#6b4fa0;--purple-l:#f4f0fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);--shadow:0 2px 14px rgba(26,24,20,0.07);--r:10px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:16px;line-height:1.78;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:880px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-lang{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-lang a{color:var(--amber);font-weight:500;}
+.hero{padding:112px 0 68px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(28px,4.5vw,48px);font-weight:400;line-height:1.28;color:var(--ink);margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--amber);}
+.hero-sub{font-size:16px;color:var(--ink2);max-width:520px;line-height:1.88;margin-bottom:36px;}
+.hero-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#fff;font-weight:500;font-size:14px;padding:10px 22px;border-radius:7px;border:none;cursor:pointer;text-decoration:none;transition:opacity .15s;}
+.btn:hover{opacity:.86;text-decoration:none;color:#fff;}
+.hero-note{font-size:13px;color:var(--ink3);}
+section{padding:72px 0;border-bottom:1px solid var(--border);}
+.sec-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.2vw,30px);font-weight:400;line-height:1.38;margin-bottom:16px;}
+h2 em{font-style:italic;color:var(--amber);}
+.body-text{color:var(--ink2);max-width:640px;margin-bottom:14px;line-height:1.88;}
+.layer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:32px 0;}
+.layer-block{border-radius:8px;padding:18px;}
+.layer-block.a{background:var(--red-l);}.layer-block.b{background:var(--amber-l);}.layer-block.c{background:var(--blue-l);}
+.layer-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;margin-bottom:6px;}
+.layer-block.a .layer-tag{color:var(--red);}.layer-block.b .layer-tag{color:var(--amber);}.layer-block.c .layer-tag{color:var(--blue);}
+.layer-name{font-size:13px;font-weight:500;margin-bottom:4px;}.layer-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;font-size:14px;color:var(--ink2);margin:24px 0;line-height:1.78;}
+.insight strong{color:var(--ink);font-weight:500;}
+#tools{padding:72px 0;border-bottom:1px solid var(--border);}
+.tool-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;transition:box-shadow .2s;}
+.tool-card:hover{box-shadow:0 4px 20px rgba(26,24,20,0.1);}
+.tool-header{display:flex;align-items:center;padding:16px 22px;gap:14px;cursor:pointer;border-bottom:1px solid transparent;transition:border-color .2s;}
+.tool-card.open .tool-header{border-color:var(--border);}
+.tool-accent{width:34px;height:34px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.tool-meta{flex:1;}.tool-use{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2px;}
+.tool-name{font-size:14px;font-weight:500;color:var(--ink);}
+.tool-arrow{font-size:16px;color:var(--ink3);transition:transform .22s;flex-shrink:0;}
+.tool-card.open .tool-arrow{transform:rotate(180deg);}
+.tool-body{display:none;padding:22px;}.tool-card.open .tool-body{display:block;}
+.tool-desc{font-size:14px;color:var(--ink2);margin-bottom:18px;line-height:1.78;}
+.c-amber .tool-accent{background:var(--amber-l);color:var(--amber);}.c-amber .tool-use{color:var(--amber);}
+.c-blue .tool-accent{background:var(--blue-l);color:var(--blue);}.c-blue .tool-use{color:var(--blue);}
+.c-teal .tool-accent{background:var(--teal-l);color:var(--teal);}.c-teal .tool-use{color:var(--teal);}
+.c-red .tool-accent{background:var(--red-l);color:var(--red);}.c-red .tool-use{color:var(--red);}
+.c-purple .tool-accent{background:var(--purple-l);color:var(--purple);}.c-purple .tool-use{color:var(--purple);}
+.mini-form{background:var(--bg2);border-radius:8px;padding:18px;}
+.mini-form-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px;}
+.mini-form-q{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:7px;}
+.mini-form input[type=text],.mini-form textarea{width:100%;font-family:inherit;font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--border2);border-radius:6px;padding:9px 12px;outline:none;transition:border-color .15s;line-height:1.6;resize:vertical;}
+.mini-form input[type=text]:focus,.mini-form textarea:focus{border-color:var(--amber);}
+.mini-form-row{margin-bottom:12px;}.mini-form-hint{font-size:12px;color:var(--ink3);margin-top:4px;}
+.layers-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.layer-input-box textarea{min-height:68px;font-size:13px;}
+.layer-tag-label{font-size:11px;font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:4px;}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.dot-a{background:var(--red);}.dot-b{background:var(--amber);}.dot-c{background:var(--blue);}
+.tool-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px;flex-wrap:wrap;gap:8px;}
+.btn-dl{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--amber);background:var(--amber-l);border:1px solid var(--amber-b);padding:6px 14px;border-radius:6px;cursor:pointer;text-decoration:none;transition:opacity .15s;}
+.btn-dl:hover{opacity:.8;text-decoration:none;color:var(--amber);}
+.tool-note{font-size:12px;color:var(--ink3);}
+#gateway{padding:72px 0 96px;}
+.gateway-box{background:#fff;border:1px solid var(--border2);border-radius:14px;padding:52px;text-align:center;box-shadow:var(--shadow);}
+.gateway-box h2{margin-bottom:14px;}.gateway-box p{color:var(--ink2);max-width:460px;margin:0 auto 28px;line-height:1.88;font-size:15px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:0.04em;}
+@media(max-width:640px){.layer-grid,.layers-row{grid-template-columns:1fr;}.gateway-box{padding:32px 18px;}nav{padding:0 16px;}.container{padding:0 16px;}.hero{padding:90px 0 52px;}section{padding:52px 0;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span></div>
+  <div class="nav-lang" style="display:flex;gap:16px;align-items:center;"><a href="/blog/">Blog</a><a href="/">English</a></div>
+</nav>
+<main>
+<section class="hero">
+  <div class="container">
+    <p class="hero-tag">構造的対話ツール　無料配布</p>
+    <h1>見えない摩擦を<br><em>可視化するツール。</em></h1>
+    <p class="hero-sub">会議・1on1・授業・変革推進で、なぜか対話が崩れるとき。原因を構造的に可視化する5枚のワークシート。</p>
+    <div class="hero-cta">
+      <a href="#tools" class="btn">ツールを試す →</a>
+      <span class="hero-note">登録不要。事前知識も不要。</span>
+    </div>
+
+    <!-- Vimeo -->
+    <div style="margin-top:44px;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(26,24,20,0.10);aspect-ratio:16/9;max-width:720px;">
+      <iframe src="https://player.vimeo.com/video/1175757847?badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        style="width:100%;height:100%;display:block;"
+        title="SANA OS — なぜ存在するのか"></iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </div>
+</section>
+
+<!-- WHY EXISTS -->
+<section id="why-exists" style="padding:72px 0;border-bottom:1px solid var(--border);background:#fff;">
+  <div class="container" style="max-width:680px;">
+    <p class="sec-tag">なぜ SANA OS は存在するのか</p>
+    <p style="font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(19px,2.8vw,26px);font-weight:400;line-height:1.45;color:var(--ink);margin-bottom:32px;">ほとんどのシステムは、人が間違えたから崩壊しない。<br><em style="color:var(--amber);">人が、早すぎる確信を持ったから崩壊する。</em></p>
+
+    <p style="color:var(--ink2);line-height:1.88;margin-bottom:16px;">何かが不明確なとき、人間の脳は待たない。未知を、物語で置き換える。</p>
+
+    <div style="background:var(--bg2);border-radius:8px;padding:20px 22px;margin:24px 0;">
+      <p style="color:var(--ink3);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;margin-bottom:10px;">置き換えは、一瞬で起きる</p>
+      <p style="color:var(--ink2);font-size:15px;line-height:1.82;font-style:italic;">「これは悪い判断だ。」<br>「あの人にはわかっていない。」<br>「どうせうまくいかない。」</p>
+    </div>
+
+    <p style="color:var(--ink2);line-height:1.88;margin-bottom:16px;">不快感は消える。説明は完結したように感じる。でも、その下にある構造は、見えないままだ。</p>
+    <p style="color:var(--ink2);line-height:1.88;margin-bottom:24px;">時間が経つにつれ、パターンが生まれる。構造の問題が、人間関係の問題になる。問いが、非難になる。修正が、不可能になる。そしてシステムは、自分を更新する力を失う。</p>
+
+    <div style="background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;">
+      <p style="color:var(--ink2);font-size:14px;line-height:1.82;"><strong style="color:var(--ink);">これは知性の失敗ではない。</strong>人間の認知の性質だ。私たちは、不確実性を長く保持するようには設計されていない。</p>
+    </div>
+
+    <p style="color:var(--ink2);line-height:1.88;margin-bottom:16px;">SANA OSはひとつの目的のために存在する。<strong style="color:var(--ink);">物語で置き換える前に、構造を見ることを可能にする。</strong></p>
+    <p style="color:var(--ink2);line-height:1.88;margin-bottom:16px;">問題をあなたの代わりに解決しない。誰が正しいかを決めない。もっとシンプルなことをする。</p>
+    <p style="color:var(--ink2);line-height:1.88;margin-bottom:24px;">見えていなかった変数を、見えるようにする。</p>
+
+    <p style="font-family:'Lora','Hiragino Mincho ProN',serif;font-size:18px;font-weight:400;color:var(--ink);line-height:1.6;">そのとき、何かが変わる。<br>議論が、人についてではなくなる。<br><em style="color:var(--amber);">システムについての話になる。</em><br>それが、本当の対話の始まりだ。</p>
+  </div>
+</section>
+
+
+<section id="tools">
+  <div class="container">
+    <p class="sec-tag">ワークシート一覧</p>
+    <h2>状況に合うものを選んで、<br><em>Step 1 だけ書いてみてください。</em></h2>
+
+    <div class="tool-card c-amber" id="card-01">
+      <div class="tool-header" onclick="toggle('01')">
+        <div class="tool-accent">⚖</div>
+        <div class="tool-meta"><p class="tool-use">プロジェクト・会議</p><p class="tool-name">目的設定と前提の整列チェックシート</p></div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">会議での優先順位の対立は、悪意からではなく圧力の違いから生まれます。クライアント関係を守ろうとする人（B層）と、システムの安定を守ろうとする人（A層）。このシートは、議論が始まる前にその圧力を可視化します。</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — 共通の目的を確認する</p>
+          <div class="mini-form-row">
+            <p class="mini-form-q">今回、私たちが達成したい目的：</p>
+            <input type="text" placeholder="例：Q3ローンチのスコープと優先順位を決める">
+          </div>
+          <p class="mini-form-label">Step 2 — それぞれが守ろうとしている圧力</p>
+          <div class="layers-row">
+            <div class="layer-input-box"><p class="layer-tag-label"><span class="dot dot-a"></span> A層 — 生存</p><textarea rows="3" placeholder="例：システムが落ちたら2日徹夜"></textarea></div>
+            <div class="layer-input-box"><p class="layer-tag-label"><span class="dot dot-b"></span> B層 — 文化</p><textarea rows="3" placeholder="例：うちは期日を必ず守る、という自負"></textarea></div>
+            <div class="layer-input-box"><p class="layer-tag-label"><span class="dot dot-c"></span> C層 — 制度</p><textarea rows="3" placeholder="例：遅延時の契約ペナルティ条項"></textarea></div>
+          </div>
+          <p class="mini-form-hint">3列が埋まったとき、対立の理由がたいてい自明になります。</p>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-01-premise-alignment.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全5ステップ・4人チームで約20分</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card c-blue" id="card-02">
+      <div class="tool-header" onclick="toggle('02')">
+        <div class="tool-accent">◎</div>
+        <div class="tool-meta"><p class="tool-use">1on1・面談</p><p class="tool-name">構造的ストレス可視化ワークシート</p></div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">誰かが苦しんでいるとき、「なぜできないのか？」と問うと脳は脅威と感じます。このシートは同じ状況を「構造的な過負荷」として再定義します。どこで需要が供給を超えているか。答えは決して「その人」ではない。</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — 需給バランスチェック</p>
+          <div class="mini-form-row"><p class="mini-form-q">現在の業務要求（1〜10）：</p><input type="text" placeholder="1〜10で記入し、理由を一言添えてください"></div>
+          <div class="mini-form-row"><p class="mini-form-q">現在の供給能力（時間・体力・人員）（1〜10）：</p><input type="text" placeholder="1〜10で記入し、理由を一言添えてください"><p class="mini-form-hint">需要 ＞ 供給なら、そのギャップは構造的な問題です。個人の怠慢ではない。</p></div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-02-stress-visualizer.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全4ステップ・1on1向け設計</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card c-teal" id="card-03">
+      <div class="tool-header" onclick="toggle('03')">
+        <div class="tool-accent">→</div>
+        <div class="tool-meta"><p class="tool-use">変革・導入前チェック</p><p class="tool-name">変革と提案のズレ可視化チェックシート</p></div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">論理的に正しい改革がなぜ失敗するのか。B層（文化）は変化を一定の速度でしか吸収できないからです。変化の速度が吸収容量を超えると崩壊する。このシートはその差を導入前に診断します。</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — 導入予定の変革</p>
+          <div class="mini-form-row"><p class="mini-form-q">新しい制度・システム・改革の内容：</p><textarea rows="2" placeholder="例：4月から全社で新プロジェクト管理ツールを義務化"></textarea></div>
+          <div class="mini-form-row"><p class="mini-form-q">導入スピード：</p><input type="text" placeholder="例：2週間で完全移行"><p class="mini-form-hint">導入が速いほど、吸収容量のチェックが重要になります。</p></div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-03-reform-gap.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全4ステップ・導入前診断用</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card c-red" id="card-04">
+      <div class="tool-header" onclick="toggle('04')">
+        <div class="tool-accent">🕵</div>
+        <div class="tool-meta"><p class="tool-use">教育・歴史探索</p><p class="tool-name">歴史ミステリ探索ワークシート</p></div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">過去の行動を「間違い」「野蛮」と裁く代わりに、当時その行動を合理的にした環境圧力を再構築します。事実・認識・記録を切り分ける。人は事実ではなく認識で動くから。</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — 謎のテーマを選ぶ</p>
+          <div class="mini-form-row"><p class="mini-form-q">探索する歴史的な出来事・決断：</p><input type="text" placeholder="例：なぜ魔女狩りは起きたのか？なぜその帝国は崩壊したのか？"></div>
+          <div class="mini-form-row"><p class="mini-form-q">当時の最大のA層の圧力（生存の脅威）は何でしたか？</p><textarea rows="2" placeholder="例：凶作・疫病・飢餓への恐怖"></textarea><p class="mini-form-hint">「なぜそう行動したのか」の答えは、たいていこの欄にあります。</p></div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-04-history-mystery.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全4ステップ・授業・独学向け</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-card c-purple" id="card-05">
+      <div class="tool-header" onclick="toggle('05')">
+        <div class="tool-accent">◈</div>
+        <div class="tool-meta"><p class="tool-use">構造分析・上級</p><p class="tool-name">GMM — ガバナンス成熟度モデル</p></div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">構造的安定性を診断する定量ツール。「良いか悪いか」ではなく「どこに負荷が集中し、吸収容量はいくつか」を問います。国家・組織・共同体に適用可能。予言ではなく比較のツール。</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — 三層評価（0〜5）</p>
+          <div class="layers-row">
+            <div class="layer-input-box"><p class="layer-tag-label"><span class="dot dot-a"></span> A層 — 生存</p><textarea rows="3" placeholder="0〜5で評価＋理由"></textarea></div>
+            <div class="layer-input-box"><p class="layer-tag-label"><span class="dot dot-b"></span> B層 — 物語</p><textarea rows="3" placeholder="0〜5で評価＋理由"></textarea></div>
+            <div class="layer-input-box"><p class="layer-tag-label"><span class="dot dot-c"></span> C層 — 制度</p><textarea rows="3" placeholder="0〜5で評価＋理由"></textarea></div>
+          </div>
+          <p class="mini-form-hint">最も低い層が構造的なボトルネックです。まずそこを見る。</p>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-05-gmm.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全8ステップ・安定式付き</span>
+        </div>
+      </div>
+    </div>
+    <!-- 06 RBM -->
+    <div class="tool-card c-teal" id="card-06">
+      <div class="tool-header" onclick="toggle('06')">
+        <div class="tool-accent">⇌</div>
+        <div class="tool-meta">
+          <p class="tool-use">個人・チーム・組織</p>
+          <p class="tool-name">RBM — 需給バランス診断ワークシート</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">どこで需要が供給を構造的に超えているか。RBMは「誰が悪いか」を問わず「どこに過負荷があるか」を問います。個人のストレス診断・チームの業務過負荷分析・組織の機能不全の初期診断に使えます。前提の整列が完了してから使用してください。</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — 機能の定義</p>
+          <div class="mini-form-row">
+            <p class="mini-form-q">分析対象：</p>
+            <input type="text" placeholder="例：プロダクト開発チーム（5名）">
+          </div>
+          <div class="mini-form-row">
+            <p class="mini-form-q">機能A — そのシステムが提供すべきアウトプット：</p>
+            <input type="text" placeholder="例：週次リリース　/ 顧客サポート対応　/ 技術負債の解消">
+            <p class="mini-form-hint">ボトルネック = Demand − Supplyのギャップが最大の機能。まずそこを見る。</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-06-rbm.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全5ステップ・需給グリッド付き</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 RSM -->
+    <div class="tool-card c-purple" id="card-07">
+      <div class="tool-header" onclick="toggle('07')">
+        <div class="tool-accent">◉</div>
+        <div class="tool-meta">
+          <p class="tool-use">研究・歴史・制度分析</p>
+          <p class="tool-name">RSM — 役割システム診断ワークシート</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">組織・制度・国家の役割構造崩壊を分析する研究者向けツール。6つの機能役割（Decider / Architect / Integrator / Executor / Observer / Auditor）をマッピングし、Role Capture・Architect Isolation・Succession Deficitなどの失敗パターンを特定します。歴史的事例分析に最適。</p>
+        <div class="mini-form">
+          <p class="mini-form-label" style="color:var(--red);border:1px solid rgba(184,64,64,0.2);background:var(--red-l);padding:6px 10px;border-radius:5px;font-size:10px;">⚠ 研究用 — 人事評価・組織コンサルティング目的での使用は想定していません</p>
+          <div class="mini-form-row" style="margin-top:10px;">
+            <p class="mini-form-q">分析対象と時期：</p>
+            <input type="text" placeholder="例：ドレフュス事件期のフランス軍（1894〜1906年）">
+            <p class="mini-form-hint">RSMは役割の構造的関係を分析します。個人・性格は分析対象ではありません。</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-07-rsm.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全4ステップ・6役割診断グリッド付き・研究用</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 CPM -->
+    <div class="tool-card" id="card-08" style="border-top:2px solid #b85a10;">
+      <div class="tool-header" onclick="toggle('08')">
+        <div class="tool-accent" style="background:#fef0e6;color:#b85a10;">∿</div>
+        <div class="tool-meta">
+          <p class="tool-use" style="color:#b85a10;">研究・歴史・社会現象</p>
+          <p class="tool-name">CPM — 認知圧力診断ワークシート</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">圧力下でどのように信念が形成されるかを分析する研究者向けツール。未解決の不確実性（Variable X）から認知トリガー、ナラティブ代替または探索的シミュレーションへの経路を追跡します。魔女狩り・革命・思想転換・社会運動の分析に最適。</p>
+        <div class="mini-form">
+          <p class="mini-form-label" style="color:var(--red);border:1px solid rgba(184,64,64,0.2);background:var(--red-l);padding:6px 10px;border-radius:5px;font-size:10px;">⚠ 研究用 — 精神診断・心理評価目的での使用は想定していません</p>
+          <div class="mini-form-row" style="margin-top:10px;">
+            <p class="mini-form-q">分析対象と主要なVariable X（当時の未解決の不確実性）：</p>
+            <input type="text" placeholder="例：17世紀魔女狩り参加者集団 /「なぜ神の怒りが続くのか」">
+            <p class="mini-form-hint">CPMは「信念が正しいかどうか」ではなく「どのように形成されたか」を問います。</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/ja/sana-ja-08-cpm.pdf" class="btn-dl" download>↓ 全ステップPDFをダウンロード</a>
+          <span class="tool-note">全5ステップ・Architect状態グリッド付き・研究用</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <p class="sec-tag">なぜ機能するのか</p>
+    <h2>対立はほとんどの場合、議題の問題ではない。<br><em>どの層が圧力を受けているかの問題だ。</em></h2>
+    <p class="body-text">人は常に、三層の圧力のもとで同時に動いています。これらが衝突したとき、脳は認知圧縮に入ります。複雑な思考が単純なラベルに崩れる。「間違い」「怠慢」「抵抗勢力」。議論はエスカレートするが、構造的な原因は見えないままです。</p>
+    <div class="layer-grid">
+      <div class="layer-block a"><p class="layer-tag">Layer A</p><p class="layer-name">生存層</p><p class="layer-desc">食事・睡眠・安全・雇用。ここが脅かされると、他のすべてが止まる。</p></div>
+      <div class="layer-block b"><p class="layer-tag">Layer B</p><p class="layer-name">物語・文化層</p><p class="layer-desc">アイデンティティ・価値観・暗黙ルール・帰属感。ここへの挑戦は身体的な脅威として感じられる。</p></div>
+      <div class="layer-block c"><p class="layer-tag">Layer C</p><p class="layer-name">制度・公式ルール層</p><p class="layer-desc">法律・制度・KPI・契約。一晩で変えられる。ただし吸収はB層の速度でしか起きない。</p></div>
+    </div>
+    <div class="insight"><strong>核心：</strong>誰かの層を可視化すること—それだけで圧縮を中断するのに十分です。これらのツールが行うのはそれだけ。対立を解決するのではなく、対立の<em>構造</em>を可視化することで、当事者たちが自分で解決できるようにします。</div>
+  </div>
+</section>
+
+<section id="gateway" style="border-bottom:none;">
+  <div class="container">
+    <div class="gateway-box">
+      <p class="sec-tag" style="text-align:center;">さらに深めたい方へ</p>
+      <h2>これらのツールを使って、<br><em>対話そのものへの見方が変わったなら</em></h2>
+      <p>これらのワークシートは、より広い構造的観察フレームワーク「SANA OS」の実践的な実装です。前提を先に整えるというアプローチが、あなたの思考や構築の仕方と共鳴するなら、これらのツールを支えるシステムはここにあります。</p>
+      <a href="/system/ja/" class="btn">SANA OS を見る →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">SANA OS · sana-os.org</span>
+      <span class="footer-copy"><a href="/" style="color:var(--amber);">English version</a></span>
+      <span class="footer-copy"><a href="/terms/ja/" style="color:var(--amber);">利用規約</a></span>
+      <span class="footer-copy">理解は、同意ではない。</span>
+    </div>
+  </div>
+</footer>
+<script>
+function toggle(id){const card=document.getElementById('card-'+id);const isOpen=card.classList.contains('open');document.querySelectorAll('.tool-card').forEach(c=>c.classList.remove('open'));if(!isOpen)card.classList.add('open');}
+document.getElementById('card-01').classList.add('open');
+</script>
+</body>
+</html>

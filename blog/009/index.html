@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why adding people makes projects worse | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--border:rgba(26,24,20,0.10);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:680px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(23px,3.8vw,36px);font-weight:400;line-height:1.22;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:56px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:22px;}
+h2{font-family:'Lora',serif;font-size:clamp(19px,2.8vw,24px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 16px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(17px,2.4vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:24px 0;margin:28px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}
+.insight strong{color:var(--ink);}
+ul{color:var(--ink2);line-height:1.82;margin-bottom:22px;padding-left:22px;}ul li{margin-bottom:8px;}
+blockquote{border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;background:var(--amber-l);border-radius:0 8px 8px 0;font-size:15px;color:var(--ink2);line-height:1.78;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:40px 0 60px;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+<div class="nav-right"><a href="/blog/009/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+<p class="hero-tag">Post 009 — RBM · RSM · Structural Collapse</p>
+<p class="hero-date">2025</p>
+<h1>Why adding people makes projects worse</h1>
+<p class="hero-dek">The structural paradox of headcount: why more supply can generate more demand — and more silence.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>The team is under-resourced. The obvious answer: add people. Five become ten. And then, paradoxically, progress slows. Mistakes accumulate. And eventually something serious happens that everyone saw but no one reported.</p>
+    <p>This is not about effort or motivation. It is a structural phenomenon with a structural explanation.</p>
+
+    <h2>The RBM paradox: adding supply that generates more demand</h2>
+    <p>RBM (Resource Balance Model) distinguishes between the supply added by new members and the demand their arrival creates. When five people join a team of five:</p>
+    <ul>
+      <li>Communication paths multiply non-linearly.</li>
+      <li>Coordination, clarification, and alignment become full-time activities.</li>
+      <li>Individual cognitive supply is increasingly consumed by the work of managing relationships — leaving less for the actual task.</li>
+    </ul>
+    <p>The bottleneck is not the number of people. It is the structural organisation of their roles.</p>
+
+    <h2>The RSM problem: roles that dissolve into ambiguity</h2>
+    <p>In a team of five, each person has a clear functional identity — they know what they own, and so does everyone else. When headcount doubles without role clarity, something critical happens: gaps appear. Work exists that belongs to no one.</p>
+    <p>SANA OS calls this <em>Role Deficit</em>. In a Role Deficit state, problems that surface in the gap are processed by the individuals who encounter them through the Proximity Rule: <strong>"If I touch this, I own it. If I stay quiet, it belongs to the system."</strong> Staying quiet is the rational survival choice.</p>
+
+    <h2>Why concealment is a rational response, not a character flaw</h2>
+    <p>When a problem appears in an ambiguous structural space:</p>
+    <ul>
+      <li>Layer A (self-protection): "If I flag this and it turns out to be my fault, the consequences fall on me."</li>
+      <li>Layer B (belonging): "Everyone else seems to know what they're doing. Maybe I'm missing something — I'll wait and see."</li>
+    </ul>
+    <p>These are not signs of bad character. They are the rational outputs of a structural environment that has made honesty too costly and ambiguity too safe.</p>
+
+    <div class="insight">
+      <strong>The structural intervention:</strong> before adding people, clarify who owns what. Make reporting a Layer C reward rather than a Layer A risk. The environment needs to be redesigned so that honesty is the most rational survival strategy.
+    </div>
+
+    <div class="pullquote">
+      "Misconduct is not a signal that people have started cutting corners. It is a signal that the structure can no longer support individual integrity."
+    </div>
+<div class="nav-post"><span><a href="/blog/008/">← Post 008</a></span><span><a href="/blog/010/">Post 010 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+<span class="footer-copy">SANA OS · sana-os.org</span>
+<span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+<span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer>
+</body></html>

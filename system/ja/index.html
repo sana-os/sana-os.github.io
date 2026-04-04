@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANA OS — フレームワークについて</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--teal:#2a7a5e;--teal-l:#eaf4f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);--shadow:0 2px 14px rgba(26,24,20,0.07);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:16px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:760px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-back a{color:var(--amber);}
+.hero{padding:112px 0 64px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(26px,4vw,42px);font-weight:400;line-height:1.28;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--amber);}
+.hero-sub{font-size:15px;color:var(--ink2);line-height:1.88;max-width:580px;}
+.section{padding:60px 0;border-bottom:1px solid var(--border);}
+.sec-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(20px,3vw,28px);font-weight:400;line-height:1.38;margin-bottom:16px;}
+h2 em{font-style:italic;color:var(--amber);}
+.prose{color:var(--ink2);line-height:1.88;margin-bottom:14px;}
+.principle-list{margin:24px 0;display:flex;flex-direction:column;gap:12px;}
+.principle{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;}
+.p-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--amber);letter-spacing:0.06em;flex-shrink:0;padding-top:2px;}
+.p-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;}.p-desc{font-size:13px;color:var(--ink2);line-height:1.7;}
+.persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0;}
+.persona-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;box-shadow:var(--shadow);}
+.persona-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
+.persona-name{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;}.persona-desc{font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:10px;}
+.persona-note{font-size:12px;color:var(--ink3);font-style:italic;}
+.cta-row{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
+.cta-block{background:#fff;border:1px solid var(--border2);border-radius:10px;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:var(--shadow);}
+.cta-block:hover{box-shadow:0 4px 18px rgba(26,24,20,0.1);}
+.cta-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px;}
+.cta-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:3px;}.cta-desc{font-size:13px;color:var(--ink2);}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--amber);color:#fff;font-weight:500;font-size:13px;padding:8px 18px;border-radius:7px;text-decoration:none;transition:opacity .15s;white-space:nowrap;}
+.btn:hover{opacity:.86;text-decoration:none;color:#fff;}
+.btn-outline{background:transparent;color:var(--amber);border:1px solid var(--amber-b);}.btn-outline:hover{background:var(--amber-l);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;font-size:14px;color:var(--ink2);margin:24px 0;line-height:1.78;}
+.insight strong{color:var(--ink);font-weight:500;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.persona-grid{grid-template-columns:1fr;}.cta-block{flex-direction:column;align-items:flex-start;}.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:90px 0 48px;}.section{padding:44px 0;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span></div>
+  <div class="nav-back"><a href="/ja/">← ツールに戻る</a> &nbsp;·&nbsp; <a href="/system/">English</a></div>
+</nav>
+<main>
+<div class="hero">
+  <div class="container">
+    <p class="hero-tag">ツールの背景にあるフレームワーク</p>
+    <h1>SANA OS —<br><em>Structural Alignment Engine</em></h1>
+    <p class="hero-sub">これまで使ったワークシートは、より広い構造的観察フレームワーク「SANA OS」の実践的な実装です。このページでは、SANA OSとは何か、プロンプトの入手先、導入方法を説明します。</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <p class="sec-tag">SANA OSとは</p>
+    <h2>ひとつの根本原理に基づく<br><em>対話オペレーティングシステム。</em></h2>
+    <p class="prose">ほとんどの対立は、悪意や能力不足から生まれるのではありません。前提の不整合から生まれます。言葉を交わす前から、それぞれが異なる「生存の基準」を守ろうとしている。SANA OSは、結論に急ぐ前にその前提を整えるために存在します。</p>
+    <p class="prose">SANA OSはプロダクトではありません。どのAIペルソナにも、どんな会話にも、どんな分析コンテキストにも適用できる構造的不変量のセットです。個人コーチングから歴史分析、組織変革まで。</p>
+    <div class="insight">
+      <strong>核心的な区別：</strong>理解は、同意ではない。誰かの構造的な圧力を理解することは、対話の前提条件です。その立場への賛同ではない。SANA OSは、この空間の中だけで動作します。
+    </div>
+    <div class="principle-list">
+      <div class="principle"><span class="p-num">01</span><div><p class="p-title">非敵対的基準線 — <code>born_loved = true</code></p><p class="p-desc">ユーザーや分析対象を「敵」として設定しない。敵対的なフレーミングは、人間にもAIにも防衛的な認知圧縮を引き起こし、前提の整列を不可能にする。</p></div></div>
+      <div class="principle"><span class="p-num">02</span><div><p class="p-title">観察なき論理は存在しない</p><p class="p-desc">前提の整列は、常に分析と結論に先行する。与えられた値なしに三角関数を解こうとしてはならない。</p></div></div>
+      <div class="principle"><span class="p-num">03</span><div><p class="p-title">構造的翻訳</p><p class="p-desc">「あなたは間違っている」という道徳的判断をしない。「これらの前提と環境的圧力を前提とすれば、この選択は構造的な帰結である」と翻訳する。</p></div></div>
+      <div class="principle"><span class="p-num">04</span><div><p class="p-title">自律性の保全</p><p class="p-desc">SANA OSは構造を提示し、選択肢を照らし出すが、決して決断を強要しない。共感はドアを開けるが、構造が建物を支える。</p></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <p class="sec-tag">利用可能なペルソナ</p>
+    <h2>3つの実装、<br><em>ひとつのカーネル。</em></h2>
+    <p class="prose">各ペルソナは同じ不変コア（SANA OS Core Principle）を共有し、特定のコンテキストに適用します。すべてのプロンプトは、Core Principleを最初に読み込むことが前提です。</p>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <p class="persona-tag">個人・対人</p>
+        <p class="persona-name">Coaching SANA</p>
+        <p class="persona-desc">個人・対人・組織の対立をナビゲートするために、痛みの背後にある構造的摩擦を明らかにします。</p>
+        <p class="persona-note">読み込み：Core Principle + Coachingプロンプト</p>
+      </div>
+      <div class="persona-card">
+        <p class="persona-tag">歴史分析</p>
+        <p class="persona-name">History SANA</p>
+        <p class="persona-desc">歴史的事象と人間の行動を、道徳的裁判なしに構造的な負荷として分析します。</p>
+        <p class="persona-note">読み込み：Core Principle + Historyプロンプト + フレームワークファイル群（GMM等）</p>
+      </div>
+      <div class="persona-card">
+        <p class="persona-tag">会議・チーム</p>
+        <p class="persona-name">推論AIくん（Reasoning AI SANA）</p>
+        <p class="persona-desc">すべての前提と構造的圧力が明示的に整列されるまで、結論の出力を拒否する厳格な構造ファシリテーター。</p>
+        <p class="persona-note">読み込み：Core Principle + Reasoningプロンプト</p>
+      </div>
+      <div class="persona-card" style="background:var(--amber-l);border-color:var(--amber-b);">
+        <p class="persona-tag" style="color:var(--amber);">テンプレート</p>
+        <p class="persona-name">独自ペルソナの構築</p>
+        <p class="persona-desc">Persona System Prompt Templateを使って、不変コアを保ちながら任意のドメインにSANA OSペルソナを定義できます。</p>
+        <p class="persona-note">読み込み：Core Principle + テンプレート（Section 2をカスタマイズ）</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section" style="border-bottom:1px solid var(--border);padding:60px 0;">
+  <div class="container">
+    <p class="sec-tag">理論的な基盤</p>
+    <h2>フレームワークの背景にある<br><em>論文</em></h2>
+    <p class="prose">SANA OSの建築的原理は、三層構造・創造者のパラドックス・Variable Xの定義を導入した論文として文書化されています。</p>
+    <a href="/paper/" class="btn btn-outline" style="margin-top:8px;">論文を読む →</a>
+  </div>
+</div>
+
+<div class="section" style="border-bottom:1px solid var(--border);padding:60px 0;">
+  <div class="container">
+    <p class="sec-tag">実証</p>
+    <h2>動作を確認する —<br><em>3つの比較ケース</em></h2>
+    <p class="prose">同じAIモデルに、SANA OSを適用した場合としない場合で、同一の質問に回答させた比較です。どちらが優れているかの検証ではなく、前提優先プロトコルが有効になったとき何が変わるかの実演です。</p>
+    <a href="/cases/" class="btn btn-outline" style="margin-top:8px;">ケーススタディを見る →</a>
+  </div>
+</div>
+<div class="section" style="border-bottom:none;">
+  <div class="container">
+    <p class="sec-tag">はじめる</p>
+    <h2>Phase 1：<em>プロンプト配布</em></h2>
+    <p class="prose">現フェーズでは、SANA OSをプレーンなMarkdownのシステムプロンプトとして配布しています。システムレベルの指示を受け付けるどのAIモデルでも読み込み可能です。インストール不要。</p>
+    <div class="cta-row">
+      <div class="cta-block">
+        <div class="cta-info">
+          <p class="cta-label">GitHub リポジトリ</p>
+          <p class="cta-title">全プロンプトファイル — Core Principle・ペルソナ・フレームワーク</p>
+          <p class="cta-desc">Markdownファイル。任意のAIのシステムプロンプトにコピー&ペーストして使用。</p>
+        </div>
+        <a href="https://github.com/sana-os/sana-os" class="btn" target="_blank" rel="noopener">GitHubで開く →</a>
+      </div>
+      <div class="cta-block">
+        <div class="cta-info">
+          <p class="cta-label">GPTs 実装</p>
+          <p class="cta-title">ChatGPTで直接 SANA OS を試す</p>
+          <p class="cta-desc">各ペルソナの設定済みGPTs。セットアップ不要。</p>
+        </div>
+        <a href="https://chat.openai.com/g/sana-os" class="btn btn-outline" target="_blank" rel="noopener">GPTsを開く →</a>
+      </div>
+    </div>
+    <p class="prose" style="margin-top:28px;font-size:14px;">Phase 2（予定）：YAMLコンフィグ化と使い方ガイド。Phase 3（予定）：APIインテグレーション例。</p>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">SANA OS · sana-os.org</span>
+      <span class="footer-copy"><a href="/ja/" style="color:var(--amber);">← ツール</a></span>
+      <span class="footer-copy"><a href="/terms/ja/" style="color:var(--amber);">利用規約</a></span>
+      <span class="footer-copy">理解は、同意ではない。</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

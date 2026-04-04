@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界の「健康状態」を数値化する——GMM、RBM、RSM：SANA OSの解析フレームワーク | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--border:rgba(26,24,20,0.10);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:680px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(23px,3.8vw,36px);font-weight:400;line-height:1.22;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.85;font-style:italic;}
+.body{padding:56px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:22px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(19px,2.8vw,24px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 16px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(17px,2.4vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:24px 0;margin:28px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}
+.insight strong{color:var(--ink);}
+ul{color:var(--ink2);line-height:1.82;margin-bottom:22px;padding-left:22px;}ul li{margin-bottom:8px;}
+blockquote{border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;background:var(--amber-l);border-radius:0 8px 8px 0;font-size:15px;color:var(--ink2);line-height:1.78;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:40px 0 60px;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+<div class="nav-right"><a href="/blog/012/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+<p class="hero-tag">Post 012 — GMM · RBM · RSM · フレームワーク</p>
+<p class="hero-date">2025</p>
+<h1>世界の「健康状態」を数値化する——GMM、RBM、RSM：SANA OSの解析フレームワーク</h1>
+<p class="hero-dek">なぜ構造的観察には計器が必要なのか——そしてSANA OSの3つの解析フレームワークが何を測定するか。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>3層モデルと近接性の法則は、個人やチームがなぜそのように行動するかについて多くを説明します。しかし、分析の対象が大きな組織、制度、または国家の場合——より多くのものが必要です。主観的な観察では十分ではありません。計器が必要です。</p>
+    <p>これがSANA OSに3つの構造的診断フレームワークが含まれている理由です。</p>
+
+    <h2>RBM：リソース・バランス・モデル</h2>
+    <p>RBMは一つの問いに答えます：<em>どこで需要が供給を超えているか？</em></p>
+    <p>システムの各機能について、必要なもの（需要）と利用可能なもの（供給）のギャップをマッピングします。集計された構造的ストレス（RBM_Stress = Σ max(Demand_j − Supply_j, 0)）が全体的な負荷を示します。ボトルネック機能——最大のギャップを持つもの——が介入が最も必要な場所です。</p>
+    <p>RBMが提供する重要な再定義：<strong>過負荷は性格の問題ではなく、供給の問題です。</strong>「対処できない」人は、ほとんどの場合、構造的な不均衡に合理的に応答しています——弱さを示しているのではありません。</p>
+
+    <h2>RSM：ロール・システム・モデル</h2>
+    <p>RSMは集合システムを人々の集まりとしてではなく、機能のネットワークとして分析します。6つの役割が定義されています——決定者（Decider）、設計者（Architect）、統合者（Integrator）、執行者（Executor）、観察者（Observer）、監査者（Auditor）——それぞれがシステムの自己修正のために必要な機能を表しています。</p>
+    <p>RSMは各役割の3つの失敗状態を特定します。</p>
+    <ul>
+      <li><strong>欠損（Deficit）：</strong>役割が十分に満たされていない。機能が欠けている。</li>
+      <li><strong>支配（Dominance）：</strong>一つの役割が他の権限を吸収し、フィードバックループを抑制している。</li>
+      <li><strong>幽霊（Phantom）：</strong>役割は名目上存在するが機能を果たしていない。最も危険な状態——安定の幻想を生む。</li>
+    </ul>
+    <p>歴史的な惨事——軍の暴走から企業スキャンダルまで——は頻繁に同じRSMパターンを示します：執行者の支配 → 観察者の歪曲 → 監査者の抑制 → 修正ループの失敗 → システム崩壊。</p>
+
+    <h2>GMM：ガバナンス成熟度モデル</h2>
+    <p>GMMは文明、国家、大きな制度のレベルで動作します。3つの層にわたる構造的安定性を診断し、問います：<em>このシステムは、現在直面している変化のペースを吸収できるか？</em></p>
+    <p>安定条件：V ≤ k × A_eff（変化速度は構造係数×吸収容量を超えてはならない）。この条件が違反されると——制度変化がナラティブ吸収を上回ると——システムは壊れます。劇的にではなく、正統性の侵食、分断、そして最終的には解体を通じて。</p>
+    <p>GMMは予言ツールではありません。診断です：負荷はどこに集中しているか、そしてシステムが安定を維持できる条件は何か？</p>
+
+    <div class="insight">
+      <strong>3つのフレームワークが共有するもの：</strong>帰属を排除します。「リーダーが悪い」「文化が壊れている」「人々は怠惰だ」——これらの言明は分析を停止させます。RBM、RSM、GMMはそれらを、実際に調査し対処できる構造的問いに置き換えます。
+    </div>
+
+    <div class="pullquote">
+      「これらのフレームワークは議論に勝つための武器ではありません。同じ建物を——異なる部屋から、異なるツールで——直したい人々のための共通の地図です。」
+    </div>
+<div class="nav-post"><span><a href="/blog/011/">← Post 011</a></span><span></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+<span class="footer-copy">SANA OS · sana-os.org</span>
+<span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+<span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

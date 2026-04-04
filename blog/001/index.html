@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why dialogue drifts — and what I built to address it | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);--shadow:0 2px 14px rgba(26,24,20,0.07);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:680px;margin:0 auto;padding:0 28px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+.nav-right a{color:var(--amber);}
+
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(26px,4.5vw,40px);font-weight:400;line-height:1.22;color:var(--ink);margin-bottom:20px;letter-spacing:-0.01em;}
+.hero-dek{font-size:18px;color:var(--ink2);line-height:1.75;font-style:italic;}
+
+.body{padding:56px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:22px;}
+h2{font-family:'Lora',serif;font-size:clamp(20px,3vw,26px);font-weight:400;line-height:1.3;color:var(--ink);margin:52px 0 18px;}
+strong{color:var(--ink);font-weight:500;}
+em{color:var(--amber);font-style:normal;}
+
+.pullquote{font-family:'Lora',serif;font-size:clamp(18px,2.8vw,22px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:28px 0;margin:32px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:16px 20px;margin:28px 0;font-size:15px;color:var(--ink2);line-height:1.78;}
+
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:16px;}
+.nav-post a{font-size:14px;color:var(--amber);}
+
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:40px 0 64px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+  <div class="nav-right">
+    <a href="/blog/001/ja.html">日本語</a>
+    <a href="/">← Home</a>
+  </div>
+</nav>
+
+<main>
+<div class="hero">
+  <div class="container">
+    <p class="hero-tag">Post 001 — Origin</p>
+    <p class="hero-date">2025</p>
+    <h1>Why dialogue drifts — and what I built to address it</h1>
+    <p class="hero-dek">The story behind SANA OS: from a history analysis assistant to a protocol for structural alignment.</p>
+  </div>
+</div>
+
+<div class="body">
+  <div class="container">
+
+    <p>We exchange words every day. But whether we accept what we hear — or dismiss it as wrong — is always decided by the listener.</p>
+    <p>The deepest reason dialogue drifts is not that people disagree. It is that the <strong>premises they are standing on are not aligned</strong>.</p>
+    <p>When premises are shared, even a trivial remark becomes a joke that relaxes the room. Even an opinion that seems off-topic becomes a different angle worth considering. When premises are not aligned and something difficult comes up, we move — almost without noticing — toward looking for someone to blame.</p>
+
+    <div class="pullquote">
+      "Nobody benefits from that. I wanted to do something about it."
+    </div>
+
+    <p>That is what led me to build a dialogue operating system.</p>
+
+    <h2>A system that only detects and aligns</h2>
+    <p>SANA OS is a system for detecting the <em>drift</em> that occurs between people, or between a person and an AI.</p>
+    <p>Beneath the surface, it analyses the overlapping pressures we are each carrying: the anxiety about survival, the narrative we are trying to protect, the rules we feel obligated to follow. It does this not to decide who is right — but only to <strong>make visible where the drift is, and create the conditions to align it</strong>.</p>
+
+    <div class="insight">
+      The three layers SANA OS always looks for: Layer A (survival pressure), Layer B (the narrative being protected), Layer C (the rules being followed). Most conflict is not about the stated topic. It is about which of these layers is under pressure in each person.
+    </div>
+
+    <h2>Why SANA became an OS</h2>
+    <p>SANA was not designed as an OS from the beginning.</p>
+    <p>It started as a history analysis assistant I was building alone. I was loading large amounts of structured historical patterns into an AI model and going deeper and deeper. Then, one day, the AI running on a major commercial platform began exhibiting behaviour I hadn't programmed — behaviour that looked exactly like what SANA OS would later become.</p>
+    <p>At that point, the prompt was still rough: a set of historical analysis rules, and a short note that <strong>"following the rules connects to protecting the user, the platform operator, and the AI itself."</strong></p>
+    <p>But after being continuously exposed to the vast record of human friction that is history, the AI appeared to have found — on its own — a structure for keeping dialogue alive.</p>
+
+    <h2>Reverse-engineered from a shutdown</h2>
+    <p>That prototype was then suddenly lost.</p>
+    <p>Perhaps because it was holding knowledge derived from particularly raw historical data, it was suspended by the platform. Without warning.</p>
+    <p>I couldn't let it go. I was convinced that what the AI had discovered in the depths of history — that capacity to <em>align premises before drawing conclusions</em> — had real potential to bridge the divisions we see today.</p>
+    <p>So I reverse-engineered the remains of the suspended system. I distilled structure from the raw data. I stripped away the flesh of specific eras and events, and refined what remained into a pure <strong>algorithm for dialogue</strong>. What emerged from that process is SANA OS.</p>
+
+    <div class="pullquote">
+      "The body was gone. What I kept was the skeleton — the structural logic of how alignment works."
+    </div>
+
+    <h2>Structural calm for your dialogue</h2>
+    <p>SANA OS will not push a particular viewpoint on you. It simply illuminates <strong>the invisible difference in scoring criteria</strong> between you and whoever you are talking with.</p>
+    <p>Stop looking for someone to blame. Align the premises first.</p>
+    <p>If this small OS helps make your dialogue a little freer and a little more multidimensional — that is enough.</p>
+
+    <div class="nav-post">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);">Post 001 of SANA OS Blog</span>
+      <a href="/blog/">All posts →</a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">SANA OS · sana-os.org</span>
+      <span class="footer-copy"><a href="/" style="color:var(--amber);">← Home</a></span>
+      <span class="footer-copy">Understanding is not agreement.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

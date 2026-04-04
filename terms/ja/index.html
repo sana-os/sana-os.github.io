@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANA OS — 利用規約</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:16px;line-height:1.85;}
+a{color:var(--amber);}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-back a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(24px,3.5vw,36px);font-weight:400;line-height:1.3;margin-bottom:12px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+.doc{padding:56px 0;}
+.doc-section{margin-bottom:48px;}
+.doc-section h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:19px;font-weight:400;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.doc-section h3{font-size:15px;font-weight:500;color:var(--ink);margin:20px 0 8px;}
+.doc-section p{color:var(--ink2);line-height:1.88;margin-bottom:12px;font-size:15px;}
+.doc-section ul{color:var(--ink2);line-height:1.88;margin-bottom:12px;padding-left:20px;font-size:15px;}
+.doc-section ul li{margin-bottom:6px;}
+.permit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+.permit-box{padding:14px 16px;border-radius:8px;font-size:14px;line-height:1.65;}
+.permit-box.yes{background:var(--teal-l);border-left:3px solid var(--teal);color:var(--ink);}
+.permit-box.no{background:var(--red-l);border-left:3px solid var(--red);color:var(--ink);}
+.permit-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+.permit-box.yes .permit-label{color:var(--teal);}.permit-box.no .permit-label{color:var(--red);}
+.core-box{background:var(--amber-l);border:1px solid var(--amber-b);border-radius:10px;padding:20px 22px;margin:16px 0;}
+.core-box p{font-size:14px;color:var(--ink2);line-height:1.82;margin-bottom:0;}
+.core-box strong{color:var(--ink);}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.permit-grid{grid-template-columns:1fr;}.container{padding:0 16px;}nav{padding:0 16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span></div>
+  <div class="nav-back"><a href="/ja/">← ホーム</a> &nbsp;·&nbsp; <a href="/terms/">English</a></div>
+</nav>
+<main>
+<div class="hero">
+  <div class="container">
+    <p class="hero-tag">Legal</p>
+    <h1>利用規約とライセンス</h1>
+    <p class="hero-date">SANA OS License v1.0 · 2025年施行</p>
+  </div>
+</div>
+<div class="doc">
+  <div class="container">
+
+    <div class="doc-section">
+      <h2>1. 適用範囲</h2>
+      <p>この規約は、sana-os.orgおよびSANA OS GitHubリポジトリで公開されているすべての素材（ワークシート、システムプロンプト、フレームワーク文書、ペルソナテンプレート。以下「SANA OS素材」）に適用されます。</p>
+      <p>この規約はCreative Commons Attribution 4.0 International (CC BY 4.0) の精神に基づいており、SANA OS固有の追加条件が、CC BY 4.0と矛盾する場合は優先されます。</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>2. 許可されること</h2>
+      <div class="permit-grid">
+        <div class="permit-box yes"><p class="permit-label">✓ 許可</p><p>商用利用を含む、あらゆる目的での使用</p></div>
+        <div class="permit-box yes"><p class="permit-label">✓ 許可</p><p>任意の形式でのコピー・再配布</p></div>
+        <div class="permit-box yes"><p class="permit-label">✓ 許可</p><p>テンプレートを使用した新しいペルソナの作成</p></div>
+        <div class="permit-box yes"><p class="permit-label">✓ 許可</p><p>ワークシートの改良・翻訳</p></div>
+        <div class="permit-box yes"><p class="permit-label">✓ 許可</p><p>プロダクトやサービスへの統合</p></div>
+        <div class="permit-box yes"><p class="permit-label">✓ 許可</p><p>学術・研究目的でのフレームワーク活用</p></div>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>3. 必須の条件</h2>
+      <h3>3.1 帰属表示（Attribution）</h3>
+      <p>SANA OS素材を使用・配布・公開する場合は、以下の帰属表示が必要です：</p>
+      <ul>
+        <li>テキスト：<strong>「Powered by SANA OS」</strong></li>
+        <li>リンク：<strong>https://sana-os.org</strong></li>
+      </ul>
+      <p>AIへの実装（システムプロンプト・GPTs・APIプロダクト）の場合、エンドユーザーに見える製品説明またはドキュメントに帰属表示を含めてください。</p>
+
+      <h3>3.2 改変の明示</h3>
+      <p>改変したSANA OS素材を配布する場合は、変更を加えたことと、その結果が派生物であることを明示してください。</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>4. 禁止事項</h2>
+      <div class="permit-grid">
+        <div class="permit-box no"><p class="permit-label">✗ 禁止</p><p>Core Principleファイルの改変</p></div>
+        <div class="permit-box no"><p class="permit-label">✗ 禁止</p><p>4つのCore Invariantの削除・弱体化</p></div>
+        <div class="permit-box no"><p class="permit-label">✗ 禁止</p><p>帰属表示の削除</p></div>
+        <div class="permit-box no"><p class="permit-label">✗ 禁止</p><p>操作・強制・欺瞞を目的とした使用</p></div>
+        <div class="permit-box no"><p class="permit-label">✗ 禁止</p><p>自律性保全（Autonomy Preservation）の無効化</p></div>
+        <div class="permit-box no"><p class="permit-label">✗ 禁止</p><p>ツールの根本的な目的（前提の整列）の変更</p></div>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>5. Core Principleの不変性</h2>
+      <div class="core-box">
+        <p><strong>SANA OS Core Principle</strong>（<code>core/SANA_OS_Core_Principle.md</code>）は、フレームワークの基本的な不変量を定義しています。いかなる派生物においても改変することはできません。</p>
+        <p style="margin-top:10px;">すべての派生物において保持しなければならない4つの不変量：<strong>（1）</strong>born_loved = true（非敵対的基準線）、<strong>（2）</strong>観察なき論理は存在しない、<strong>（3）</strong>構造的翻訳、<strong>（4）</strong>自律性の保全。</p>
+      </div>
+
+      <h3>5.1 目的の保全</h3>
+      <p>SANA OSの根本的な目的—「結論に急ぐ前に前提を整えることで、対話における構造的摩擦を軽減する」—は、いかなる改変においても維持されなければなりません。</p>
+      <p>SANA OS素材を操作・強制・欺瞞的な出力の生成を目的として転用することは禁止されています。</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>6. 免責事項および責任の制限</h2>
+      <p>SANA OSのツールとプロンプトは、構造的な摩擦を可視化し前提を整えるための道具です。意思決定システムではなく、法的・医療的・心理的・組織的な専門的助言の代替物でもありません。</p>
+      <p><strong>SANA OSツールの出力に基づいて下されたすべての決定は、利用者自身の責任に帰します。</strong>SANA OSプロジェクトは、提供するいかなる素材についても、その正確性・完全性・目的適合性について明示・黙示を問わず保証しません。</p>
+      <p>SANA OSプロジェクトは、これらの素材の使用または誤用から生じる直接的・間接的・付随的・結果的損害について責任を負いません。</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>7. お問い合わせ</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;color:var(--ink2);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 0;font-weight:500;color:var(--ink);width:160px;">X (Twitter)</td><td style="padding:8px 0;"><a href="https://x.com/sanaosproject">@sanaosproject</a></td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 0;font-weight:500;color:var(--ink);">一般お問い合わせ</td><td style="padding:8px 0;"><a href="mailto:contact@sana-os.org">contact@sana-os.org</a></td></tr>
+        <tr><td style="padding:8px 0;font-weight:500;color:var(--ink);">セキュリティ・安全性</td><td style="padding:8px 0;"><a href="mailto:security@sana-os.org">security@sana-os.org</a></td></tr>
+      </table>
+      <p style="margin-top:14px;">この規約でカバーされないライセンスに関するお問い合わせや商業的なご相談は <a href="mailto:contact@sana-os.org">contact@sana-os.org</a> までご連絡ください。脆弱性の報告やSANA OSの安全性に関するご懸念は <a href="mailto:security@sana-os.org">security@sana-os.org</a> までご連絡ください。</p>
+    </div>
+
+  </div>
+</div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">SANA OS · sana-os.org</span>
+      <span class="footer-copy"><a href="/terms/" style="color:var(--amber);">English version</a></span>
+      <span class="footer-copy">理解は、同意ではない。</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why the most rational meetings end in deadlock | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--border:rgba(26,24,20,0.10);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:680px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(23px,3.8vw,36px);font-weight:400;line-height:1.22;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:56px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:22px;}
+h2{font-family:'Lora',serif;font-size:clamp(19px,2.8vw,24px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 16px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(17px,2.4vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:24px 0;margin:28px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}
+.insight strong{color:var(--ink);}
+ul{color:var(--ink2);line-height:1.82;margin-bottom:22px;padding-left:22px;}ul li{margin-bottom:8px;}
+blockquote{border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;background:var(--amber-l);border-radius:0 8px 8px 0;font-size:15px;color:var(--ink2);line-height:1.78;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:40px 0 60px;}}
+</style>
+</head>
+<body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+<div class="nav-right"><a href="/blog/004/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+<p class="hero-tag">Post 004 — Worksheet 01 · Premise Alignment</p>
+<p class="hero-date">2025</p>
+<h1>Why the most rational meetings end in deadlock</h1>
+<p class="hero-dek">Worksheet 01 in practice: making invisible pressure visible before it becomes a verdict.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Smart people, good intentions, a shared goal — and still the meeting ends with everyone more entrenched than when they walked in.</p>
+    <p>This is one of the most common and least understood patterns in organisational life. The instinct is to attribute it to personality: someone is being difficult, someone lacks ownership, someone doesn't understand the bigger picture. But the structural explanation is simpler and more useful.</p>
+
+    <h2>Three people, three invisible landscapes</h2>
+    <p>In a typical project review, three different positions are present simultaneously:</p>
+    <ul>
+      <li>The CEO is carrying pressure from shareholders and markets — Layer C institutional pressure to show growth and maintain trust.</li>
+      <li>The middle manager is chasing this quarter's KPIs — another form of Layer C pressure, but operationally immediate.</li>
+      <li>The frontline staff are protecting their workload and health — Layer A survival pressure, the most physically proximate of all.</li>
+    </ul>
+    <p>Each person's landscape is <em>invisible</em> to the others. And because it is invisible, it becomes Variable X — and Variable X, left unaddressed, becomes a verdict: "They don't care about us." "They have no ownership." "They don't understand reality."</p>
+
+    <h2>What Worksheet 01 does</h2>
+    <p>The <strong>Goal Setting &amp; Premise Alignment Checklist</strong> was designed for exactly this situation. Its purpose is not to decide who is right. It is to make each person's layer visible before the compression happens.</p>
+    <p>The protocol shifts the language of the room. Instead of "this is important," participants are asked to state <em>which layer their priority comes from</em>:</p>
+    <ul>
+      <li>"I am prioritising the release date because of a Layer C constraint — a shareholder commitment that carries reputational risk if missed."</li>
+      <li>"I am prioritising headcount because of a Layer A risk — at current load, members will break before the deadline."</li>
+    </ul>
+    <p>This is structural translation: converting subjective conviction into observable layer pressure.</p>
+
+    <div class="insight">
+      <strong>The key shift:</strong> the gap between positions stops being a character problem and becomes structural information. "Where is the load concentrated?" is a question that can be answered together. "Who is wrong?" cannot.
+    </div>
+
+    <h2>The closing agreement</h2>
+    <p>Worksheet 01 ends with a statement read aloud by all participants:</p>
+    <blockquote>"Our priorities differed not because anyone was wrong, but because each of us was facing different invisible pressures. Now that those structures are visible, we agree to focus first on [Element X] and to discuss how to cover the load on those protecting [Element Y]."</blockquote>
+    <p>This is not a feel-good ritual. It is a SYN/ACK handshake — a structural confirmation that premises have been aligned and the conversation can now proceed on shared ground.</p>
+
+    <div class="pullquote">
+      "Stop looking for someone to blame. Align the premises first. The path forward usually becomes visible from there."
+    </div>
+<div class="nav-post"><span><a href="/blog/003/">← Post 003</a></span><span><a href="/blog/005/">Post 005 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+<span class="footer-copy">SANA OS · sana-os.org</span>
+<span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+<span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer>
+</body></html>

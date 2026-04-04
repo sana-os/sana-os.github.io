@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANA OS — Structural Dialogue Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #faf8f4;
+  --bg2:      #f3f0ea;
+  --bg3:      #ede9e0;
+  --ink:      #1a1814;
+  --ink2:     #4a4640;
+  --ink3:     #8a857c;
+  --ink4:     #b8b3aa;
+  --amber:    #c47c20;
+  --amber-l:  #fdf3e3;
+  --amber-b:  rgba(196,124,32,0.22);
+  --teal:     #2a7a5e;
+  --teal-l:   #eaf4f0;
+  --red:      #b84040;
+  --red-l:    #fdf0f0;
+  --blue:     #2e5f9e;
+  --blue-l:   #eef3fb;
+  --purple:   #6b4fa0;
+  --purple-l: #f4f0fb;
+  --border:   rgba(26,24,20,0.10);
+  --border2:  rgba(26,24,20,0.16);
+  --shadow:   0 2px 14px rgba(26,24,20,0.07);
+  --r:        10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.7; }
+a { color: var(--amber); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,248,244,0.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  height: 54px; display: flex; align-items: center;
+  padding: 0 28px; justify-content: space-between;
+}
+.nav-logo { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: var(--ink); letter-spacing: 0.06em; }
+.nav-logo span { color: var(--amber); }
+.nav-lang { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink3); letter-spacing: 0.06em; }
+.nav-lang a { color: var(--amber); font-weight: 500; }
+.nav-lang a:hover { text-decoration: underline; }
+
+/* HERO */
+.hero { padding: 112px 0 68px; border-bottom: 1px solid var(--border); }
+.hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: var(--amber); text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-family: 'Lora', serif; font-size: clamp(30px, 5vw, 52px); font-weight: 400; line-height: 1.18; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.01em; }
+.hero h1 em { font-style: italic; color: var(--amber); }
+.hero-sub { font-size: 17px; color: var(--ink2); max-width: 520px; line-height: 1.75; margin-bottom: 36px; }
+.hero-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--amber); color: #fff; font-weight: 500; font-size: 14px; padding: 10px 22px; border-radius: 7px; border: none; cursor: pointer; text-decoration: none; transition: opacity 0.15s; }
+.btn:hover { opacity: 0.86; text-decoration: none; color: #fff; }
+.hero-note { font-size: 13px; color: var(--ink3); }
+
+/* SECTION */
+section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+.sec-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 12px; }
+h2 { font-family: 'Lora', serif; font-size: clamp(22px, 3.5vw, 32px); font-weight: 400; line-height: 1.28; margin-bottom: 16px; }
+h2 em { font-style: italic; color: var(--amber); }
+.body-text { color: var(--ink2); max-width: 640px; margin-bottom: 14px; line-height: 1.78; }
+
+/* LAYER GRID */
+.layer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 32px 0; }
+.layer-block { border-radius: 8px; padding: 18px; }
+.layer-block.a { background: var(--red-l); }
+.layer-block.b { background: var(--amber-l); }
+.layer-block.c { background: var(--blue-l); }
+.layer-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: 6px; }
+.layer-block.a .layer-tag { color: var(--red); }
+.layer-block.b .layer-tag { color: var(--amber); }
+.layer-block.c .layer-tag { color: var(--blue); }
+.layer-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+.layer-desc { font-size: 12px; color: var(--ink2); line-height: 1.55; }
+
+/* INSIGHT BOX */
+.insight { background: var(--amber-l); border-left: 3px solid var(--amber); border-radius: 0 8px 8px 0; padding: 14px 18px; font-size: 14px; color: var(--ink2); margin: 24px 0; line-height: 1.7; }
+
+/* TOOLS */
+#tools { padding: 72px 0; border-bottom: 1px solid var(--border); }
+.tool-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); box-shadow: var(--shadow); margin-bottom: 16px; overflow: hidden; transition: box-shadow 0.2s; }
+.tool-card:hover { box-shadow: 0 4px 20px rgba(26,24,20,0.1); }
+.tool-header { display: flex; align-items: center; padding: 16px 22px; gap: 14px; cursor: pointer; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.tool-card.open .tool-header { border-color: var(--border); }
+.tool-accent { width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.tool-meta { flex: 1; }
+.tool-use { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; }
+.tool-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.tool-arrow { font-size: 16px; color: var(--ink3); transition: transform 0.22s; flex-shrink: 0; }
+.tool-card.open .tool-arrow { transform: rotate(180deg); }
+.tool-body { display: none; padding: 22px; }
+.tool-card.open .tool-body { display: block; }
+.tool-desc { font-size: 14px; color: var(--ink2); margin-bottom: 18px; line-height: 1.7; }
+
+/* colour variants */
+.c-amber .tool-accent { background: var(--amber-l); color: var(--amber); }
+.c-amber .tool-use   { color: var(--amber); }
+.c-blue  .tool-accent { background: var(--blue-l);   color: var(--blue); }
+.c-blue  .tool-use   { color: var(--blue); }
+.c-teal  .tool-accent { background: var(--teal-l);   color: var(--teal); }
+.c-teal  .tool-use   { color: var(--teal); }
+.c-red   .tool-accent { background: var(--red-l);    color: var(--red); }
+.c-red   .tool-use   { color: var(--red); }
+.c-purple .tool-accent { background: var(--purple-l); color: var(--purple); }
+.c-purple .tool-use  { color: var(--purple); }
+
+/* MINI FORM */
+.mini-form { background: var(--bg); border-radius: 8px; padding: 18px; }
+.mini-form-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 5px; }
+.mini-form-q { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 7px; }
+.mini-form input[type=text], .mini-form textarea { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); background: #fff; border: 1px solid var(--border2); border-radius: 6px; padding: 9px 12px; outline: none; transition: border-color 0.15s; line-height: 1.6; resize: vertical; }
+.mini-form input[type=text]:focus, .mini-form textarea:focus { border-color: var(--amber); }
+.mini-form-row { margin-bottom: 12px; }
+.mini-form-hint { font-size: 12px; color: var(--ink3); margin-top: 4px; }
+.layers-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.layer-input-box textarea { min-height: 68px; font-size: 13px; }
+.layer-tag-label { font-size: 11px; font-weight: 500; margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-a { background: var(--red); }
+.dot-b { background: var(--amber); }
+.dot-c { background: var(--blue); }
+.tool-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; flex-wrap: wrap; gap: 8px; }
+.btn-dl { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: var(--amber); background: var(--amber-l); border: 1px solid var(--amber-b); padding: 6px 14px; border-radius: 6px; cursor: pointer; text-decoration: none; transition: opacity 0.15s; }
+.btn-dl:hover { opacity: 0.8; text-decoration: none; color: var(--amber); }
+.tool-note { font-size: 12px; color: var(--ink3); }
+
+/* WHY */
+#why .insight strong { color: var(--ink); font-weight: 500; }
+
+/* GATEWAY */
+#gateway { padding: 72px 0 96px; }
+.gateway-box { background: #fff; border: 1px solid var(--border2); border-radius: 14px; padding: 52px; text-align: center; box-shadow: var(--shadow); }
+.gateway-box h2 { margin-bottom: 14px; }
+.gateway-box p { color: var(--ink2); max-width: 460px; margin: 0 auto 28px; line-height: 1.78; font-size: 15px; }
+
+/* FOOTER */
+footer { padding: 28px 0; border-top: 1px solid var(--border); }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink3); letter-spacing: 0.04em; }
+.footer-lang a { color: var(--amber); }
+
+@media (max-width: 640px) {
+  .layer-grid, .layers-row { grid-template-columns: 1fr; }
+  .gateway-box { padding: 32px 18px; }
+  nav { padding: 0 16px; }
+  .container { padding: 0 16px; }
+  .hero { padding: 90px 0 52px; }
+  section { padding: 52px 0; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">SANA<span> OS</span></div>
+  <div class="nav-lang" style="display:flex;gap:16px;align-items:center;"><a href="/blog/">Blog</a><a href="/ja/">日本語</a></div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" style="border-bottom:1px solid var(--border); padding-bottom:68px;">
+  <div class="container">
+    <p class="hero-tag">Free structural dialogue tools</p>
+    <h1>Tools that make<br><em>hidden friction visible.</em></h1>
+    <p class="hero-sub">Five worksheets for meetings, 1-on-1s, classrooms, and change management — when dialogue keeps collapsing for no obvious reason.</p>
+    <div class="hero-cta">
+      <a href="#tools" class="btn">Try a tool →</a>
+      <span class="hero-note">No signup. No prior knowledge required.</span>
+    </div>
+
+    <!-- Vimeo -->
+    <div style="margin-top:44px;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(26,24,20,0.10);aspect-ratio:16/9;max-width:720px;">
+      <iframe src="https://player.vimeo.com/video/1175942641?badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        style="width:100%;height:100%;display:block;"
+        title="SANA OS — Why it exists"></iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </div>
+</section>
+
+<!-- WHY EXISTS -->
+<section id="why-exists" style="padding:72px 0;border-bottom:1px solid var(--border);background:#fff;">
+  <div class="container" style="max-width:680px;">
+    <p class="sec-tag">Why SANA OS exists</p>
+    <p style="font-family:'Lora',serif;font-size:clamp(20px,3vw,28px);font-weight:400;line-height:1.35;color:var(--ink);margin-bottom:32px;">Most systems do not collapse because people are wrong.<br><em style="color:var(--amber);">They collapse because people are certain too early.</em></p>
+
+    <p style="color:var(--ink2);line-height:1.82;margin-bottom:16px;">When something is unclear, the human brain does not wait. It replaces the unknown with a story.</p>
+
+    <div style="background:var(--bg2);border-radius:8px;padding:20px 22px;margin:24px 0;">
+      <p style="color:var(--ink3);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.06em;margin-bottom:10px;">THE REPLACEMENT HAPPENS INSTANTLY</p>
+      <p style="color:var(--ink2);font-size:15px;line-height:1.75;font-style:italic;">"This is a bad decision."<br>"They don't understand."<br>"This will never work."</p>
+    </div>
+
+    <p style="color:var(--ink2);line-height:1.82;margin-bottom:16px;">The discomfort disappears. The explanation feels complete. But the structure underneath remains unseen.</p>
+    <p style="color:var(--ink2);line-height:1.82;margin-bottom:24px;">Over time, this creates a pattern: structural problems become personal conflicts. Questions become accusations. Correction becomes impossible. And the system loses its ability to update itself.</p>
+
+    <div style="background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;">
+      <p style="color:var(--ink2);font-size:14px;line-height:1.75;"><strong style="color:var(--ink);">This is not a failure of intelligence.</strong> It is a property of human cognition. We are not built to hold uncertainty for long.</p>
+    </div>
+
+    <p style="color:var(--ink2);line-height:1.82;margin-bottom:16px;">SANA OS exists for one purpose: to make it possible to <strong style="color:var(--ink);">see structure before replacing it with story.</strong></p>
+    <p style="color:var(--ink2);line-height:1.82;margin-bottom:16px;">It does not solve the problem for you. It does not decide who is right. It does something much simpler.</p>
+    <p style="color:var(--ink2);line-height:1.82;margin-bottom:24px;">It makes the hidden variables visible.</p>
+
+    <p style="font-family:'Lora',serif;font-size:18px;font-weight:400;color:var(--ink);line-height:1.45;">When that happens, something changes.<br>The argument stops being about people.<br><em style="color:var(--amber);">It becomes about the system.</em><br>That is where real dialogue begins.</p>
+  </div>
+</section>
+
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="container">
+    <p class="sec-tag">The worksheets</p>
+    <h2>Pick the one that fits your situation.<br><em>Fill in Step 1. See what happens.</em></h2>
+
+    <!-- 01 Premise Alignment -->
+    <div class="tool-card c-amber" id="card-01">
+      <div class="tool-header" onclick="toggle('01')">
+        <div class="tool-accent">⚖</div>
+        <div class="tool-meta">
+          <p class="tool-use">Project · Meeting</p>
+          <p class="tool-name">Goal Setting &amp; Premise Alignment Checklist</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">Priority conflicts in meetings rarely come from bad intentions. They come from different pressures — one person protecting a client relationship (Layer B), another protecting system stability (Layer A). This checklist makes those pressures visible before the argument starts.</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — Confirm the shared goal</p>
+          <div class="mini-form-row">
+            <p class="mini-form-q">Our goal for this session:</p>
+            <input type="text" placeholder="e.g. Agree on scope and priorities for the Q3 launch">
+          </div>
+          <p class="mini-form-label">Step 2 — What pressures is each person protecting?</p>
+          <div class="layers-row">
+            <div class="layer-input-box">
+              <p class="layer-tag-label"><span class="dot dot-a"></span> Layer A — Survival</p>
+              <textarea rows="3" placeholder="e.g. System breaks → team works through the night"></textarea>
+            </div>
+            <div class="layer-input-box">
+              <p class="layer-tag-label"><span class="dot dot-b"></span> Layer B — Narrative</p>
+              <textarea rows="3" placeholder="e.g. We always deliver on time — that is who we are"></textarea>
+            </div>
+            <div class="layer-input-box">
+              <p class="layer-tag-label"><span class="dot dot-c"></span> Layer C — Rules</p>
+              <textarea rows="3" placeholder="e.g. Contract penalty if launch is delayed"></textarea>
+            </div>
+          </div>
+          <p class="mini-form-hint">When all three columns are filled, the disagreement usually explains itself.</p>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-01-premise-alignment.pdf" class="btn-dl" download>↓ Download full worksheet (PDF)</a>
+          <span class="tool-note">5 steps · ~20 min for a team of 4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Stress -->
+    <div class="tool-card c-blue" id="card-02">
+      <div class="tool-header" onclick="toggle('02')">
+        <div class="tool-accent">◎</div>
+        <div class="tool-meta">
+          <p class="tool-use">1-on-1 · Welfare</p>
+          <p class="tool-name">Structural Stress Visualizer Worksheet</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">When someone is struggling, asking "why can't you cope?" reads as a threat. This worksheet reframes the situation as a structural load problem: where does demand exceed supply? The answer is never the person.</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — Demand vs. Supply</p>
+          <div class="mini-form-row">
+            <p class="mini-form-q">Current workload demand (1–10, briefly note why):</p>
+            <input type="text" placeholder="Rate 1–10 and briefly note why">
+          </div>
+          <div class="mini-form-row">
+            <p class="mini-form-q">Current supply capacity — time, energy, headcount (1–10):</p>
+            <input type="text" placeholder="Rate 1–10 and briefly note why">
+            <p class="mini-form-hint">If demand &gt; supply, the gap is a structural problem — not a personal failing.</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-02-stress-visualizer.pdf" class="btn-dl" download>↓ Download full worksheet (PDF)</a>
+          <span class="tool-note">4 steps · designed for 1-on-1 use</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Reform -->
+    <div class="tool-card c-teal" id="card-03">
+      <div class="tool-header" onclick="toggle('03')">
+        <div class="tool-accent">→</div>
+        <div class="tool-meta">
+          <p class="tool-use">Change Management</p>
+          <p class="tool-name">Reform Gap Checklist</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">Logically correct reforms fail because Layer B (culture) absorbs change at a fixed rate. When change speed exceeds absorption capacity, the system breaks. This checklist diagnoses that gap before deployment.</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — Define the change</p>
+          <div class="mini-form-row">
+            <p class="mini-form-q">New system / policy / reform:</p>
+            <textarea rows="2" placeholder="e.g. Mandatory use of new project management platform starting April"></textarea>
+          </div>
+          <div class="mini-form-row">
+            <p class="mini-form-q">Rollout speed:</p>
+            <input type="text" placeholder="e.g. Full cutover in 2 weeks">
+            <p class="mini-form-hint">The faster the rollout, the more critical the absorption capacity check.</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-03-reform-gap.pdf" class="btn-dl" download>↓ Download full checklist (PDF)</a>
+          <span class="tool-note">4 steps · pre-deployment diagnostic</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 History -->
+    <div class="tool-card c-red" id="card-04">
+      <div class="tool-header" onclick="toggle('04')">
+        <div class="tool-accent">🕵</div>
+        <div class="tool-meta">
+          <p class="tool-use">Education · History</p>
+          <p class="tool-name">History Mystery Explorer Worksheet</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">Instead of judging past actions as "wrong" or "barbaric," reconstruct the environmental pressures that made those actions rational at the time. Separates fact, perception, and record — because people act on perception, not fact.</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — Choose your mystery</p>
+          <div class="mini-form-row">
+            <p class="mini-form-q">Historical event or decision to explore:</p>
+            <input type="text" placeholder="e.g. Why did the witch trials happen? Why did this empire collapse?">
+          </div>
+          <div class="mini-form-row">
+            <p class="mini-form-q">What was the dominant Layer A pressure at the time?</p>
+            <textarea rows="2" placeholder="e.g. Crop failures, plague, fear of famine"></textarea>
+            <p class="mini-form-hint">The answer to "why did they act that way?" usually lives in this field.</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-04-history-mystery.pdf" class="btn-dl" download>↓ Download full worksheet (PDF)</a>
+          <span class="tool-note">4 steps · classroom or self-study</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 GMM -->
+    <div class="tool-card c-purple" id="card-05">
+      <div class="tool-header" onclick="toggle('05')">
+        <div class="tool-accent">◈</div>
+        <div class="tool-meta">
+          <p class="tool-use">Structural Analysis · Advanced</p>
+          <p class="tool-name">GMM — Governance Maturity Model</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">A quantitative diagnostic for structural stability — not "is this good or bad?" but "where is the load concentrated, and what is the absorption capacity?" Applicable to states, organisations, or communities. A comparison tool, not a prediction tool.</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — Three-layer assessment (0–5)</p>
+          <div class="layers-row">
+            <div class="layer-input-box">
+              <p class="layer-tag-label"><span class="dot dot-a"></span> A — Survival</p>
+              <textarea rows="3" placeholder="Score 0–5 + reason"></textarea>
+            </div>
+            <div class="layer-input-box">
+              <p class="layer-tag-label"><span class="dot dot-b"></span> B — Narrative</p>
+              <textarea rows="3" placeholder="Score 0–5 + reason"></textarea>
+            </div>
+            <div class="layer-input-box">
+              <p class="layer-tag-label"><span class="dot dot-c"></span> C — Institution</p>
+              <textarea rows="3" placeholder="Score 0–5 + reason"></textarea>
+            </div>
+          </div>
+          <p class="mini-form-hint">The layer with the lowest score is the structural bottleneck. That is where to look first.</p>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-05-gmm.pdf" class="btn-dl" download>↓ Download full worksheet (PDF)</a>
+          <span class="tool-note">8 steps · includes stability formula</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 RBM -->
+    <div class="tool-card c-teal" id="card-06">
+      <div class="tool-header" onclick="toggle('06')">
+        <div class="tool-accent">⇌</div>
+        <div class="tool-meta">
+          <p class="tool-use">Individual · Team · Organisation</p>
+          <p class="tool-name">RBM — Resource Balance Diagnostic Worksheet</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">Where does demand structurally exceed supply? RBM does not ask who is responsible — it asks where capacity is overloaded. Suitable for individual stress diagnosis, team workload analysis, and initial organisational dysfunction diagnosis. Use only after Premise Alignment is established.</p>
+        <div class="mini-form">
+          <p class="mini-form-label">Step 1 — Define functions</p>
+          <div class="mini-form-row">
+            <p class="mini-form-q">Subject being analysed:</p>
+            <input type="text" placeholder="e.g. Product development team (5 members)">
+          </div>
+          <div class="mini-form-row">
+            <p class="mini-form-q">Function A — what output is this system expected to deliver?</p>
+            <input type="text" placeholder="e.g. Weekly releases / Customer support / Technical debt reduction">
+            <p class="mini-form-hint">Bottleneck = function with the largest Demand − Supply gap. That is where to look first.</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-06-rbm.pdf" class="btn-dl" download>↓ Download full worksheet (PDF)</a>
+          <span class="tool-note">5 steps · demand / supply grid included</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 RSM -->
+    <div class="tool-card c-purple" id="card-07">
+      <div class="tool-header" onclick="toggle('07')">
+        <div class="tool-accent">◉</div>
+        <div class="tool-meta">
+          <p class="tool-use">Research · History · Institutional Analysis</p>
+          <p class="tool-name">RSM — Role System Diagnostic Worksheet</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">For researchers analysing structural collapse in organisations, institutions, and states. RSM maps six functional roles (Decider / Architect / Integrator / Executor / Observer / Auditor) and identifies failure patterns: Role Capture, Architect Isolation, Succession Deficit. Optimally suited for historical case analysis.</p>
+        <div class="mini-form">
+          <p class="mini-form-label" style="color:var(--red);border:1px solid rgba(184,64,64,0.2);background:var(--red-l);padding:6px 10px;border-radius:5px;font-size:10px;">⚠ Research use — not for personnel evaluation or organisational consulting</p>
+          <div class="mini-form-row" style="margin-top:10px;">
+            <p class="mini-form-q">Subject and timeframe:</p>
+            <input type="text" placeholder="e.g. French Army during the Dreyfus Affair (1894–1906)">
+            <p class="mini-form-hint">RSM analyses structural role relationships — not individuals or personalities.</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-07-rsm.pdf" class="btn-dl" download>↓ Download full worksheet (PDF)</a>
+          <span class="tool-note">4 steps · 6-role diagnostic grid · research use</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 CPM -->
+    <div class="tool-card" id="card-08" style="border-top:2px solid #b85a10;">
+      <div class="tool-header" onclick="toggle('08')">
+        <div class="tool-accent" style="background:#fef0e6;color:#b85a10;">∿</div>
+        <div class="tool-meta">
+          <p class="tool-use" style="color:#b85a10;">Research · History · Social Phenomena</p>
+          <p class="tool-name">CPM — Cognitive Pressure Diagnostic Worksheet</p>
+        </div>
+        <span class="tool-arrow">↓</span>
+      </div>
+      <div class="tool-body">
+        <p class="tool-desc">For researchers analysing how beliefs form under pressure. CPM traces the path from unresolved uncertainty (Variable X) through cognitive triggers to narrative substitution or exploratory simulation. Optimally suited for analysing witch hunts, revolutions, ideological transformation, and social movements.</p>
+        <div class="mini-form">
+          <p class="mini-form-label" style="color:var(--red);border:1px solid rgba(184,64,64,0.2);background:var(--red-l);padding:6px 10px;border-radius:5px;font-size:10px;">⚠ Research use — not for psychiatric diagnosis or psychological evaluation</p>
+          <div class="mini-form-row" style="margin-top:10px;">
+            <p class="mini-form-q">Subject and primary Variable X (dominant unresolved uncertainty):</p>
+            <input type="text" placeholder="e.g. 17th-c. European witch trial participants / 'Why does God's punishment continue?'">
+            <p class="mini-form-hint">CPM asks how beliefs form — not whether they are correct.</p>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <a href="/sheets/en/sana-en-08-cpm.pdf" class="btn-dl" download>↓ Download full worksheet (PDF)</a>
+          <span class="tool-note">5 steps · Architect state grid · research use</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="container">
+    <p class="sec-tag">Why they work</p>
+    <h2>Conflict is rarely about the issue.<br><em>It is about which layer is under pressure.</em></h2>
+    <p class="body-text">Every person operates simultaneously under three layers of pressure. When these conflict — within one person or between two — the brain defaults to cognitive compression: complex reasoning collapses into a simple label. "Wrong." "Lazy." "Obstruction." The argument escalates. The structural cause stays invisible.</p>
+
+    <div class="layer-grid">
+      <div class="layer-block a">
+        <p class="layer-tag">Layer A</p>
+        <p class="layer-name">Survival</p>
+        <p class="layer-desc">Food, sleep, safety, job security. When threatened, everything else stops.</p>
+      </div>
+      <div class="layer-block b">
+        <p class="layer-tag">Layer B</p>
+        <p class="layer-name">Narrative</p>
+        <p class="layer-desc">Identity, values, unwritten rules, belonging. Challenges here feel like physical threats.</p>
+      </div>
+      <div class="layer-block c">
+        <p class="layer-tag">Layer C</p>
+        <p class="layer-name">Institution</p>
+        <p class="layer-desc">Law, policy, KPIs, contracts. Can change overnight — absorbed only at Layer B speed.</p>
+      </div>
+    </div>
+
+    <div class="insight">
+      <strong>The key insight:</strong> making someone's layer visible — to themselves and to others — is enough to interrupt the compression. These tools do not resolve conflict. They make the <em>structure</em> of the conflict visible, so the people involved can resolve it themselves.
+    </div>
+  </div>
+</section>
+
+<!-- GATEWAY -->
+<section id="gateway" style="border-bottom:none;">
+  <div class="container">
+    <div class="gateway-box">
+      <p class="sec-tag" style="text-align:center;">For those who want to go further</p>
+      <h2>If using these tools changed<br><em>how you see dialogue itself</em></h2>
+      <p>These worksheets are practical implementations of a broader framework for structural observation. If the premise-first approach resonates with how you want to think and build, the system behind these tools is available here.</p>
+      <a href="/system/" class="btn">Explore SANA OS →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">SANA OS · sana-os.org</span>
+      <span class="footer-copy footer-lang">日本語版は <a href="/ja/">こちら</a></span>
+      <span class="footer-copy"><a href="/terms/" style="color:var(--amber);">Terms</a></span>
+      <span class="footer-copy">Understanding is not agreement.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggle(id) {
+  const card = document.getElementById('card-' + id);
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+document.getElementById('card-01').classList.add('open');
+</script>
+</body>
+</html>

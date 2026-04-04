@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>なぜ2,461億円の不正が7年間見逃されたのか——そして止めたのは何だったか | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+ul{color:var(--ink2);line-height:1.82;margin-bottom:20px;padding-left:22px;}ul li{margin-bottom:7px;}
+.layer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;}
+.layer-card{border-radius:8px;padding:14px 16px;}
+.layer-card.cpm{background:var(--amber-l);border-left:3px solid var(--amber);}
+.layer-card.rsm{background:var(--red-l);border-left:3px solid var(--red);}
+.layer-card.rbm{background:var(--teal-l);border-left:3px solid var(--teal);}
+.layer-card.gmm{background:var(--blue-l);border-left:3px solid var(--blue);}
+.layer-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.layer-card.cpm .layer-label{color:var(--amber);}
+.layer-card.rsm .layer-label{color:var(--red);}
+.layer-card.rbm .layer-label{color:var(--teal);}
+.layer-card.gmm .layer-label{color:var(--blue);}
+.layer-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.layer-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.analysis{background:#fff;border:1px solid var(--border2);border-radius:12px;padding:36px;margin:52px 0;box-shadow:0 2px 14px rgba(26,24,20,0.07);}
+.analysis-header{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.analysis h2{margin-top:36px;font-size:clamp(16px,2.2vw,20px);}
+.analysis h3{margin-top:20px;font-size:14px;}
+.analysis p,.analysis ul{font-size:15px;}.analysis ul{line-height:1.78;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.layer-grid{grid-template-columns:1fr;}.analysis{padding:22px;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/019/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-tag">Post 019 — 実例分析 · コーポレートガバナンス</p>
+  <p class="hero-date">2026</p>
+  <h1>なぜ2,461億円の不正が7年間見逃されたのか——そして止めたのは何だったか</h1>
+  <p class="hero-dek">KDDI/ビッグローブ/ジー・プラン架空循環取引事案：2人の従業員がいかにして巨大なコーポレートガバナンスシステムをすり抜けたかの構造分析。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>2026年3月31日、KDDIは特別調査委員会の調査報告書を公表しました。KDDIの孫会社であるジー・プランが、約7年間にわたり架空の循環取引スキームを実行していたというものです。架空売上の累計：2,461億円。外部への流出額：329億円。営業利益への影響：1,508億円。</p>
+    <p>調査により、広告代理事業の売上高の99.7%が架空であることが判明しました。</p>
+    <p>そして、その全スキームを主導したのは2人でした。</p>
+    <p>組織ぐるみの犯行ではありません。幹部でもありません。コンプライアンス意識が高いとされる日本有数の巨大グループの中で、孫会社の一事業部門のわずか2名の従業員が、7年間発覚せずに動かし続けたのです。</p>
+    <p>SANA OSは問いません：「なぜこんなことができたのか？」その代わりに問います：<em>「どの構造的な配置が、その2人の置かれた環境においてこの結果を合理的にしたのか？」</em></p>
+
+    <h2>彼らが戦っていた「見えない敵」</h2>
+    <p>ビッグローブはもともと1990年代にNECのインターネットサービスプロバイダ事業として始まり、日本のインターネット黎明期を牽引した名門ブランドでした。2006年に分離独立し、2017年にKDDIグループへと参画。ジー・プランはそのビッグローブの子会社です。</p>
+    <p>2008年のリーマン・ショックは、日本企業の心理に深いトラウマを刻みました。NECエレクトロニクスはその年に684億円もの営業赤字を計上し、業界全体で大規模なリストラが吹き荒れました。「切り捨てられる事業になること」への恐怖が、一世代の企業人に深く植え付けられました。</p>
+    <p>KDDIの戦略的マンデートは明確でした：通信事業以外の新規収益を構築せよ。子会社群は成長を示すことを求められていました。報告書でA氏と識別される事業部長が立ち上げたジー・プランの広告代理事業は、その成長を体現するはずのプロジェクトでした。</p>
+    <p>しかし、最初から機能していませんでした。立ち上げ後数ヶ月で、KDDI全体の決算規模からすれば誤差の範囲に入らない金額の赤字と目標未達に直面しました。しかし、局所的な認知の中では——一つの孫会社の一つの事業部門の中では——その重さは圧倒的でした。</p>
+    <p>A氏の恐怖は抽象的なものではありませんでした。日本の企業文化において、鳴り物入りで立ち上げた新規事業のリーダーが初年度から失敗の烙印を押されることは、キャリア的に致命的です。コーポレートガバナンス・コードの浸透が、不採算事業の早期撤退という論理を制度的に正当化していました。</p>
+    <p>Layer Aの脅威は物理的なものではありませんでした。しかし即座で鮮明でした：<em>この事業は撤退させられ、自分は公衆の面前で失敗する。</em></p>
+
+    <h2>一線を越えた最初の一歩</h2>
+    <p>最初の不正は2,461億円ではありませんでした。数十万円——目標と実績のギャップを、実在しない広告主からの受注を装った架空売上で埋めたものでした。</p>
+    <p>その瞬間の内部論理は、すべての企業不正に普遍的な自己正当化です：<em>本業を立て直す。一時的にギャップを埋める。正規の収益が入れば消える。</em></p>
+    <p>正規の収益は入りませんでした。そして循環取引の構造上、各ラウンドで複数の代理店が手数料を抜くため、循環するたびに原資が目減りします。成長しているように見せ続けるには——KDDIの信頼を維持するには——取引規模を増やし続けなければなりませんでした。7年間、毎年。</p>
+
+    <h2>なぜファイナンスシステムが燃料になったか</h2>
+    <p>単独の企業が架空取引を続ければ資金が尽きます。実態のない売上には、銀行は無制限に融資しません。</p>
+    <p>しかしジー・プランとビッグローブは単独企業ではありませんでした。KDDIグループのファイナンスシステムがグループ内の資金調達を効率化していたのです——結果として、その資金が何のために使われているかを実質的に確認しないままで。</p>
+    <p>2022年以降、ビッグローブ自身も商流に直接関与するようになりました。上流代理店からの入金確認前に下流代理店へ支払う「先出し」が常態化しました。グループファイナンスがその資金ショートを吸収しました。グループの資本効率を高めるために設計されたシステムが、本来なら早期に自滅すべき不正に無尽蔵の栄養を与え続ける「死に至る劇薬」となっていたのです。</p>
+    <div class="layer-grid">
+      <div class="layer-card cpm"><p class="layer-label">CPM — 認知</p><p class="layer-name">撤退の恐怖</p><p class="layer-desc">Layer Aの生存圧力：事業撤退＝キャリアの死。最初は「一時的な穴埋め」として正当化。後に：逸脱の正常化、私的現金受領がロックイン効果として機能。</p></div>
+      <div class="layer-card rsm"><p class="layer-label">RSM — 役割</p><p class="layer-name">チェックのない権力</p><p class="layer-desc">稟議起案・発注・検収を一人が完結。修正ループ（Observer/Auditor）が「業界慣行」に敗北。面談要求が拒否され、その拒絶が受け入れられた。</p></div>
+      <div class="layer-card rbm"><p class="layer-label">RBM — 資源</p><p class="layer-name">死に至る劇薬</p><p class="layer-desc">効率化のために設計されたKDDIのグループファイナンスが、使途を問わず内部資本を無制限供給。不正の自然な終焉点を消した。</p></div>
+      <div class="layer-card gmm"><p class="layer-label">GMM — ガバナンス</p><p class="layer-name">三層の死角</p><p class="layer-desc">KDDI：PL偏重、事業の実態不問。ビッグローブ：ジー・プランを特例扱い。ジー・プラン：与信審査規定なし、権限が一人に集中。</p></div>
+    </div>
+
+    <h2>拒絶された修正ループ</h2>
+    <p>7年間で、組織内部の何人かが異常に気づきました。役員や内部監査部門が、信じがたいほど急成長する数字に疑念を抱き、取引先の代理店担当者との面会を求めました。</p>
+    <p>A氏と外部代理店はこれを拒否しました。理由：「緊張するタイプだから」「電話でやっているから」。</p>
+    <p>RSMの観点から、これはObserver/Auditor機能の発動——そして幽霊化（Phantom）の完成です。シグナルは受け取られた。レスポンスは不自然だった。そして不自然なレスポンスが受け入れられた。</p>
+    <p>なぜ受け入れられたのか。その事業部門が数字を出していたからです。子会社が成長を示すことを常に求められる環境では、大きな売上を作っている部門は心理的にアンタッチャブルな存在になりやすい。疑問を向けることには、それ自体にリスクがあります。</p>
+    <p>Auditor機能は不在ではありませんでした。存在し、シグナルに触れ、そして「これはグループの成長エンジンだ」というLayer Bのナラティブに負けたのです。</p>
+
+    <h2>実際に止めたもの：経営トップの「直感」</h2>
+    <p>2025年2月、KDDIの経営戦略会議で、当時の社長（現会長）髙橋誠氏がジー・プランとビッグローブの広告代理事業の報告を見て、何かがおかしいと声に出して言いました。</p>
+    <p>調査報告書が記録した、その具体的な言葉：</p>
+    <ul>
+      <li>「あまりにも伸びているので怖い」</li>
+      <li>「（主要事業である）通信より大きくなっている。事業として指標で管理していることを見せてほしい」</li>
+      <li>「これだけ伸びているといつか何かが起きるかもしれないので注意してほしい」</li>
+      <li>「コンプライアンス的に問題ないか」</li>
+    </ul>
+    <p>これはガバナンスシステムの姿ではありません。これは人間の観察者の姿です——数字の構造的なあり得なさを、分析的に説明できる前に感じられるほどの経験を持つ人間の。</p>
+    <p>孫会社が手がける広告代理事業が、日本有数の通信キャリアの主力事業を短期間で凌駕することは、有機的な成長としてはあり得ません。数字とビジネスモデルが整合しない。社長は完全な構造的診断を言語化できなかったかもしれません。しかし「怖い」と言えた。</p>
+    <p>その「怖い」という一言が実質的な調査を開始させました。2025年10月に会計監査人が指摘。12月に代理店からの入金遅延と従業員の証言で疑惑が確信に変わり、2026年1月に特別調査委員会が設置されました。</p>
+
+    <div class="pullquote">
+      「すべての公式のガバナンス層が失敗しました。実際に機能した修正ループは、数字がおかしいと声に出して言った一人の人間でした。公式システムが抑圧しがちな直感が、ときに部屋の中で唯一機能しているAuditorです。」
+    </div>
+
+    <div class="insight">
+      <strong>構造的な教訓：</strong>この不正はルールの失敗によって生み出されたのではありません。ルールは存在しました。監査機能は存在しました。報告ラインは存在しました。失敗したのは、生産ループが機能しているというナラティブによって修正ループが無効化されることへの抵抗力でした。構造のデバッグはより多くのルールを追加することではありません。修正ループが生産ループのナラティブによって停止できないことを確保することです。
+    </div>
+
+    <div class="analysis">
+      <p class="analysis-header">詳細分析 — SANAフレームワーク資料</p>
+      <p style="font-size:14px;color:var(--ink3);margin-bottom:24px;font-style:italic;">4フレームワーク完全分析：KDDI/ビッグローブ/ジー・プラン架空循環取引事案（2018〜2026年）。</p>
+
+      <h2>事案の基本情報</h2>
+      <table class="data-table">
+        <thead><tr><th>項目</th><th>データ</th></tr></thead>
+        <tbody>
+          <tr><td>不正期間</td><td>2018年8月頃〜2025年12月（約7年間）</td></tr>
+          <tr><td>実行主体</td><td>ジー・プラン株式会社 / ビッグローブ株式会社</td></tr>
+          <tr><td>主導者</td><td>A氏（事業部長）、B氏（部下）の計2名</td></tr>
+          <tr><td>関与した外部代理店</td><td>取引先218社のうち21社</td></tr>
+          <tr><td>架空売上累計</td><td>2,461億円</td></tr>
+          <tr><td>外部流出額</td><td>329億円</td></tr>
+          <tr><td>営業利益への影響</td><td>1,508億円</td></tr>
+          <tr><td>のれん減損</td><td>646億円</td></tr>
+          <tr><td>A氏の個人的受領額</td><td>約3,000万円（2023年9月〜2025年12月）</td></tr>
+        </tbody>
+      </table>
+
+      <h2>CPM：認知状態の変遷</h2>
+      <p><strong>第1段階——最初の正当化（2018年）。</strong>Survival Anxietyトリガー：Layer Aの脅威（事業撤退＝キャリアの死）が小さな赤字と目標未達によって発動。古典的な自己正当化：「一時的なギャップ、正規の収益で修正する」。不正は計画としてではなく、耐えがたい結果への認知的防衛として始まります。</p>
+      <p><strong>第2段階——雪だるま式拡大（2018〜2022年）。</strong>循環構造は、成長の外観を維持しつつ手数料の目減りをカバーするために、各ラウンドでより大きな取引量を必要とします。「一時的な」フレームは維持できませんが、代替案（告白＋事業撤退）はすべての段階でより悪く感じられます。逸脱の正常化：架空売上の計上が標準的な業務プロセスになります。</p>
+      <p><strong>第3段階——私的利益によるロックイン（2023〜2025年）。</strong>A氏が上流代理店代表者から個人的に約3,000万円を受領します。これは単なる腐敗ではありません——CPMの観点から、これは相互確証破壊の構造の構築です。資金の受領は自発的な開示の選択肢を永続的に閉じます。受け取った者と渡した者は共同責任で結びつけられます。帰属圧力と生存圧力が同時に最大化されます。</p>
+      <p><strong>第4段階——B氏のCamouflaged状態。</strong>B氏は2020年4月から参加しました。絶対的な権威を持つ創設者的上司がいる閉鎖した組織単位では、同じ生存圧力に直面する部下は（その部門との関連＝キャリアが結びついている）、コンプライアンスへの懸念を同調圧力として処理します。能動的な疑問は安全ではありませんでした。認知状態は不快感からCamouflaged（偽装）へのコンプライアンスへと移行しました。</p>
+
+      <h2>RSM：役割捕捉とPhantom Auditor</h2>
+      <p>構造的に区別される3つの機能が一人（A氏）に集中していることがRSMの核心的な失敗です：</p>
+      <ul>
+        <li><strong>稟議起案：</strong>新規取引の特定と承認</li>
+        <li><strong>発注手続き：</strong>外部主体へのコミット</li>
+        <li><strong>検収作業：</strong>成果物の存在確認</li>
+      </ul>
+      <p>取引を開始した同じ人物がその完了も確認するとき、Auditor機能がプロセスから構造的に取り除かれています。クライアントの存在記録もコントロールするとき、架空のクライアントを作ることは容易です。</p>
+      <p>「面談拒否」のエピソードは特に診断的です。代理店の取引相手方の実在確認を求めたとき——基本的なAuditor機能——信じられない理由で拒否されました。その信じられない理由が受け入れられました。Auditorがシグナルを受け取るのに失敗したのではありません。Auditorがシグナルを検証まで追跡することに失敗したのです。「緊張するタイプだから」をビジネスの理由として受け入れた瞬間が、幽霊（Phantom）状態が完成する瞬間です。</p>
+
+      <h2>RBM：自然な終焉点の除去</h2>
+      <p>すべての循環取引スキームには自然な終焉点があります：お金が尽きる。実体のない取引には、外部の融資は利用できません。</p>
+      <p>KDDIのグループファイナンスシステムはこの制約を取り除きました。システムは子会社間で資本を効率的に配分するために設計されました——本当に有益な機能です。しかし設計には、資本需要が実際の経済活動に基づいているかどうかの意味のある精査が含まれていませんでした。Demand_j（拡大規模で循環スキームを維持するために必要な資金）とSupply_j（KDDIグループファイナンス）のギャップは顕在化が許されませんでした。融資は申告された売上に対して行われました。売上は架空でした。システムは資金の実体を確認するように設計されていなかったため、乖離を検出するメカニズムを持っていませんでした。</p>
+
+      <h2>GMM：三層の死角の構造</h2>
+      <table class="data-table">
+        <thead><tr><th>層</th><th>主体</th><th>機能不全の様式</th></tr></thead>
+        <tbody>
+          <tr><td><strong>第一層</strong></td><td>ジー・プラン（孫会社）</td><td>新規取引先の与信審査規定なし。すべての権限がA氏に集中。取引の実体確認なし。</td></tr>
+          <tr><td><strong>第二層</strong></td><td>ビッグローブ（子会社）</td><td>ジー・プランを「特例」として分類——通常の与信管理から除外。内部監査は手続き的なヒアリングのみ。バウチング（証憑突き合わせ）なしに「内部統制有効」と結論。</td></tr>
+          <tr><td><strong>第三層</strong></td><td>KDDI（親会社）</td><td>PL成長への極端な偏重。ビジネスモデルの妥当性・市場規模・取引先品質への精査なし。「Excelの数字が合っている」フレームが「このビジネスは意味を成すか？」を置き換えた。</td></tr>
+        </tbody>
+      </table>
+      <p>特別調査委員会の結論は明確です：不正はガバナンス構造のすべての層を同時にすり抜けていました。これが三層の死角の定義的な特徴です：各層の失敗が次の層の失敗の条件を作り出します。</p>
+
+      <h2>社長の直感のパラドックス</h2>
+      <p>不正を実際に止めたメカニズムは、公式のガバナンス手段ではありませんでした。髙橋会長が数字を「怖い」と言った声明でした。</p>
+      <p>これは公式ガバナンスへの反論ではありません。公式ガバナンスにできないことについての議論です。ガバナンスシステムは定義されたパラメータ内でシグナルを処理するよう設計されています。ここのシグナル——孫会社が手がける広告代理事業が日本有数の通信キャリアの主力事業を凌駕すること——は構造的に異常でした。「これは起きてはならない」というルールは存在しませんでした。閾値は超えられませんでした。アルゴリズムはフラグを立てませんでした。</p>
+      <p>フラグを立てたのは、数字が語ることに対して事業が実際にどうあるかを読む長年の経験から構築された、一人の人間の統合されたビジネス妥当性感覚でした。なぜかをすぐに説明できなくても「怖い」と言える能力は、公式システムが複製できないObserver機能です。</p>
+      <p>パラドックス：組織が人間の判断を置き換えるために公式ガバナンスに依存すればするほど、事前に定義されたカテゴリに合わない異常を検出できる唯一のメカニズムを取り除きます。</p>
+    </div>
+  <div class="nav-post">
+    <span><a href="/blog/018/">← Post 018</a></span>
+    <span></span>
+  </div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

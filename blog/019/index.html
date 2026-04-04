@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why a ¥246bn fraud ran for seven years — and what stopped it | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--amber-b:rgba(196,124,32,0.22);--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:20px;}
+h2{font-family:'Lora',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+ul{color:var(--ink2);line-height:1.82;margin-bottom:20px;padding-left:22px;}ul li{margin-bottom:7px;}
+.layer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;}
+.layer-card{border-radius:8px;padding:14px 16px;}
+.layer-card.cpm{background:var(--amber-l);border-left:3px solid var(--amber);}
+.layer-card.rsm{background:var(--red-l);border-left:3px solid var(--red);}
+.layer-card.rbm{background:var(--teal-l);border-left:3px solid var(--teal);}
+.layer-card.gmm{background:var(--blue-l);border-left:3px solid var(--blue);}
+.layer-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.layer-card.cpm .layer-label{color:var(--amber);}
+.layer-card.rsm .layer-label{color:var(--red);}
+.layer-card.rbm .layer-label{color:var(--teal);}
+.layer-card.gmm .layer-label{color:var(--blue);}
+.layer-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.layer-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.analysis{background:#fff;border:1px solid var(--border2);border-radius:12px;padding:36px;margin:52px 0;box-shadow:0 2px 14px rgba(26,24,20,0.07);}
+.analysis-header{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.analysis h2{margin-top:36px;font-size:clamp(16px,2.2vw,20px);}
+.analysis h3{margin-top:20px;font-size:14px;}
+.analysis p,.analysis ul{font-size:15px;}.analysis ul{line-height:1.78;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.layer-grid{grid-template-columns:1fr;}.analysis{padding:22px;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+  <div class="nav-right"><a href="/blog/019/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-tag">Post 019 — Case Study · Corporate Governance</p>
+  <p class="hero-date">2026</p>
+  <h1>Why a ¥246bn fraud ran for seven years — and what stopped it</h1>
+  <p class="hero-dek">The KDDI/Biglobe/G-Plan fictitious transaction case: a structural analysis of how two employees bypassed an entire corporate governance system.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>On 31 March 2026, KDDI Corporation disclosed a report from its Special Investigation Committee. A subsidiary called G-Plan — a grandchild company two layers below KDDI — had been running a fictitious circular transaction scheme for approximately seven years. Cumulative false revenue: ¥246.1 billion. Cash drained to external parties: ¥32.9 billion. Operating profit impact: ¥150.8 billion.</p>
+    <p>The investigation found that 99.7% of the advertising agency business's revenue was fictitious.</p>
+    <p>And the entire scheme was run by two people.</p>
+    <p>Not an organised conspiracy. Not senior management. Two employees in a single business unit of a grandchild company — operating inside one of Japan's most compliance-conscious corporate groups for seven years without detection.</p>
+    <p>SANA OS does not ask: how could anyone do this? It asks: <em>what structural configuration made this the rational output of the environment those two people were in?</em></p>
+
+    <h2>What they were fighting against</h2>
+    <p>Biglobe began as NEC's internet service provider business in the 1990s — a major brand in Japan's early internet era. It was spun off in 2006, then absorbed by KDDI in 2017. G-Plan was Biglobe's subsidiary.</p>
+    <p>The 2008 financial crisis had left deep trauma in the Japanese corporate psyche. NEC Electronics posted ¥68.4 billion in operating losses that year. Mass restructuring followed across the industry. The fear of being the business that gets cut — the unit whose results justify elimination — became embedded in an entire generation of corporate managers.</p>
+    <p>KDDI's strategic mandate was explicit: build new revenue beyond the core telecommunications business. Subsidiaries were expected to demonstrate growth. G-Plan's advertising agency business, launched by the division head identified in the report as "Person A," was supposed to be that growth vehicle.</p>
+    <p>It wasn't working from the start. Within months of launch, the business was running small deficits and missing targets by amounts that were, in the context of KDDI's overall accounts, genuinely trivial. But in the local context — one business unit in one subsidiary — the cognitive weight was total.</p>
+    <p>Person A's fear was not abstract. In Japan's post-crisis corporate culture, being the leader of a new business that fails in its first year carries career consequences that feel existential. The corporate governance codes that had spread through large Japanese companies in the intervening years had institutionalised a logic of capital efficiency — unprofitable businesses are cut. Quickly.</p>
+    <p>The Layer A threat was not physical. But it was immediate and vivid: <em>this business will be shut down, and I will have failed publicly.</em></p>
+
+    <h2>The first step across the line</h2>
+    <p>The initial fraud was not ¥246 billion. It was a few tens of millions of yen — a gap between a target and the actual numbers, closed by recording fictitious orders from advertising clients who did not exist.</p>
+    <p>The internal logic at that moment was the universal rationalisation of all corporate fraud: <em>I will fix the real business, and cover the gap temporarily. Once the real revenues come in, this will disappear.</em></p>
+    <p>They did not come in. And because the circular transaction structure required paying commissions to multiple intermediary agencies at each pass, each cycle drained the pool. To maintain the appearance of growth — and to keep KDDI's confidence that the business was scaling — the transaction volume had to grow. Faster than the commissions drained it. Every year, for seven years.</p>
+
+    <h2>Why the financial system became the fuel</h2>
+    <p>A standalone company running fictitious transactions would run out of cash. Banks do not lend indefinitely against revenues that do not exist.</p>
+    <p>But G-Plan and Biglobe were not standalone companies. They were part of a corporate group with a centralised finance function — KDDI's group financing system — that made cash available to subsidiaries efficiently and, as it turned out, without meaningful scrutiny of what the cash was actually funding.</p>
+    <p>From 2022, Biglobe itself was drawn directly into the circular scheme. It began paying downstream agencies before receiving funds from upstream agencies — a practice called "advance payment" that reversed the normal cash flow cycle. KDDI's group financing absorbed the shortfall. The system designed to make the group's capital allocation efficient had become the machine that kept the fraud alive.</p>
+    <div class="layer-grid">
+      <div class="layer-card cpm"><p class="layer-label">CPM — Cognitive</p><p class="layer-name">Fear of withdrawal</p><p class="layer-desc">Layer A survival pressure: business closure = career extinction. Initial fraud rationalised as temporary. Later: normalisation of deviance, private cash receipts locking in silence.</p></div>
+      <div class="layer-card rsm"><p class="layer-label">RSM — Roles</p><p class="layer-name">Unchecked authority</p><p class="layer-desc">One person controlled origination, ordering, and acceptance verification. Correction loop (Observer/Auditor) deferred to "industry custom." Meeting requests refused, accepted.</p></div>
+      <div class="layer-card rbm"><p class="layer-label">RBM — Resources</p><p class="layer-name">Lethal medicine</p><p class="layer-desc">KDDI's group financing — designed for efficiency — provided unlimited internal capital with no scrutiny of use. Removed the natural self-termination point of the fraud.</p></div>
+      <div class="layer-card gmm"><p class="layer-label">GMM — Governance</p><p class="layer-name">Three blind spots</p><p class="layer-desc">KDDI: P&L focus, no business reality check. Biglobe: G-Plan treated as exception. G-Plan: no credit review rules, all authority in one person.</p></div>
+    </div>
+
+    <h2>The correction loop that was refused</h2>
+    <p>Over seven years, there were moments when people inside the organisation noticed something was wrong. Executives and internal auditors saw the numbers growing in ways that seemed implausible. They asked to meet the advertising agency representatives.</p>
+    <p>Person A and the external agencies refused. The stated reasons: the agency representatives were "the nervous type" or "preferred to work by phone."</p>
+    <p>In RSM terms, this is Observer/Auditor function activation — followed by Phantom completion. The signal was received. The response was implausible. And the implausible response was accepted.</p>
+    <p>Why was it accepted? Because the business was producing numbers. And in an environment where subsidiaries are under constant pressure to demonstrate growth, the unit producing large revenues becomes psychologically untouchable. Questioning it carries its own risk: what if the scrutiny kills a legitimate success story?</p>
+    <p>The Auditor function was not absent. It was present, made contact with the signal, and was overridden by Layer B pressure — the narrative that this was the group's growth engine.</p>
+
+    <h2>What actually stopped it: the CEO's intuition</h2>
+    <p>In February 2025, at a KDDI management strategy meeting, the then-president (now chairman) Makoto Takahashi looked at the G-Plan and Biglobe advertising business report and said, out loud, that something felt wrong.</p>
+    <p>His specific words, according to the investigation:</p>
+    <ul>
+      <li>"This growth rate is so extreme it frightens me."</li>
+      <li>"This is now larger than the core telecoms business. Show me how you're managing it with metrics."</li>
+      <li>"Something might break given this trajectory. Please be careful."</li>
+      <li>"Is there any compliance concern here?"</li>
+    </ul>
+    <p>This is not what a governance system looks like. This is what a human observer looks like — one who has enough experience to feel the structural implausibility of a number before he can explain it analytically.</p>
+    <p>An advertising agency business run by a grandchild company does not organically outgrow the telecommunications business of one of Japan's largest carriers. The number and the business model do not fit together. The CEO could not articulate a full structural diagnosis. But he could say: "this frightens me."</p>
+    <p>That statement — "怖い" (I'm scared) — initiated the real investigation. Accounting auditors flagged concerns in October 2025. In December 2025, delayed payments from agencies and employee testimony converted suspicion to certainty. The Special Investigation Committee was formed in January 2026.</p>
+
+    <div class="pullquote">
+      "Every formal governance layer failed. The correction loop that actually worked was a human being saying, out loud, that the numbers felt wrong. The intuition that formal systems suppress is sometimes the only functioning Auditor in the room."
+    </div>
+
+    <div class="insight">
+      <strong>The structural lesson:</strong> the fraud was not produced by a failure of rules. The rules existed. The audit functions existed. The reporting lines existed. What failed was the willingness to activate those functions against a business unit that was producing the numbers the organisation needed. Structural debugging is not about adding more rules. It is about ensuring that the correction loop cannot be deactivated by the narrative that the production loop is working.
+    </div>
+
+    <div class="analysis">
+      <p class="analysis-header">Extended Analysis — SANA Framework Documentation</p>
+      <p style="font-size:14px;color:var(--ink3);margin-bottom:24px;font-style:italic;">Full four-framework analysis: KDDI / Biglobe / G-Plan fictitious circular transaction case, 2018–2026.</p>
+
+      <h2>Case overview</h2>
+      <table class="data-table">
+        <thead><tr><th>Item</th><th>Data</th></tr></thead>
+        <tbody>
+          <tr><td>Period</td><td>August 2018 – December 2025 (approx. 7 years)</td></tr>
+          <tr><td>Entities involved</td><td>G-Plan Co., Ltd. / Biglobe Co., Ltd. (KDDI subsidiaries)</td></tr>
+          <tr><td>Principals</td><td>Person A (division head), Person B (subordinate) — 2 employees</td></tr>
+          <tr><td>External agencies involved</td><td>21 of 218 business partners</td></tr>
+          <tr><td>Cumulative false revenue</td><td>¥246.1 billion</td></tr>
+          <tr><td>Cash drained externally</td><td>¥32.9 billion</td></tr>
+          <tr><td>Operating profit impact</td><td>¥150.8 billion</td></tr>
+          <tr><td>Goodwill impairment</td><td>¥64.6 billion</td></tr>
+          <tr><td>Person A's personal receipts</td><td>Approx. ¥30 million (Sept 2023 – Dec 2025)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>CPM: cognitive state transitions</h2>
+      <p><strong>Stage 1 — Initial rationalisation (2018).</strong> Survival Anxiety trigger: Layer A threat (business closure = career extinction) activated by small deficits and target shortfalls. Classic Rationalization: "temporary gap, will correct with real revenues." The fraud begins as a cognitive defence against an unbearable outcome, not as a plan.</p>
+      <p><strong>Stage 2 — Snowball escalation (2018–2022).</strong> The circular structure means each pass requires more volume to maintain appearance of growth AND cover commission leakage. The original "temporary" frame cannot be maintained, but the alternative (confession + business closure) feels worse at every stage. Normalization of Deviance: fabricating revenue becomes standard business process.</p>
+      <p><strong>Stage 3 — Private benefit lock-in (2023–2025).</strong> Person A receives approximately ¥30 million in personal cash from upstream agency representatives. This is not merely corruption — in CPM terms, it is the construction of a Mutual Assured Destruction structure. Accepting the money permanently closes the option of voluntary disclosure. The recipient and the giver are now bound by shared liability. Belonging Pressure and Survival Pressure are simultaneously maximised.</p>
+      <p><strong>Stage 4 — Person B's Camouflaged state.</strong> Person B, subordinate to Person A, participated from April 2020. In a closed organisational unit with a founder-figure holding unchallenged authority, a subordinate facing the same Survival Pressure (association with the unit = career tied to it) would process compliance concerns as Conformity Pressure. Active questioning was not safe. The cognitive state shifted from discomfort to Camouflaged compliance.</p>
+
+      <h2>RSM: role capture and Phantom Auditor</h2>
+      <p>The concentration of three structurally distinct functions in a single person (Person A) is the RSM core failure:</p>
+      <ul>
+        <li><strong>Origination (稟議起案):</strong> identifying and approving new transactions</li>
+        <li><strong>Ordering (発注手続き):</strong> committing to external parties</li>
+        <li><strong>Acceptance verification (検収作業):</strong> confirming that deliverables exist</li>
+      </ul>
+      <p>When the same person who initiates a transaction also verifies its completion, the Auditor function has been structurally removed from the process. Fabricating a client is easy when you also control the record of the client's existence.</p>
+      <p>The "meeting refusal" episodes are particularly diagnostic. When Observer/Auditor functions at Biglobe and KDDI requested verification of the agency counterparties — the basic Auditor function of confirming that entities exist — they were refused with implausible justifications. The implausible justifications were accepted. This is not a failure of the Auditor to receive the signal. It is a failure of the Auditor to follow the signal through to verification. The acceptance of "they're nervous types" as a business reason is the moment the Phantom state completes.</p>
+
+      <h2>RBM: the self-termination point removal</h2>
+      <p>Every circular transaction scheme has a natural termination point: it runs out of money. External financing is not available for transactions that have no underlying economic activity.</p>
+      <p>KDDI's group financing system removed this constraint. The system was designed to allocate capital efficiently across subsidiaries — a genuinely useful function. But the design did not include meaningful scrutiny of whether the demand for capital was grounded in real economic activity. The gap between Demand_j (funds required to maintain the circular scheme at growing scale) and Supply_j (KDDI group financing) was not allowed to materialise. The financing was provided against the declared revenues. The revenues were fictitious. The system had no mechanism to detect the discrepancy because it was not designed to verify the substance of what it was financing.</p>
+
+      <h2>GMM: the three-layer blind spot structure</h2>
+      <table class="data-table">
+        <thead><tr><th>Layer</th><th>Entity</th><th>Failure mode</th></tr></thead>
+        <tbody>
+          <tr><td><strong>First layer</strong></td><td>G-Plan (grandchild)</td><td>No credit review rules for new counterparties. All authority concentrated in Person A. No verification of transaction substance.</td></tr>
+          <tr><td><strong>Second layer</strong></td><td>Biglobe (subsidiary)</td><td>G-Plan classified as "exception" — excluded from standard credit management. Internal audit limited to procedural interviews; no vouching (document-to-evidence matching). "Internal controls effective" declared without substantive verification.</td></tr>
+          <tr><td><strong>Third layer</strong></td><td>KDDI (parent)</td><td>Extreme focus on P&L growth; no scrutiny of business model plausibility, market size, or counterparty quality. The "Excel number checks out" frame replaced "does this business make sense?"</td></tr>
+        </tbody>
+      </table>
+      <p>The Special Investigation Committee's conclusion is precise: the fraud passed through every layer of the governance structure simultaneously. This is the defining characteristic of a three-layer blind spot: each layer's failure creates the condition for the next layer's failure.</p>
+
+      <h2>The CEO intuition paradox</h2>
+      <p>The mechanism that actually stopped the fraud was not any formal governance instrument. It was Chairman Takahashi's statement that the numbers "frightened" him.</p>
+      <p>This is not an argument against formal governance. It is an argument about what formal governance cannot do. Governance systems are designed to process signals within defined parameters. The signal here — an advertising agency business run by a grandchild company outgrowing the core telecoms business of one of Japan's largest carriers — was structurally anomalous. No rule existed that said "this should not happen." No threshold was exceeded. No algorithm flagged it.</p>
+      <p>What flagged it was a human being's integrated sense of business plausibility — built from years of experience reading what businesses actually do versus what their numbers say. The capacity to say "this frightens me" without being able to immediately explain why is precisely the Observer function that formal systems cannot replicate.</p>
+      <p>The paradox: the more organisations rely on formal governance to replace human judgement, the more they remove the only mechanism capable of detecting anomalies that don't fit any pre-defined category.</p>
+    </div>
+  <div class="nav-post">
+    <span><a href="/blog/018/">← Post 018</a></span>
+    <span></span>
+  </div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+  <span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer>
+</body></html>

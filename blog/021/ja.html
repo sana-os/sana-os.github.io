@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>組織分析入門ガイド：SANAフレームワークで読み解く「企業の失敗」の正体 | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.sohat{background:var(--teal-l);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.sohat strong{color:var(--teal);}
+ul{color:var(--ink2);line-height:1.82;margin-bottom:20px;padding-left:22px;}ul li{margin-bottom:7px;}
+ol{color:var(--ink2);line-height:1.82;margin-bottom:20px;padding-left:22px;}ol li{margin-bottom:9px;}
+.lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;}
+.lens-card{border-radius:8px;padding:16px;}
+.lens-card.gmm{background:var(--blue-l);border-left:3px solid var(--blue);}
+.lens-card.rbm{background:var(--teal-l);border-left:3px solid var(--teal);}
+.lens-card.rsm{background:var(--red-l);border-left:3px solid var(--red);}
+.lens-card.cpm{background:var(--amber-l);border-left:3px solid var(--amber);}
+.lens-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.lens-card.gmm .lens-label{color:var(--blue);}
+.lens-card.rbm .lens-label{color:var(--teal);}
+.lens-card.rsm .lens-label{color:var(--red);}
+.lens-card.cpm .lens-label{color:var(--amber);}
+.lens-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px;}
+.lens-desc{font-size:12px;color:var(--ink2);line-height:1.65;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.lens-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/021/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-tag">Post 021 — フレームワーク入門</p>
+  <p class="hero-date">2026</p>
+  <h1>組織分析入門ガイド：SANAフレームワークで読み解く「企業の失敗」の正体</h1>
+  <p class="hero-dek">なぜ「個人の過失」は常に間違った診断なのか——そして実際に何が起きているかを明らかにする4つの構造的レンズ。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>大きな組織が失敗するとき、私たちが語る物語はほぼ常に個人についてです。不正なCFO。無謀なCEO。怠慢な規制当局。個人を特定し、罰を与え、問題は解決されたとみなします。</p>
+    <p>しかしこのシリーズのケーススタディ——リーマン・ブラザーズ、KDDIのジー・プラン、砂川ヒグマ訴訟——を読んだならば、あるパターンに気づいていると思います。関わった個人たちは例外的な悪人ではありませんでした。自分たちが置かれた構造的環境に合理的に反応していた、普通の人々でした。</p>
+    <p>SANA OSは、その構造的環境が実際に何であったかを診断するための4つの分析レンズを提供します。このポストはそのレンズの使い方のガイドです——最初から始めましょう。</p>
+
+    <h2>なぜ「個人の過失」は間違ったフレームなのか</h2>
+    <p>孫会社の2名の従業員が7年間で2,461億円の架空売上を計上し——洗練されたガバナンスシステムのすべての層をすり抜けて——「なぜこんなことができたのか？」という問いは間違っています。正しい問いは：<em>「どの構造的な配置が、彼らの環境においてこれを合理的なアウトプットにしたのか？」</em></p>
+    <p>リーマン・ブラザーズにも同じ論理が当てはまります。高度な教育を受け、動機付けられた何千人もの人々を雇用し、広範なコンプライアンス機能、精巧なリスクモデル、多層の外部監視を持つ企業が——それでも44:1のレバレッジで支払い不能に向かいました。失敗は個人の失敗ではありませんでした。構造の失敗でした。</p>
+    <p>構造を理解することは、関わった個人への免罪符ではありません。それが次の発生を防ぐ唯一の道です。</p>
+
+    <h2>4つのレンズ</h2>
+    <div class="lens-grid">
+      <div class="lens-card gmm"><p class="lens-label">レンズ1 — GMM</p><p class="lens-name">ガバナンス成熟度</p><p class="lens-desc">3層構成を診断：ルール（C）、文化/ナラティブ（B）、生存条件（A）。盲点がどこにあるか、公式管理がどこで実体のないチェックリストになっているかを検出します。</p></div>
+      <div class="lens-card rbm"><p class="lens-label">レンズ2 — RBM</p><p class="lens-name">需給バランス</p><p class="lens-desc">資源（資本・人材・注意力）の需要対供給をマッピング。供給がそうでなければ構造的失敗を終結させる自然な終焉点を除去するとき——「死に至る劇薬」パターン——を特定します。</p></div>
+      <div class="lens-card rsm"><p class="lens-label">レンズ3 — RSM</p><p class="lens-name">役割システム</p><p class="lens-desc">修正ループ（Observer・Auditor）が機能しているか、生産ループ（Executor・Decider）に捕捉されているかを分析します。機能が形式上は存在するが実際は作動しない「幽霊Auditor」状態を特定します。</p></div>
+      <div class="lens-card cpm"><p class="lens-label">レンズ4 — CPM</p><p class="lens-name">認知圧力</p><p class="lens-desc">生存不安、同調圧力、ナラティブ・ロックが個人と集団の認知をいかに変容させるか——合理的な人々を、自分たちを救えるかもしれないシグナルを処理できない行為者に変えるプロセス——を検討します。</p></div>
+    </div>
+
+    <h2>レンズ1：GMM——ルールはどこで機能しなくなるか？</h2>
+    <p>ガバナンス成熟度モデルの分析は問いから始まります：どの層で構成が壊れているか？</p>
+    <table class="data-table">
+      <thead><tr><th>層</th><th>KDDI / ジー・プラン</th><th>リーマン・ブラザーズ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>C — 制度</strong></td><td>「三層の死角」：KDDI（PL偏重・事業の実態不問）、ビッグローブ（ジー・プランを特例扱い）、ジー・プラン（与信審査規定なし・権限が一人に集中）。内部監査はバウチング（裏付け確認）なしで手続き完了。</td><td>「規制の骨抜き」：2004年SEC純資本規則改正が内部リスクモデルを許可し、事実上のレバレッジ制限解除。高リスク運用が制度的に正当化される構造が完成。</td></tr>
+        <tr><td><strong>B — 文化</strong></td><td>「新規事業への成長圧力」：通信インフラが頭打ちの中、非通信領域での成長が唯一の存在理由になった。数字を出すことだけが正義となる文化。</td><td>「Too Big to Fail」：ベアー・スターンズ救済が「自分たちも救済される」というナラティブを強化。組織全体のリスク感覚を麻痺させた。</td></tr>
+        <tr><td><strong>A — 生存</strong></td><td>事業撤退＝組織と個人の絶滅への恐怖。コーポレートガバナンス・コードが「不採算＝撤退」を即座で現実的な脅威にした。</td><td>極限のレバレッジ：ピーク時44:1。資産価値2.5%の下落で自己資本消滅。生存可能性の構造的な縁で動作していた。</td></tr>
+      </tbody>
+    </table>
+    <div class="sohat"><strong>構造的な教訓：</strong>内部統制が「チェックリストを埋める作業」になったとき、形式的な手続きは隠蔽のための最強の盾となります。末端組織——孫会社・新規事業部門——における基本的な与信管理の空白は、悪用を待つ構造的バグです。</div>
+
+    <h2>レンズ2：RBM——自然な終焉点を何が取り除いたか？</h2>
+    <p>あらゆる構造的失敗には自然な終焉があります：お金が尽きる。壊滅的な失敗を壊滅的にするのは、その自然な終焉点の除去です。</p>
+    <p>リーマンの場合、レポ市場が貸し続ける意思——「TBTF」前提に支えられRepoo 105会計で偽装された——が終焉点を取り除きました。KDDIの場合、経済的実体を確認せずに申告された売上に対して資本を提供するグループファイナンスが取り除きました。</p>
+    <p>注意すべき3つの危険なリソース供給配置：</p>
+    <ol>
+      <li><strong>機械的なグループファイナンス：</strong>実際に何を資金調達しているかを精査せず、設定された極度額内であれば資本を提供する仕組み。</li>
+      <li><strong>整合しない支払サイト：</strong>資金流出が資金流入より常に先行することを許容するキャッシュフロー管理。</li>
+      <li><strong>非対称な報酬構造：</strong>長期的な結果が顕在化する前に支払われる短期業績ボーナスで、クローバック（返還請求）メカニズムなし。</li>
+    </ol>
+
+    <h2>レンズ3：RSM——「No」と言う権限を持つのは誰か？</h2>
+    <p>役割システム分析は問います：この組織の中で、修正ループを起動するための構造的権限と実際の能力を両方持っている人間はいるか？</p>
+    <p>リーマンではその権限は存在しました——CROアントンチッチ、ゲルバンド、マシュー・リー——しかしシステムから物理的に除去されました。KDDIのジー・プランでは権限は形式上存在しましたが（内部監査・管理部門の監督）、収益を生む部門の心理的聖域化と信じがたい説明の受け入れによって無効化されました。</p>
+    <p>両者が同じ結果を生みます：<strong>幽霊Auditor状態。</strong>機能は存在する。機能は作動しない。そして機能が存在するように見えるため、誰も外部レビューを起動しません。</p>
+    <div class="sohat"><strong>警戒すべき配置：</strong>同じ取引の稟議起案・発注・検収確認を一人がコントロールするすべての状況。その配置は内側から修正ループを構造的に除去します。</div>
+
+    <h2>レンズ4：CPM——生存圧力は認知に何をするか？</h2>
+    <p>認知圧力分析は、合理的な人間が自分たちを救えるかもしれないシグナルを処理できなくなるプロセスのステージを追います。</p>
+    <p>ステージは両事例で一貫しています：</p>
+    <ol>
+      <li><strong>生存不安のトリガー：</strong>存在への特定の脅威が特定される（事業撤退、競争的な無関係化）。</li>
+      <li><strong>最初の正当化：</strong>一つの逸脱が一時的なものとして正当化される（「正規の売上で修正する」）。</li>
+      <li><strong>ナラティブの神聖化：</strong>成功をもたらした戦略が組織の定義になる。疑問を向けることは脅威になる。</li>
+      <li><strong>ナラティブ・ロック：</strong>最後の出口（KDB提案・自発的開示）が、それを受け入れることがナラティブが間違いだと認めることを必要とするため、閉じられる。</li>
+    </ol>
+    <p>Camouflaged（偽装）状態——従業員が問題を認識しながら発言できない——はこの個人的プロセスの組織的表現です。心理的安全性がないとき、最後の防衛線が自ら沈黙します。</p>
+
+    <div class="pullquote">
+      「複雑な社会的失敗は個人の悪意の産物ではありません。その中にいる人々にとって破壊的な行動を合理的な選択にする構造的配置の産物です。」
+    </div>
+
+    <h2>診断の地図</h2>
+    <table class="data-table">
+      <thead><tr><th>レンズ</th><th>診断の問い</th><th>構造的教訓</th></tr></thead>
+      <tbody>
+        <tr><td><strong>GMM</strong></td><td>ルールがチェックリストになっている箇所はどこか？末端組織に与信審査基準のない空白はないか？</td><td>制度の空白は構造的バグ。悪用される。</td></tr>
+        <tr><td><strong>RBM</strong></td><td>リソース供給が構造的失敗の自然な終焉点を取り除いていないか？</td><td>実態確認なしのグループファイナンスは死に至る劇薬。</td></tr>
+        <tr><td><strong>RSM</strong></td><td>「No」と言う権限を持つ人間が実際に「No」と言えるか？</td><td>稟議・発注・検収確認の一人集中を絶対に許容しない。</td></tr>
+        <tr><td><strong>CPM</strong></td><td>正直な報告を隠蔽より高コストにする生存圧力はないか？</td><td>物理的・心理的孤立が「怖い」と言える能力を奪う。</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight">
+      <strong>パラドックス：</strong>この診断が最も必要な組織は、最も必要としていないと信じがちな組織です。完全で機能しているように見えるコンプライアンスシステムは、幽霊Auditor状態の最も信頼できるサインの一つです——システムの完全性がチェックリストの完了を実際のコントロールと取り違えさせるからです。
+    </div>
+  <div class="nav-post"><span><a href="/blog/020/">← Post 020</a></span><span><a href="/blog/022/">Post 022 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

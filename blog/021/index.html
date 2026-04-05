@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A beginner's guide to reading organisational failure | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:20px;}
+h2{font-family:'Lora',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.sohat{background:var(--teal-l);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.sohat strong{color:var(--teal);}
+ul{color:var(--ink2);line-height:1.82;margin-bottom:20px;padding-left:22px;}ul li{margin-bottom:7px;}
+ol{color:var(--ink2);line-height:1.82;margin-bottom:20px;padding-left:22px;}ol li{margin-bottom:9px;}
+.lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;}
+.lens-card{border-radius:8px;padding:16px;}
+.lens-card.gmm{background:var(--blue-l);border-left:3px solid var(--blue);}
+.lens-card.rbm{background:var(--teal-l);border-left:3px solid var(--teal);}
+.lens-card.rsm{background:var(--red-l);border-left:3px solid var(--red);}
+.lens-card.cpm{background:var(--amber-l);border-left:3px solid var(--amber);}
+.lens-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.lens-card.gmm .lens-label{color:var(--blue);}
+.lens-card.rbm .lens-label{color:var(--teal);}
+.lens-card.rsm .lens-label{color:var(--red);}
+.lens-card.cpm .lens-label{color:var(--amber);}
+.lens-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px;}
+.lens-desc{font-size:12px;color:var(--ink2);line-height:1.65;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.lens-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+  <div class="nav-right"><a href="/blog/021/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-tag">Post 021 — Framework Guide · Introductory</p>
+  <p class="hero-date">2026</p>
+  <h1>A beginner's guide to reading organisational failure</h1>
+  <p class="hero-dek">Why 'individual fault' is always the wrong diagnosis — and four structural lenses that reveal what is actually happening.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>When a large organisation fails, the story we tell is almost always about individuals. A fraudulent CFO. A reckless CEO. A negligent regulator. We identify the person, apply the punishment, and consider the matter resolved.</p>
+    <p>But if you have read through the case studies in this series — Lehman Brothers, KDDI's G-Plan, the Sunagawa bear hunt — you will have noticed something. The individuals involved were not exceptional villains. They were ordinary people responding rationally to the structural environments they found themselves in.</p>
+    <p>SANA OS provides four analytical lenses for diagnosing what those structural environments actually were. This post is a guide to using those lenses — starting from scratch.</p>
+
+    <h2>Why "individual fault" is the wrong frame</h2>
+    <p>When two employees at a grandchild company produce ¥246 billion in fictitious revenue over seven years — bypassing every layer of a sophisticated governance system — the question "how could anyone do this?" is the wrong question. The right question is: <em>what structural configuration made this the rational output of their environment?</em></p>
+    <p>The same logic applies to Lehman Brothers. A firm employing thousands of highly educated, motivated people, with extensive compliance functions, sophisticated risk models, and layers of external oversight — still drove into insolvency at 44:1 leverage. The failure was not a failure of individuals. It was a failure of structure.</p>
+    <p>Understanding the structure is not an excuse for the individuals involved. It is the only path to preventing the next occurrence.</p>
+
+    <h2>The four lenses</h2>
+    <div class="lens-grid">
+      <div class="lens-card gmm"><p class="lens-label">Lens 1 — GMM</p><p class="lens-name">Governance Maturity</p><p class="lens-desc">Diagnoses the three-layer configuration: rules (C), culture/narrative (B), and survival conditions (A). Detects where blind spots exist and where formal controls have become checklists without substance.</p></div>
+      <div class="lens-card rbm"><p class="lens-label">Lens 2 — RBM</p><p class="lens-name">Resource Balance</p><p class="lens-desc">Maps demand versus supply of resources (capital, staff, attention). Identifies when supply removes the natural endpoint that would otherwise terminate a structural failure — the "lethal medicine" pattern.</p></div>
+      <div class="lens-card rsm"><p class="lens-label">Lens 3 — RSM</p><p class="lens-name">Role System</p><p class="lens-desc">Analyses whether the correction loop (Observer, Auditor) is functioning or has been captured by the production loop (Executor, Decider). Identifies Phantom Auditor states where the function exists formally but operates not at all.</p></div>
+      <div class="lens-card cpm"><p class="lens-label">Lens 4 — CPM</p><p class="lens-name">Cognitive Pressure</p><p class="lens-desc">Examines how survival anxiety, conformity pressure, and narrative lock alter individual and collective cognition — turning rational people into actors who cannot process the signals that might save them.</p></div>
+    </div>
+
+    <h2>Lens 1: GMM — where do the rules stop working?</h2>
+    <p>Governance Maturity Model analysis begins by asking: at which layer is the configuration broken?</p>
+    <table class="data-table">
+      <thead><tr><th>Layer</th><th>KDDI / G-Plan</th><th>Lehman Brothers</th></tr></thead>
+      <tbody>
+        <tr><td><strong>C — Rules</strong></td><td>"Three blind spots": KDDI (P&L focus, no business reality check), Biglobe (G-Plan classified as exception), G-Plan (no credit review rules, all authority in one person). Internal audit completed procedures without vouching.</td><td>"Regulatory gutting": 2004 SEC net capital rule amendment permitted internal risk models, effectively removing leverage limits. High-risk operations were institutionally legitimised.</td></tr>
+        <tr><td><strong>B — Culture</strong></td><td>"Growth pressure on new business": with telecoms revenue plateauing, non-telecoms growth became the only acceptable identity. Producing the numbers was the only path to continued existence.</td><td>"Too Big to Fail": the Bear Stearns rescue signalled to Lehman that systemic firms would be saved. This narrative paralysed risk perception across the organisation.</td></tr>
+        <tr><td><strong>A — Survival</strong></td><td>Fear of business closure as organisational and personal extinction. The capital efficiency logic of corporate governance codes made "unprofitable = cut" feel inevitable and immediate.</td><td>Extreme leverage: 44:1 at peak. A 2.5% asset decline would eliminate all equity. The firm was operating at the structural edge of viability.</td></tr>
+      </tbody>
+    </table>
+    <div class="sohat"><strong>The structural lesson:</strong> when internal controls become a checklist-completion exercise, formal procedure becomes the strongest shield for concealment. Blank spots in basic credit management at peripheral organisations — grandchild companies, new business units — are structural bugs waiting to be exploited.</div>
+
+    <h2>Lens 2: RBM — what removed the natural endpoint?</h2>
+    <p>Every structural failure has a natural termination: money runs out. What makes catastrophic failures catastrophic is the removal of that natural endpoint.</p>
+    <p>In Lehman's case, the repo market's willingness to keep lending — sustained by the Too Big to Fail assumption and disguised by Repo 105 accounting — removed the endpoint. In KDDI's case, group financing that provided capital against declared revenues without verifying economic substance removed it.</p>
+    <p>The three dangerous resource supply configurations to watch for:</p>
+    <ol>
+      <li><strong>Mechanical group financing:</strong> capital provided within preset limits without scrutiny of what it is actually funding.</li>
+      <li><strong>Misaligned payment cycles:</strong> advance payment structures that allow cash outflows to precede cash inflows indefinitely.</li>
+      <li><strong>Asymmetric compensation:</strong> short-term performance bonuses that are paid before long-term consequences materialise, with no clawback mechanism.</li>
+    </ol>
+
+    <h2>Lens 3: RSM — who has the authority to say no?</h2>
+    <p>Role System analysis asks: is there anyone in this organisation who has both the structural authority and the practical ability to activate the correction loop?</p>
+    <p>In Lehman, that authority existed — CRO Antoncic, Mike Gelband, Matthew Lee — but was physically removed from the system. In KDDI's G-Plan, the authority existed formally (internal audit, management oversight) but was deactivated by the psychological sanctity of the revenue-generating unit and the acceptance of implausible explanations as sufficient.</p>
+    <p>Both produce the same result: <strong>Phantom Auditor status.</strong> The function is present. The function is inert. And because the function appears present, no one triggers an external review.</p>
+    <div class="sohat"><strong>Watch for:</strong> any situation where one person controls origination, ordering, and acceptance verification of the same transactions. That configuration structurally eliminates the correction loop from the inside.</div>
+
+    <h2>Lens 4: CPM — what does survival pressure do to cognition?</h2>
+    <p>Cognitive Pressure analysis tracks the stages through which a rational person becomes unable to process signals that might save them.</p>
+    <p>The stages are consistent across both cases:</p>
+    <ol>
+      <li><strong>Survival anxiety trigger:</strong> a specific threat to existence is identified (business closure, competitive irrelevance).</li>
+      <li><strong>Initial rationalisation:</strong> one transgression is justified as temporary ("I'll fix it with real revenues").</li>
+      <li><strong>Narrative sanctification:</strong> the strategy that produced success becomes the definition of the organisation. Questioning it is threatening.</li>
+      <li><strong>Narrative lock:</strong> the last available exit (the KDB offer; voluntary disclosure) is closed because accepting it requires acknowledging that the narrative is wrong.</li>
+    </ol>
+    <p>The Camouflaged state — where employees recognise the problem but cannot speak — is the organisational expression of this individual process. When psychological safety is absent, the last line of defence silences itself.</p>
+
+    <div class="pullquote">
+      "Complex social failures are not the product of individual wickedness. They are the product of structural configurations that make destructive behaviour the rational choice for the people inside them."
+    </div>
+
+    <h2>The map</h2>
+    <table class="data-table">
+      <thead><tr><th>Lens</th><th>The diagnostic question</th><th>The structural lesson</th></tr></thead>
+      <tbody>
+        <tr><td><strong>GMM</strong></td><td>Where have rules become checklists? Which peripheral units have no credit review standards?</td><td>Formal blind spots are structural bugs. They will be exploited.</td></tr>
+        <tr><td><strong>RBM</strong></td><td>Is any resource supply removing the natural endpoint of a structural failure?</td><td>Unsupervised group financing is a lethal medicine.</td></tr>
+        <tr><td><strong>RSM</strong></td><td>Is anyone with authority to say no actually able to say no?</td><td>Never allow one person to control origination, ordering, and acceptance verification.</td></tr>
+        <tr><td><strong>CPM</strong></td><td>Is there survival pressure that makes honest reporting more costly than concealment?</td><td>Physical and psychological isolation removes the capacity to say "this frightens me."</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight">
+      <strong>The paradox:</strong> the organisations that most need this diagnosis are the ones most likely to believe they do not. A complete and functioning compliance system is one of the most reliable signs that the Phantom Auditor state may be present — because the system's completeness makes it easy to mistake checklist completion for actual control.
+    </div>
+  <div class="nav-post"><span><a href="/blog/020/">← Post 020</a></span><span><a href="/blog/022/">Post 022 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+  <span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer>
+</body></html>

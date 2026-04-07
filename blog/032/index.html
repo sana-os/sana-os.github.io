@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan's energy success — and the success that became a constraint | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:var(--teal);text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:20px;}
+h2{font-family:'Lora',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.rsm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;}
+.rsm-card{border-radius:8px;padding:13px 15px;background:var(--bg2);border-left:3px solid var(--teal);}
+.rsm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
+.rsm-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.rsm-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}
+.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.rsm-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+  <div class="nav-right"><a href="/blog/032/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series">Japan · Energy Arc · Part 4 of 4</p>
+  <p class="hero-tag">Post 032 — Strategic Analysis · Industrial History</p>
+  <p class="hero-date">Japan · Energy Arc</p>
+  <h1>Japan's energy success — and the success that became a constraint</h1>
+  <p class="hero-dek">How the 省エネ法, lifetime employment, and the 省エネルック combined to make Japan an efficiency-first manufacturing nation — and why the same configuration made the next paradigm shift harder.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Posts 029 and 030 documented the structural adaptation: Japan entered the 1970s oil shocks with a 99%-import-dependent energy configuration, panicked (toilet paper, 1973), pivoted diplomatically (Nikaidō Statement, 1973), and built a legal architecture for efficiency (省エネ法, 1979) that gave its manufacturers a lasting competitive advantage in the global market.</p>
+    <p>This post examines three things those posts left implicit: how exactly the adaptation worked mechanically, what made it capable of embedding so durably in Japanese industrial culture, and what the success cost — not in the short term, but in the long term.</p>
+    <p>The answer to the third question is the connection to everything that follows in this series. The 省エネ success story is not only a story of resilience. It is the origin of a narrative that later made resilience harder.</p>
+
+    <h2>The RSM configuration that made it work</h2>
+    <p>Japan's energy adaptation was not a spontaneous market response. It was a coordinated system in which all six RSM roles functioned — simultaneously, in the same direction. This is rare. Most institutional responses to crisis produce role conflicts: the Decider sets a direction, the Executor resists, the Integrator cannot bridge the gap.</p>
+    <div class="rsm-grid">
+      <div class="rsm-card"><p class="rsm-label">Decider</p><p class="rsm-name">Tanaka Cabinet → Ohira Cabinet</p><p class="rsm-desc">Redefined national priority: Layer A survival (energy security) above all existing Layer C commitments. Authorised the diplomatic pivot and the institutional rewrite.</p></div>
+      <div class="rsm-card"><p class="rsm-label">Architect</p><p class="rsm-name">MITI + JEXIM</p><p class="rsm-desc">Designed the 省エネ法 (1979) as a legally binding efficiency architecture. Set specific standards for factories, buildings, vehicles, appliances. Created the Resource Energy Agency (1974) as a permanent Observer function.</p></div>
+      <div class="rsm-card"><p class="rsm-label">Integrator</p><p class="rsm-name">Lifetime employment system</p><p class="rsm-desc">The critical and often overlooked element. Lifetime employment removed workers' fear of automation. Firms could retrain rather than replace. Structural adjustment — from steel and shipbuilding to electronics and automobiles — happened without mass labour conflict.</p></div>
+      <div class="rsm-card"><p class="rsm-label">Executor</p><p class="rsm-name">Japanese manufacturers</p><p class="rsm-desc">Converted the 省エネ法 targets into engineering problems. Continuous casting in steel. Industrial robots. Fuel efficiency in automobiles. Each improvement was a direct commercial advantage as well as a regulatory compliance response.</p></div>
+      <div class="rsm-card"><p class="rsm-label">Observer</p><p class="rsm-name">Resource Energy Agency (1974)</p><p class="rsm-desc">Permanent institutional monitoring of energy supply and demand balance. The function that was absent before 1973 — and whose absence had prevented early warning — was now institutionalised.</p></div>
+      <div class="rsm-card"><p class="rsm-label">Auditor</p><p class="rsm-name">FTC + price surveillance</p><p class="rsm-desc">Enforced against hoarding and price manipulation. Provided the correction loop that market mechanisms could not produce under panic conditions.</p></div>
+    </div>
+    <p>The data confirms the effectiveness of this configuration. Between 1973 and 1980, Japan's ratio of oil imports to real GNP fell by 35% — the largest improvement among major developed economies. In 1975, GNP grew 3.1% in real terms while energy demand fell approximately 5%. Economic growth and energy consumption had been structurally decoupled.</p>
+
+    <h2>The 省エネルック moment: how Layer C becomes Layer B</h2>
+    <p>One episode from the second oil shock (1979) captures the cultural translation mechanism with unusual precision.</p>
+    <p>In the summer of 1979, Prime Minister Ōhira Masayoshi and Minister of Trade and Industry Ezaki Masumi promoted "省エネルック" — a short-sleeved summer suit designed to allow higher air-conditioning setpoints without discomfort. Senior politicians wore them publicly. The message was explicit: energy conservation is not a sacrifice, it is a national identity.</p>
+    <p>羽田孜 (Hata Tsutomu), who later became Prime Minister and wore the 省エネルック as a junior politician, said: "Working in it felt completely different from a regular suit. The heat was different." He also noted that "Japanese men fear change" — which is why the garment needed endorsement from authority figures before ordinary workers would adopt it.</p>
+    <p>This is CPM's Narrative Translation mechanism in its clearest form. The 省エネ法 was a Layer C instrument — legally binding efficiency standards for factories and buildings. The 省エネルック was a Layer B instrument: translating a national industrial policy into a personal identity choice. Both were targeting the same objective (reduce energy consumption), but operating at different layers of the social system.</p>
+    <p>The combination worked because of the social homogeneity mechanisms of 1970s Japan: once authority figures endorsed the norm, conformity pressure propagated it rapidly through corporate culture. Wearing the 省エネルック became a signal of responsible citizenship. Not wearing it became a social marker.</p>
+
+    <div class="pullquote">
+      "The 省エネ success was not just a technical achievement. It was a cultural fusion — a moment when Layer C efficiency policy became Layer B national identity. Japan did not merely adopt energy-efficient technology. It became an energy-efficient people."
+    </div>
+
+    <h2>The RBM numbers: what the adaptation actually produced</h2>
+    <p>The quantitative record of the adaptation is extraordinary:</p>
+    <table class="data-table">
+      <thead><tr><th>Indicator</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Oil import cost per GNP unit, 1973–1980</strong></td><td>−35% (largest improvement among major developed nations)</td></tr>
+        <tr><td><strong>1975: GNP growth vs energy demand</strong></td><td>GNP +3.1%; energy demand −5% (structural decoupling)</td></tr>
+        <tr><td><strong>Long-term energy intensity, 2011–2018</strong></td><td>GDP +8%; final energy consumption −8%; energy intensity −15%</td></tr>
+        <tr><td><strong>Cumulative efficiency gain since oil shocks</strong></td><td>~40% improvement in macro energy efficiency (estimated)</td></tr>
+      </tbody>
+    </table>
+    <p>The Japanese automobile industry's trajectory tells the story most vividly. In 1979, US consumers were queuing at gasoline stations in California. They wanted fuel-efficient vehicles. Japanese manufacturers — operating under the 省エネ法 efficiency architecture, in cars whose development had been driven by the need to meet strict domestic standards — had exactly what US consumers needed. The oil shock had generated Japan's competitive advantage in its most important export market.</p>
+
+    <h2>The hidden cost: when the success narrative sanctified itself</h2>
+    <p>The adaptation produced something beyond industrial competitiveness. It produced a national identity. "Japan as a resource-constrained nation that survives through efficiency and manufacturing excellence" became one of the most powerful Layer B narratives of the late 20th century.</p>
+    <p>Powerful Layer B narratives are valuable. They generate the social cohesion that makes collective action possible. They provide the shared story that gives individual sacrifice meaning. The 省エネ narrative did all of this.</p>
+    <p>But CPM has a specific observation about what happens after prolonged success. When a response to an acute crisis produces sustained positive outcomes over years and decades, the narrative that produced it undergoes what CPM calls <em>Narrative Sanctification</em>: it transitions from "this worked in that context" to "this is who we are." The narrative stops being a strategy and becomes an identity.</p>
+    <div class="warning"><strong>The Narrative Sanctification trap:</strong> once a narrative is sanctified, it can no longer be updated. The very success that validated it makes questioning it feel like an attack on identity rather than a rational revision of strategy. "Japanese manufacturing excellence" was valid in the context of hardware-based industrial competition. It became a constraint when the competitive frontier moved to software, services, and digital platforms — domains where Japan's hardware-efficiency advantage was irrelevant. The exploratory simulation function — "what does winning look like in this new environment?" — was not triggered, because the existing narrative provided a ready answer that happened to be wrong.
+    </div>
+    <p>The RBM data shows when this transition happened. Japanese industrial energy efficiency improved dramatically from 1973 to approximately 1981. After 1981, industrial sector efficiency plateaued and in some sub-sectors began to deteriorate. The hardware efficiency approach had reached its physical limits. Further improvement required a different kind of innovation — systems design, software optimization, data-driven demand management — but these were not the domains the 省エネ success narrative pointed toward.</p>
+
+    <h2>RSM: the Succession Deficit that compounded the lock</h2>
+    <p>The CPM Narrative Sanctification was compounded by an RSM failure that unfolded more slowly.</p>
+    <p>The architects of the 1970s energy adaptation — the MITI officials and corporate engineers who had designed the 省エネ法, managed the structural adjustment, and built the efficiency culture from scratch — understood both what they were doing and why. They had designed a system to solve a specific problem: excessive energy intensity in a resource-constrained economy. They knew the system was a means, not an end.</p>
+    <p>As generational succession occurred, this contextual understanding was not transmitted. The institutions remained. The standards remained. The narrative remained. But the deep structural comprehension of why the system had been built — and therefore what conditions would require it to be rebuilt differently — was not inherited. RSM calls this Succession Deficit: the role of Architect is formally occupied, but the occupant lacks the capacity to redesign the system for new conditions.</p>
+    <p>By the 1990s, the Architect function in Japan's energy and industrial policy had transitioned from active system design to passive narrative maintenance. The 省エネ法 was updated incrementally. Standards were tightened by small degrees. But the fundamental question — "is hardware efficiency still the right frontier, or has the competitive environment changed?" — was not asked. The Auditor function that would have asked it was in Deficit.</p>
+
+    <div class="insight">
+      <strong>The structural summary of Post 032:</strong> Japan's energy adaptation worked because all six RSM roles functioned simultaneously in the same direction, and because the lifetime employment system served as an Integrator that removed the social friction from structural adjustment. The adaptation produced a genuine competitive advantage — 35% improvement in energy intensity, structural decoupling of economic growth from energy consumption, global leadership in fuel-efficient manufacturing. It also produced a Narrative Sanctification that, by the 1990s, had disabled the exploratory simulation function that would have recognised when the frontier had moved. The same narrative that enabled the response to the oil shocks made it harder to respond to the digital transformation that followed.
+    </div>
+
+    <div class="next-box">
+      <p class="next-label">Post 033 — the same logic, a different domain</p>
+      <p>The harbour failure, examined in Post 033, is the 省エネ narrative's first and most visible casualty. Japan had the maritime infrastructure. Japan had the industrial base. Japan had the capital. What Japan did not have was the institutional capacity to concentrate investment in a single hub — because "balanced national development" (the Layer B counterpart to "efficient manufacturing nation") prevented it. And when the competitive environment required concentration rather than distribution, the correction loop never activated.</p>
+    </div>
+  <div class="nav-post"><span><a href="/blog/031/">← Post 031</a></span><span><a href="/blog/033/">Post 033 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+  <span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer>
+</body></html>

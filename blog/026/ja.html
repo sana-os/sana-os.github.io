@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneCoin：コンプライアンス責任者が資金を洗浄するとき | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.threat{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.threat strong{color:var(--red);}
+.node-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0;}
+.node-card{border-radius:8px;padding:14px 16px;}
+.node-card.dom{background:var(--red-l);border-left:3px solid var(--red);}
+.node-card.phant{background:var(--blue-l);border-left:3px solid var(--blue);}
+.node-card.iso{background:var(--amber-l);border-left:3px solid var(--amber);}
+.node-card.run{background:var(--teal-l);border-left:3px solid var(--teal);}
+.node-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.node-card.dom .node-label{color:var(--red);}
+.node-card.phant .node-label{color:var(--blue);}
+.node-card.iso .node-label{color:var(--amber);}
+.node-card.run .node-label{color:var(--teal);}
+.node-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.node-desc{font-size:12px;color:var(--ink2);line-height:1.65;}
+.analysis{background:#fff;border:1px solid var(--border2);border-radius:12px;padding:36px;margin:52px 0;box-shadow:0 2px 14px rgba(26,24,20,0.07);}
+.analysis-header{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.analysis h2{margin-top:36px;font-size:clamp(16px,2.2vw,20px);}
+.analysis h3{margin-top:20px;font-size:14px;}
+.analysis p,.analysis ul{font-size:15px;line-height:1.78;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.node-grid{grid-template-columns:1fr;}.analysis{padding:22px;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/026/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-tag">Post 026 — 実例分析 · 暗号詐欺</p>
+  <p class="hero-date">2026</p>
+  <h1>OneCoin：コンプライアンス責任者が資金を洗浄するとき</h1>
+  <p class="hero-dek">役割捕捉の構造的到達点——そしてなぜ世界最大の暗号詐欺が、修正ループが届く前に100カ国以上で350万人に広まることができたのか。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>4人。1人は行方不明、1人は服役中、2人はすでに判決を受けました。そして100カ国以上で約350万人の被害者が、存在したことのない暗号通貨に40億ドル以上を失いました。</p>
+    <p>OneCoinは2014年にブルガリアのソフィアで始まりました。共同創設者のルジャ・イグナトヴァ——「クリプトクイーン」と自称した——はそれを「ビットコイン・キラー」として提示しました：より速く、よりアクセスしやすく、より革命的だと。グリーンウッドはそれを世界に広めるMLMの勧誘ネットワークを構築しました。マーク・スコットというオフショアファンドを通じて4億ドルを洗浄した弁護士がいました。法務・コンプライアンス部門の責任者イリーナ・ディルキンスカはマネーロンダリングの共謀を認めました。</p>
+    <p>イグナトヴァは2017年に米国の逮捕状が出た直後に姿を消しました。2026年現在、彼女はFBIの10大最重要指名手配犯リストに掲載されたままです。資金のほとんどは消えました。</p>
+    <p>これはシリーズで最も複雑な事例です——詐欺が技術的に洗練されていたからではなく、悪用された構造的配置が過去のどの事例よりも完全だったからです。4つのSANAフレームワークのすべての層が同時に侵害されました。そして、これを防ぐために特定的に存在した1つの役割——Auditor——が詐欺の最も能動的な主体に変えられました。</p>
+
+    <h2>犯罪的実行者としてのPhantom Auditor：RSMの到達点</h2>
+    <p>Post 018から025はPhantom Auditorの概念を導入し発展させました：形式上は存在するが修正を実行しないガバナンス機能。リーマン・ブラザーズでは、監査者はマシュー・リーの警告を受け取り何もしませんでした。KDDIのジー・プランでは、内部監査が実体確認なしに手続きを完了しました。ワールドオーシャンファームでは、規制当局の監査者が構造的に断片化されていました。</p>
+    <p>すべての以前の事例で、Phantom Auditorは受動的に失敗しました——行動が必要なときに行動しないことによって。</p>
+    <p>イリーナ・ディルキンスカは構造的に異なるものを表します：受動的に失敗しただけでなく、自分のAuditorの役割を積極的に生産ループの目的のために武器化したAuditorです。</p>
+    <div class="threat"><strong>役割捕捉のRSM到達点：</strong>ディルキンスカの公式な肩書きは法務・コンプライアンス部門の責任者でした——その構造的目的が法的・倫理的基準からの逸脱を検出し修正することである正確な役割。代わりに彼女はその立場を使ってマネーロンダリングのためのペーパーカンパニーを設立し、修正を積極的に抑制し、グリーンウッドが逮捕されると即座に証拠を隠滅して暗号で共犯者と連絡を取りました。Auditor機能は不在ではありませんでした。詐欺のExecutorとして採用されていました。
+    </div>
+    <div class="node-grid">
+      <div class="node-card dom"><p class="node-label">決定者 / ナラティブ設計者</p><p class="node-name">ルジャ・イグナトヴァ</p><p class="node-desc">「ビットコイン・キラー」のナラティブを設計。オックスフォード大学の学位・マッキンゼー・ウェンブリー・スタジアムでのプレゼンテーション——権威が構築され、主要な認知操作の道具として展開された。</p></div>
+      <div class="node-card run"><p class="node-label">統合者 / 実行者</p><p class="node-name">カール・セバスチャン・グリーンウッド</p><p class="node-desc">グローバルなMLMインフラを構築・運営。ナラティブを資金集めのマシンに変換。月次売上の5%（合計3億ドル以上）を個人的に搾取。</p></div>
+      <div class="node-card phant"><p class="node-label">幽霊Auditor → 役割捕捉</p><p class="node-name">イリーナ・ディルキンスカ</p><p class="node-desc">法務・コンプライアンス責任者（公式）。実際には：ペーパーカンパニーを設立し4億ドル以上を洗浄し逮捕時に証拠を隠滅。生産ループに占有された修正ループ。</p></div>
+      <div class="node-card iso"><p class="node-label">Architect Isolation（外部）</p><p class="node-name">マーク・スコット</p><p class="node-desc">元大手法律事務所パートナー。英領バージン諸島とケイマン諸島でFeneroファンドの洗浄インフラを構築。「50歳までに5,000万ドル」という個人的目標に動機付けられ。法的専門知識が生産ループのみに最適化。</p></div>
+    </div>
+
+    <h2>このシリーズで最も強力なVariable X：確認不可能な技術</h2>
+    <p>Post 025はワールドオーシャンファームの空の養殖池が最終的にテレビに映ったことに言及しました。カメラクルーがフィリピンに行き、「東京ドーム450個分」の養殖が存在しないことを物理的に示せました。</p>
+    <p>OneCoinの詐欺には、等価の物理的確認ポイントがありませんでした。</p>
+    <p>ブロックチェーン技術——本物のブロックチェーン技術——は、数千のノードにわたって暗号学的コンセンサスを通じてトランザクションが検証される分散型のピアツーピア台帳です。システムが実際にこのアーキテクチャを使用しているか、それとも中央集権的なSQLデータベースで動いているかを理解するには、OneCoinの350万人の参加者の大多数が持っていなかった、また容易に取得できなかった技術的知識が必要でした。</p>
+    <p>OneCoinにはブロックチェーンがありませんでした。その「コイン」の価格は、市場のダイナミクスによってではなく、手動での調整によって€0.50から€29.95に上昇する、中央集権的なデータベースの内部管理者によって設定されていました。</p>
+    <p>これがOneCoinをこのシリーズで最も洗練された認知攻撃にしています。スカイビズのウェブサイトソフトウェアは物理的に無用でしたが理解可能でした。ワールドオーシャンファームの養殖池は物理的に不在でしたが物理的に確認可能でした。OneCoinの欠如したブロックチェーンは、それを購入したほぼすべての人にとって認知的に確認不可能でした。</p>
+
+    <h2>CPM：3層の権威構築</h2>
+    <p>一般の参加者が技術を確認できず、Auditor機能が武器化され、数学が詐欺的だったとして——何が実際に100カ国以上で350万人を説得したのか？</p>
+    <p>イグナトヴァの天才は、3つのGMMの層に同時に対応する3つのレベルで権威を構築したことでした：</p>
+    <ul>
+      <li><strong>Layer A（生存）：</strong>ビットコインはすでに文書化された億万長者を生み出していました。「ビットコインを逃した；OneCoinを逃すな」というFOMOのナラティブが生存不安を直接的に活性化しました。見逃した機会のフレームは、確認が適切な注意義務としてではなく、機会への脅威として経験される認知状態を生み出します。</li>
+      <li><strong>Layer B（アイデンティティ/ナラティブ）：</strong>「経済的自由」「銀行システムからの解放」「お金の民主化」。これらは単なる売り込みではなく、アイデンティティの提案です。OneCoinに参加することは、革命を理解した人物になること、主流より先を行くこと、歴史的に重要なものの一部であることを意味しました。このアイデンティティへの社会的投資が不一致の認識を心理的にコスト高にしました。</li>
+      <li><strong>Layer C（制度的正当性）：</strong>オックスフォード大学。マッキンゼー。ウェンブリー・スタジアム。複数の国での華やかな会議。名前のあるコンプライアンス部門の長。これらのシグナルは、根底にある実体なしに、正当な制度的権威の視覚的語彙を模倣しました。権威はシグナルから構築され、構造からではありませんでした。</li>
+    </ul>
+    <p>この組み合わせは——CPMがNarrative Lockと呼ぶ——修正に対して例外的に抵抗力のある認知状態を生み出しました。ドイツ・英国・インドなどの当局が詐欺警告を発し始めると、参加者はこれをLayer Bの確認として処理しました：「既成勢力が革命を潰そうとしている」。警告シグナルは懐疑心を引き起こすのではなく、詐欺自体のナラティブに吸収されました。</p>
+
+    <div class="pullquote">
+      「OneCoinの最も強力な構造的特徴は、ポンジの数学でも欠如したブロックチェーンでもありませんでした。スキームに対する公式な警告がスキームの証拠になるナラティブを構築したことでした。修正ループのアウトプットが生産ループに方向転換されました。」
+    </div>
+
+    <h2>このシリーズへの追加</h2>
+    <p>Post 023から026は、構造的配置に対する4つの外部攻撃を検討しました。各々が特定のものを追加しました：</p>
+    <ul>
+      <li><strong>Post 023（マイアミ小切手詐欺）：</strong>Layer Cの確認ギャップ + 取引ポイントでのCPMのナラティブ悪用。</li>
+      <li><strong>Post 024（スカイビズ）：</strong>Phantom Executor + RBMの数学的崩壊 + CPMの4段階シーケンス + GMMの管轄ギャップ。</li>
+      <li><strong>Post 025（ワールドオーシャンファーム）：</strong>特定の社会的Layer Aの配置に最適化された3層GMM のナラティブ構築 + Role Coupling（被害者が実行者に）+ 外部Observerが修正メカニズムとして機能。</li>
+      <li><strong>Post 026（OneCoin）：</strong>すべてのパターンの到達点。犯罪的実行者に変えられたPhantom Auditor。主要な認知的防御としての確認不可能なVariable X。すべてのGMMの層にわたる3層の権威構築。複数の管轄にわたる規制アービトラージ。そしてスキームが崩壊しても修正ループがそのアーキテクトに届かない可能性を示す、依然行方不明の主犯。</li>
+    </ul>
+
+    <div class="insight">
+      <strong>最も危険なスキームの構造的署名：</strong>単一のギャップを悪用するだけではありません。防御のすべての層が同時に侵害される配置を構築します——Auditorが武器化され、Variable Xが確認不可能で、修正シグナルがナラティブに方向転換され、規制の対応が構造的に遅延します。その洗練さは技術的なものではありません。アーキテクチャ的なものです：利用可能なすべての修正メカニズムが誤った方向を向くシステムを構築すること。
+    </div>
+
+    <div class="analysis">
+      <p class="analysis-header">詳細分析 — 4フレームワーク資料</p>
+      <p style="font-size:14px;color:var(--ink3);margin-bottom:24px;font-style:italic;">OneCoin事件のRSM役割マッピング・CPM認知分析（被害者・加害者双方）・GMM/RBM規制ギャップ診断。</p>
+
+      <h2>RSM：完全な役割失敗マップ</h2>
+      <table class="data-table">
+        <thead><tr><th>人物 / 機能</th><th>公式の役割</th><th>RSMにおける実際の機能</th><th>失敗状態</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ルジャ・イグナトヴァ</strong></td><td>共同創設者 / CEO</td><td>決定者 + ナラティブ設計者：3層の権威構築を設計；認知操作戦略をコントロール</td><td>過剰支配。依然逃亡中（FBI Top 10、2026年）。</td></tr>
+          <tr><td><strong>カール・S・グリーンウッド</strong></td><td>共同創設者 / グローバルプロモーター</td><td>統合者 + 実行者：MLMインフラを構築・運営；ナラティブを大規模な資金フローに変換</td><td>過剰支配。懲役20年の判決（2023年）。</td></tr>
+          <tr><td><strong>イリーナ・ディルキンスカ</strong></td><td>法務・コンプライアンス責任者</td><td>幽霊Auditor → 役割捕捉 → 実行者：ペーパーカンパニーを設立・4億ドル以上を洗浄・証拠を隠滅・暗号で通信</td><td>完全な役割捕捉。懲役4年（罪状認否）。</td></tr>
+          <tr><td><strong>マーク・スコット</strong></td><td>外部弁護士（Locke Lord LLP）</td><td>構造設計者（孤立）：英領バージン諸島とケイマン諸島でFeneroファンドの洗浄インフラを設計。「50歳までに5,000万ドル」という個人的目標に動機付けられ。</td><td>Architect Isolation。懲役10年の判決。</td></tr>
+          <tr><td><strong>内部Observer / Auditor</strong></td><td>機能するものなし</td><td>設計によって不在。ブロックチェーンが存在するか・価格が操作されているかを監視すべき役割が機能する形で存在しなかった。</td><td>完全な欠損。</td></tr>
+          <tr><td><strong>外部Auditor</strong></td><td>複数の管轄にわたる規制当局</td><td>構造的に断片化。ドイツのBaFin・英国FCA・インドの執行局がそれぞれ警告を発したが、資産凍結と起訴に必要な越境調整に数年かかった。</td><td>構造的リソース不足 + GMM Layer Cラグ。</td></tr>
+        </tbody>
+      </table>
+
+      <h2>ディルキンスカの反転：Role Captureの極致が意味するもの</h2>
+      <p>このシリーズのすべての事例でRSMのRole Capture概念が現れました——生産ループの利益が修正ループを植民地化して無効化する。しかしディルキンスカの事例は質的に異なる到達点を表します。</p>
+      <p>以前の事例では、Role CaptureはAuditorを<em>不活性</em>にすることを意味しました：CROアントンチッチが脇に追いやられ（リーマン）、内部監査者が実体確認なしにチェックリストを完了し（KDDI）、規制当局の監査者が断片化されました（ワールドオーシャンファーム）。修正ループは無効化されました——しかし役割自体は積極的に被害を生み出していませんでした。</p>
+      <p>ディルキンスカの役割は積極的に被害を生み出していました。Auditorは無効化されませんでした——<em>反転</em>されました。マネーロンダリングを検出して止めることを構造的目的とする機能が、マネーロンダリングを組織して実行した機能でした。これがRole Captureの到達点です：幽霊ではなく、反機能——表明された目的と逆方向に作動する役割。</p>
+
+      <h2>GMM：3層の権威構築</h2>
+      <table class="data-table">
+        <thead><tr><th>GMM層</th><th>OneCoinの構築</th><th>ターゲットにしたもの</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Layer A — 生存</strong></td><td>「ビットコインを逃した。OneCoinを逃すな」。年率500%以上のリターン。従来の雇用からの経済的自由。</td><td>金融的な生存不安。2008年以降の従来の銀行への不信。初期のビットコイン採用者が生み出した実際に文書化された富。</td></tr>
+          <tr><td><strong>Layer B — アイデンティティ / ナラティブ</strong></td><td>「金融の民主化」「銀行システムからの解放」。革命的な先行者としてのコミュニティのアイデンティティ。ウェンブリー・リスボン・マカオでのセレブリティスタイルのプレゼンテーション。</td><td>主流より先を行くことの社会的アイデンティティ。歴史的に重要な運動への帰属。不一致の認識をアイデンティティの脅威にする心理的投資。</td></tr>
+          <tr><td><strong>Layer C — 制度的正当性</strong></td><td>オックスフォード大学の資格。マッキンゼーの経歴。内部の「xcoinx」取引所。名前のあるコンプライアンス部門の長。金融メディアの報道（その多くは有料掲載）。</td><td>制度的権威の視覚的・言語的語彙——根底にある実体なしに借用。公式の詐欺警告を正当な懸念としてではなく「制度的抵抗」として読ませた。</td></tr>
+        </tbody>
+      </table>
+
+      <h2>RBM：確認不可能なVariable Xとしての供給側防御</h2>
+      <p>被害者の認知に適用されるRBMフレームワークは、特定の供給側の失敗を明らかにします：OneCoinのアーキテクチャについて技術的に確認可能な情報の供給は、普通の参加者にとって構造的にほぼゼロでした。</p>
+      <p>Demand_cog（認知的需要）：システムが真にブロックチェーンを使用しているかどうかを理解するには、分散型コンセンサスメカニズム・暗号学的ハッシュ・ピアツーピアネットワークアーキテクチャの知識と、ネットワークのノードを独立してクエリする能力が必要です。これは一般的な技術リテラシーではなく専門的な知識です。</p>
+      <p>Supply_cog（認知的供給）：350万人の参加者は主に東欧・東南アジア・アフリカ・ラテンアメリカの非技術的な集団から引き付けられました——技術的知識と信頼できる独立した確認ソースへのアクセスの両方が欠如した集団。</p>
+      <p>Gap_cogは巨大でした。認知的供給が確認需要を満たせないとき、意思決定プロセスはヒューリスティクスに移行します——そして利用可能なヒューリスティクス（権威バイアス・社会的証明・FOMO）はすべて、懐疑ではなく参加を指すシグナルで事前にロードされていました。Sat_cog（確認能力の充足性）はゼロに近かった。これは詐欺の設計の構造的特徴であり、ターゲット集団の偶発的な特性ではありません。</p>
+    </div>
+  <div class="nav-post">
+    <span><a href="/blog/025/">← Post 025</a></span>
+    <span></span>
+  </div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山一証券破綻——なぜ名門は一夜で消えたか | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:var(--blue);text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--blue-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--blue);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}
+.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/034/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series">日本 · 金融アーク · 第1部</p>
+  <p class="hero-tag">Post 034 — 実例分析 · 金融史</p>
+  <p class="hero-date">日本 · 金融アーク</p>
+  <h1>山一証券破綻——なぜ名門は一夜で消えたか</h1>
+  <p class="hero-dek">108年。7,500人の社員。2,600億円の隠れた損失。構造的な問いは山一がなぜ倒れたかではありません——それを止めるべき修正ループがなぜ活性化しなかったかです。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>1997年11月24日、山一証券の野澤正平社長はカメラの前に立ち、泣きました。「社員は悪くありませんから」——この言葉は日本の金融史で最もよく引用される言葉の一つになりました。</p>
+    <p>山一は1897年に創業していました。高度経済成長期の一時期、主幹事数で野村証券をも凌ぐ実績を持っていました。何百もの日本企業を株式上場へと導いた証券会社でした。「法人の山一」と自称していました。</p>
+    <p>1997年11月24日、業務を停止しました。約7,500人の社員が職を失いました。負債は最終的に清算されました——顧客の預かり資産は全額返還され、山一社債も償還されました。しかし108年の機関は消えました。</p>
+    <p>日本の「四大証券」の残り3社——野村・大和・日興——は同じ1997年の金融危機を生き延びました。同じ嵐。同じ規制環境。バブル時代の隠れた損失という同じ歴史。3社は生き残った。1社は生き残れなかった。</p>
+    <p>なぜか？</p>
+    <p>答えは構造の中を見ることを必要とします——損失そのものではなく、損失が生き残れないほど大きくなる前に修正されることを妨げた配置を。</p>
+
+    <h2>隠れた損失：構造的な読み方</h2>
+    <p>山一の2,600億円の簿外債務——飛ばし——は偶然ではありませんでした。RBMの用語で言えば、それは構築された非正規のキャパシティ・バッファでした：壊滅的なDemand_j（バブル時代の資産価値崩壊による損失）を目に見えるバランスシートから取り除く仕組みで、Observable Supply_j（資本・収益）が十分に見えるようにしました。</p>
+    <p>メカニズムは「モヤ（靄）」を通じて動作しました——法人・引受部門と財務部門の上級管理職から構成される影のチームで、正式なガバナンス構造の完全に外側で動作しました。彼らが飛ばしのアーキテクチャを構築・維持しました：損失を海外のペーパーカンパニー（山一オーストラリアが主要手段）に移転し、ペーパーカンパニーが解消されたときにのみ損失が本体のバランスシートに戻る仕組みで構成されていました。</p>
+    <div class="warning"><strong>RBMの診断：</strong>Demand_jを隠すことはそれを排除しません。複利でそれを先送りします。1990年に痛みを伴うが生き残れる損失処理を必要としたかもしれない損失が、1997年には吸収できない損失になりました。バッファは解決策ではありませんでした——それは時間遅延の増幅装置でした。
+    </div>
+
+    <h2>RSM：「社友会」と幽霊の監査者</h2>
+    <p>なぜ飛ばしが7年間修正されずに続いたかを理解するには、山一の内部ガバナンスのRSM配置が不可欠です。</p>
+    <p>山一の権力構造は「社友会」——東京大学卒業者と法人・引受部門出身者の非公式派閥——に支配されていました。このグループがDeciderとArchitectの役割をほぼ完全に独占していました。結果は系統的でした：Executor役割（リテール営業・支店・「人の山一」）が構造的に周辺化されました。</p>
+    <table class="data-table">
+      <thead><tr><th>RSMの役割</th><th>山一の状態</th><th>失敗モード</th></tr></thead>
+      <tbody>
+        <tr><td><strong>決定者</strong></td><td>社友会（東大閥 / 法人・引受部門出身）</td><td>過剰支配——すべての決定が単一派閥を通過</td></tr>
+        <tr><td><strong>設計者</strong></td><td>同じ派閥——「モヤ」影チーム</td><td>Architect Isolation——1996年までに市場の現実から完全に切断</td></tr>
+        <tr><td><strong>統合者</strong></td><td>部門長（形式上）</td><td>幽霊——派閥の対立が真の調整を妨げる</td></tr>
+        <tr><td><strong>実行者</strong></td><td>リテール支店・営業社員</td><td>周辺化——市場シグナルが上に届かない</td></tr>
+        <tr><td><strong>観察者</strong></td><td>経理・財務部門</td><td>幽霊——飛ばしの構造を把握しているが報告できない</td></tr>
+        <tr><td><strong>監査者</strong></td><td>内部監査 + 大蔵省</td><td>幽霊——実体確認のない形式的なコンプライアンス手続き</td></tr>
+      </tbody>
+    </table>
+    <p>モヤチームはすべての正式なガバナンスチャネルの外側で動作しました。社長が交代しても、モヤの秘密——簿外ポジションの全体像——はごく一部の当事者間で密かに引き継がれました。取締役会の承認なし。外部による確認なし。監査証跡なし。</p>
+    <p>これは悪い人々が悪い選択をしているという説明ではありません。修正ループが構造的に無効化されたシステムの説明です——逸脱を検出してフラグを立てるべきだったすべてのノードが、最初に逸脱を生み出したのと同じ派閥のダイナミクスによって機能しなくなっていました。</p>
+
+    <h2>CPM：システムをロックした「家族」のナラティブ</h2>
+    <p>なぜ山一の内部で誰も沈黙を破らなかったのか？CPMの答えは具体的です：山一のLayer Bのアイデンティティ——「人の山一」「家族の山一」——が、制度を危険にさらすいかなる行動も自分自身の家族への攻撃として経験されるほど神聖化されていました。</p>
+    <p>帰属圧力と同調圧力は山一の文化の付随的な特徴ではありませんでした。それが主要な文化的達成でした。成長期に山一を効果的にした結束——忠誠・相互義務・集団的目的意識——が、危機の状況下では修正を不可能にするメカニズムになりました。飛ばしの問題を提起することは単なるキャリアリスクではありませんでした。家族への裏切りの行為でした。</p>
+    <p>1996年、野村と大和がすでに公式に損失を計上していたとき、山一の経営陣はホテルに籠もりました——市場でも規制当局でもなく、誰が問題を引き起こしたように見えるかという内部政治を管理するために。Architect機能は外部の現実から完全に切断されていました。構造的現実が下で溶けていく中、システムは内部のナラティブを全力で動かし続けていました。</p>
+
+    <div class="pullquote">
+      「社員は悪くありませんから」。1997年11月の野澤社長の涙は本物でした——そして構造的に正確でした。社員は修正ループが自分たちの多くが理由を理解する前に無効化されたシステムの中に置かれていました。システムが失敗しました。その中にいた人々は、主体者であると同時に犠牲者でした。
+    </div>
+
+    <div class="next-box">
+      <p class="next-label">Post 035 — 野村證券と山一</p>
+      <p>同じ嵐。野村にも損失がありました。野村にもコンプライアンスの問題がありました。しかし野村の文化は未知の変数に対して根本的に異なる反応を生み出しました——そして構造的な理由は、組織の内部で誰が価値を置かれ、どのシグナルがトップに届いたかにあります。</p>
+    </div>
+  <div class="nav-post"><span><a href="/blog/033/">← Post 033</a></span><span><a href="/blog/035/">Post 035 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

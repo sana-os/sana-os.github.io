@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日興証券と山一——生き残った構造 | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:var(--blue);text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+.compare-card{border-radius:8px;padding:14px 16px;}
+.compare-card.nom{background:var(--teal-l);border-left:3px solid var(--teal);}
+.compare-card.yam{background:var(--red-l);border-left:3px solid var(--red);}
+.compare-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.compare-card.nom .compare-label{color:var(--teal);}
+.compare-card.yam .compare-label{color:var(--red);}
+.compare-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.compare-desc{font-size:12px;color:var(--ink2);line-height:1.65;}
+.next-box{background:var(--blue-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--blue);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.compare-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/037/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series">日本 · 金融アーク · 第4部</p>
+  <p class="hero-tag">Post 037 — 比較分析 · 金融史</p>
+  <p class="hero-date">日本 · 金融アーク</p>
+  <h1>日興証券と山一——生き残った構造</h1>
+  <p class="hero-dek">日興は山一の運命への恐怖を武器化して自社の同調圧力を粉砕し——それからトラベラーズ・グループを通じた米国標準ガバナンスのインポートで同じ失敗を構造的に不可能にしました。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>1997年の日興証券は野村と大和の両方とは異なる特定の問題を持っていました。野村は内部で修正するほど強かった。大和は欠けている修正能力をインポートするために国内銀行との提携を形成しました。日興はより抜本的なものを必要としていました：まず自社の同調圧力を破壊し、それから外国のアーキテクチャを使ってガバナンスをゼロから再構築する。</p>
+    <p>そのために使ったメカニズムはCPMの観点から異例なほど正確でした：山一になる恐怖を武器化しました。</p>
+
+    <h2>恐怖の反転：内部ロックを破るための外部の脅威の使用</h2>
+    <p>山一の崩壊——7,500人の社員・涙の記者会見・108年の機関の一夜での清算——は1997年の日本の金融史で最も目に見えるイベントでした。すべての証券会社の社員がそれが何を意味するか理解しました。すべての役員が自社機関が次になりうると理解しました。</p>
+    <p>日興内部では、既存の同調圧力は相当なものでした：「日本の証券会社はこのように運営する」「私たちの文化と関係が日興を日興たらしめるもの」「外資を連れてくることは機関のコントロールを失うことを意味する」。これらはLayer Bの命題でした——組織の帰属圧力が執行するアイデンティティのナラティブ。</p>
+    <p>危機の中で日興の経営を引き継いだ金子昌資はCPMのダイナミクスを明示的に理解していました。彼は山一の崩壊を認知的な道具として展開しました：「根本的に変わらなければ、私たちは山一になります。これは仮説ではありません——適応できない機関を待つ構造的な結果です」。</p>
+    <p>CPMの反転：変わらないことへの恐怖が変わることへの恐怖を超えました。「既存の文化を維持する」を指していた同調圧力が「生存は変革を必要とする」を指すようにひっくり返りました。</p>
+
+    <h2>トラベラーズ提携：米国のガバナンスアーキテクチャのインポート</h2>
+    <p>内部の同調圧力が破られると、日興の経営陣は構造的解決策を実行できました：1998年に発表されたトラベラーズ・グループ（後のシティグループ）との包括的な資本・業務提携。</p>
+    <p>提携は3つのことを同時に提供しました：</p>
+    <p>第一に、約2,200億円の資本注入——Demand_j（認識を必要とする損失）とSupply_j（利用可能な資本）の間のRBMギャップを直接対処しました。これが即座の生存要件でした。</p>
+    <p>第二に、ソロモン・ブラザーズのリスク管理能力・デリバティブの専門知識・グローバルな流通網へのアクセス——内部開発が関連する時間軸では達成できなかった方法での日興の能力セットの構造的アップグレード。</p>
+    <p>第三に——最も構造的に重要なこと——日興ソロモン・スミス・バーニー（NSSB）の合弁事業を通じた日興のホールセール運営への米国標準のガバナンスアーキテクチャのインポート。米国の証券規制は、フロントオフィス（収益生成）とミドル・バックオフィス（リスク管理・コンプライアンス確認）の間の厳格な分離を要求します。チャイニーズ・ウォール——利益相反を防ぐ情報バリア——は文化的に維持されるのではなく構造的に義務付けられています。</p>
+    <p>このアーキテクチャは日興バージョンのモヤ式の不透明さを構造的に不可能にしました。リスク管理が収益生成とは独立して動作し、コンプライアンスがフロントオフィスの権限をバイパスする直接的な報告ラインを持つとき、山一で7年間の隠れた損失を可能にした配置は再現できません。</p>
+
+    <h2>CPM：認知的除染としてのカルチャークラッシュ</h2>
+    <p>トラベラーズ提携後に続いた日米文化の衝突は鮮明でした。日興の社員はNSSBでの勤務を異質な環境での動作として説明しました——異なるパフォーマンス指標・異なる意思決定リズム・誰にどの情報が見えるべきかについての異なる前提。</p>
+    <p>CPMの観点から、この衝突は正確に必要なものでした：独自の認知アーキテクチャがNarrative Lockを実行していた組織への異なる認知アーキテクチャの導入。外国の圧力は既存の同調メカニズムを通じて処理できませんでした——あまりにも外部的で、あまりにも異なり、期待についてあまりにも明示的で——これがArchitect機能を既存のナラティブを通じてフィルタリングするのではなく新しい情報と関わることを強制しました。</p>
+
+    <div class="pullquote">
+      「日興は山一の運命への恐怖を使って、山一の文化が破れないものを破りました：修正を妨げた同調圧力。それから同じ配置を構造的に不可能にするアーキテクチャをインポートしました。シーケンスは正確でした：まずロックを破り、それからシステムを再構築する。」
+    </div>
+
+    <div class="insight">
+      <strong>4事例の比較：</strong>野村は修正を報いる内部文化を持っていました（破るロックなし）。大和は外部ガバナンスをインポートするために国内提携を形成しました（中程度のロック・国内解決策）。日興はまず恐怖を使ってロックを破り、それから外国のガバナンスアーキテクチャをインポートしました（強力なロック・外国解決策）。山一はその文化が破れなかったロックを持っていて、破りに来た外部の力もなく——システムが崩壊するまでロックが保ちました。
+    </div>
+
+    <div class="next-box">
+      <p class="next-label">Post 038 — 金融ビッグバン</p>
+      <p>生存の3つのケース——野村の内部の強さ・大和の国内提携・日興の外国アーキテクチャ——は同じ構造的問いを指しています：ビッグバンは実際に何を変えていたのか、そしてなぜ自己修正の修正能力がない会社を露出させたのか。金融アークの最終ポストが比較を日本の金融パラダイムシフトの読み方に統合します。</p>
+    </div>
+  <div class="nav-post"><span><a href="/blog/036/">← Post 036</a></span><span><a href="/blog/038/">Post 038 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

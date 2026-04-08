@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大和証券と山一——生き残った構造 | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:var(--blue);text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+.compare-card{border-radius:8px;padding:14px 16px;}
+.compare-card.nom{background:var(--teal-l);border-left:3px solid var(--teal);}
+.compare-card.yam{background:var(--red-l);border-left:3px solid var(--red);}
+.compare-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.compare-card.nom .compare-label{color:var(--teal);}
+.compare-card.yam .compare-label{color:var(--red);}
+.compare-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.compare-desc{font-size:12px;color:var(--ink2);line-height:1.65;}
+.next-box{background:var(--blue-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--blue);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.compare-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/036/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series">日本 · 金融アーク · 第3部</p>
+  <p class="hero-tag">Post 036 — 比較分析 · 金融史</p>
+  <p class="hero-date">日本 · 金融アーク</p>
+  <h1>大和証券と山一——生き残った構造</h1>
+  <p class="hero-dek">大和は内部で修正できないものを認識し——住友銀行との提携を形成して自社の文化が生み出せない外部Auditorの機能をインポートすることで生き延びました。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>1997年の大和証券は野村ではありませんでした。野村のリテール支配も、広大な内部資本準備金も、「蛮族的な胆力」の文化もありませんでした。大和も飛ばしを使っていました——山一を破壊した同じ簿外損失隠し。大和には内部で修復できない構造的な弱点がありました。</p>
+    <p>大和が山一にはなかったものは、単独では自分を修正できないことを認識する能力——そして欠けていた構造的能力を外部からインポートする能力でした。</p>
+
+    <h2>RBMの診断：ギャップの正直な評価</h2>
+    <p>RBMの用語で、大和のポジションはSupply_j（資本＋収益能力）がDemand_j（認識と損失処理を必要とする損失）を満たすのに不十分という特徴がありました。ギャップは存在していました。飛ばしがそれを先送りしました。1990年代半ばまでに、先送りはもはや持続できなかった。</p>
+    <p>野村の解決策は内部的でした：損切りを実行して顧客基盤を再建すれば、そのリテール収益で損失をカバーできました。大和にはこの内部解決策が利用できませんでした。</p>
+    <p>正直な診断——大和銀行ニューヨーク支店スキャンダル（1995年）と加速する金融危機の圧力の下で大和の経営陣が辿り着いた——は、会社が同時に外部の資本注入と外部のガバナンス支援を必要としているということでした。どちらか一方だけでは問題を修正できません。両方合わせてならできる。</p>
+
+    <h2>構造的解決策：外部Auditorのインポート</h2>
+    <p>大和の対応は住友銀行との提携でした。RSMの用語で、これは単なる資本注入ではありませんでした。有効なバージョンのどちらも持たずに動作していたシステムへの外部AuditorとIntegratorのインポートでした。</p>
+    <p>住友のような銀行は証券会社が持っていなかった信用評価の規律の下で動作します：すべての融資決定は、カウンターパーティリスク・担保の質・返済確率の文書化された評価を必要とします。この規律——提携を通じて大和のビジネス慣行に適用された——は山一の内部Auditorに欠けていた正確に実体確認機能を導入しました。銀行の存在が内部文化だけでは生み出せない説明責任を作り出しました。</p>
+    <p>さらに、ホールセールの分離（法人ファイナンスが大和SMBCに移動し、リテールが大和証券に残った）は構造的な機能を果たしました：銀行の注入がSupply_j（資本）を増加させながら、Demand_j（損失を生み出す法人集中）を削減しました。RBM方程式の両側が同時に正しい方向に動きました。</p>
+
+    <h2>GMM：Layer AのためにLayer Bを犠牲にする</h2>
+    <p>住友提携は大和がLayer Bレベルで重要なものを犠牲にすることを必要としました：独立性。大和証券は独立した大手証券会社として存在していました。大手銀行を構造的パートナーとして連れてくることは、文化的な意味で、会社が単独で立てないという認定でした。</p>
+    <p>この点で、大和の決定はPost 030が1979年の日本のオイルショック対応のために説明したGMMパターンに直接マップします：Layer A（生存）が即座の脅威にさらされているとき、Layer B（アイデンティティとプライド）は更新できます。</p>
+    <p>山一の経営陣はこの動きができませんでした。なぜなら「家族の山一」のアイデンティティが機関の存在と完全に融合していたからです。大和の経営陣——常に野村の影の中で競争してきた会社の異なる、より実用主義的な文化的配置の下で——取引ができました：生存のための独立性。簡単ではありませんでした。しかし可能でした。</p>
+
+    <div class="pullquote">
+      「大和の洞察は構造的でした：状況が必要としたものを内部で構築できませんでしたが、外部で取得できました。住友提携は敗北ではありませんでした——内部リソースだけでは解決できないガバナンス問題への建築的解決策でした。」
+    </div>
+
+    <div class="next-box">
+      <p class="next-label">Post 037 — 日興証券と山一</p>
+      <p>日興証券は野村や大和とは異なるメカニズムを使いました：山一になる恐怖を武器化して自社内の同調圧力を粉砕し、それからトラベラーズ・グループを通じて米国標準のガバナンスをインポートしました。CPMの反転——外部の脅威を使って内部のNarrative Lockを破壊する——は4事例の中で最も分析的に際立ちます。</p>
+    </div>
+  <div class="nav-post"><span><a href="/blog/035/">← Post 035</a></span><span><a href="/blog/037/">Post 037 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

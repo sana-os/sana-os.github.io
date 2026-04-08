@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daiwa and Yamaichi: importing the correction loop you cannot build | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;color:var(--blue);text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:20px;}
+h2{font-family:'Lora',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+.compare-card{border-radius:8px;padding:14px 16px;}
+.compare-card.nom{background:var(--teal-l);border-left:3px solid var(--teal);}
+.compare-card.yam{background:var(--red-l);border-left:3px solid var(--red);}
+.compare-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
+.compare-card.nom .compare-label{color:var(--teal);}
+.compare-card.yam .compare-label{color:var(--red);}
+.compare-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.compare-desc{font-size:12px;color:var(--ink2);line-height:1.65;}
+.next-box{background:var(--blue-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--blue);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.compare-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+  <div class="nav-right"><a href="/blog/036/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series">Japan · Financial Arc · Part 3 of 5</p>
+  <p class="hero-tag">Post 036 — Comparative Analysis · Financial History</p>
+  <p class="hero-date">Japan · Financial Arc</p>
+  <h1>Daiwa and Yamaichi: importing the correction loop you cannot build</h1>
+  <p class="hero-dek">Daiwa survived by recognising what it could not fix internally — and forming an alliance with Sumitomo Bank to import the external Auditor function its own culture could not generate.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Daiwa Securities in 1997 was not Nomura. It did not have Nomura's retail dominance, its vast internal capital reserves, or its "barbaric courage" culture. Daiwa had used tobashi too — the same off-balance-sheet loss-hiding mechanism that destroyed Yamaichi. Daiwa had structural weaknesses that it could not repair internally.</p>
+    <p>What Daiwa had that Yamaichi did not was the ability to recognise that it could not fix itself alone — and to import the structural capacity it lacked from outside.</p>
+
+    <h2>The RBM diagnosis: an honest account of the gap</h2>
+    <p>In RBM terms, Daiwa's position was characterised by a Supply_j (capital + earnings capacity) that was insufficient to meet Demand_j (losses requiring recognition and write-down). The gap existed. The tobashi had deferred it. By the mid-1990s, the deferral was no longer sustainable.</p>
+    <p>Nomura's solution was internal: its retail earnings could cover its losses if it executed the loss-cuts and rebuilt the client base. Daiwa did not have this internal solution available. The retail base was smaller; the corporate concentration of losses was proportionally larger; the internal earnings capacity was insufficient to absorb the write-downs and maintain adequate capital.</p>
+    <p>The honest diagnosis — which Daiwa's leadership arrived at under the pressure of the Daiwa Bank New York scandal (1995) and the accelerating financial crisis — was that the firm needed external capital injection and external governance support simultaneously. Neither alone would fix the problem. Both together could.</p>
+
+    <h2>The structural solution: importing an external Auditor</h2>
+    <p>Daiwa's response was the Sumitomo Bank alliance. In 1999, Daiwa and Sumitomo Bank (now Sumitomo Mitsui Banking Corporation) announced a comprehensive strategic alliance that eventually led to the creation of Daiwa SMBC (the joint wholesale securities operation) and a fundamental restructuring of Daiwa's business model.</p>
+    <p>In RSM terms, this was not merely a capital injection. It was the importation of an external Auditor and Integrator into a system that had been running without effective versions of either.</p>
+    <p>A bank like Sumitomo operates under credit assessment disciplines that securities firms did not: every lending decision requires documented evaluation of counterparty risk, collateral quality, and repayment probability. This discipline — applied to Daiwa's business practices through the alliance — introduced exactly the substantive verification function that Yamaichi's internal Auditor had lacked. The bank's presence created accountability that internal culture alone could not generate.</p>
+    <p>Additionally, the wholesale separation (corporate finance moved to Daiwa SMBC, retail remained in Daiwa Securities) performed a structural function: it reduced Demand_j (loss-generating corporate concentration) while the bank injection increased Supply_j (capital). Both sides of the RBM equation moved in the right direction simultaneously.</p>
+
+    <h2>GMM: sacrificing Layer B to save Layer A</h2>
+    <p>The Sumitomo alliance required Daiwa to sacrifice something significant at the Layer B level: independence. Daiwa Securities had existed as an independent major securities house. Bringing in a major bank as a structural partner was, in cultural terms, an admission that the firm could not stand on its own.</p>
+    <p>In this, Daiwa's decision maps directly onto the GMM pattern that Post 030 described for Japan's 1979 oil shock response: when Layer A (survival) is under immediate threat, Layer B (identity and pride) can be updated. The system can rewrite its cultural narrative if the survival requirement is strong enough and the leadership makes the case compellingly enough.</p>
+    <p>Yamaichi's management could not make this move because the "家族の山一" identity had fused completely with the institution's existence. Sacrificing the independence narrative would have been experienced as killing the institution before the market did. The belonging pressure was too strong to allow the Layer B update that Layer A required.</p>
+    <p>Daiwa's management — under the different, more pragmatic cultural configuration of a firm that had always competed in Nomura's shadow — could make the trade: independence for survival. It was not easy. But it was possible.</p>
+
+    <div class="pullquote">
+      "Daiwa's insight was structural: it could not build internally what the situation required, but it could acquire it externally. The Sumitomo alliance was not a defeat — it was an architectural solution to a governance problem that internal resources alone could not solve."
+    </div>
+
+    <div class="insight">
+      <strong>The structural lesson for Post 036:</strong> when an organisation's internal correction loop is insufficient — whether because the culture suppresses correction, or because the capital base is too small to absorb necessary write-downs — there is a structural alternative: import the correction capacity from outside. This requires recognising the insufficiency, which requires that the Architect function be active enough to model the gap honestly. Daiwa's leadership performed this function. Yamaichi's did not.
+    </div>
+
+    <div class="next-box">
+      <p class="next-label">Post 037 — Nikko vs Yamaichi</p>
+      <p>Nikko Securities used a different mechanism than either Nomura or Daiwa: it weaponised the fear of becoming Yamaichi to shatter its own internal conformity pressure, then imported US-standard governance through Travelers Group. The CPM inversion — using external threat to destroy internal narrative lock — is the most analytically distinctive of the four cases.</p>
+    </div>
+  <div class="nav-post"><span><a href="/blog/035/">← Post 035</a></span><span><a href="/blog/037/">Post 037 →</a></span></div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+  <span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer>
+</body></html>

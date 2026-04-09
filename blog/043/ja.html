@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>もんじゅ——機能することを許されなかった修正ループの1.1兆円のコスト | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style></head><body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+<div class="nav-right"><a href="/blog/043/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#b84040;">日本 · 災害アーク · 第3部</p>
+  <p class="hero-tag">Post 043 — 実例分析 · エネルギー政策</p>
+  <h1>もんじゅ——機能することを許されなかった修正ループの1.1兆円のコスト</h1>
+  <p class="hero-dek">15年間の停止を経て商業電力を生み出すことなく廃炉になった高速増殖原型炉。構造的な失敗はナトリウム火災ではありませんでした——1995年に修正ループを破壊したビデオ編集でした。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>1995年12月——阪神大震災の余震がまだ数えられていた同じ月——福井県敦賀市の高速増殖原型炉もんじゅでナトリウム冷却材の漏洩と火災が発生しました。物理的なイベントは原子炉炉心を脅かしませんでした。ナトリウム火災は制御できます。損傷は封じ込められました。</p>
+    <p>封じ込められなかったのは制度的対応でした。もんじゅを運転していた動力炉・核燃料開発事業団（動燃）が、公衆と規制当局への公開前に事故現場のビデオテープを編集して最もグラフィックな映像を除去したことが発覚したとき、続いたスキャンダルはナトリウム火災が壊さなかったものを破壊しました：修正ループを。</p>
+    <p>もんじゅはその後15年間電気を生み出しませんでした。約1.1兆円の公費を費やした後、1キロワット時の商業電力も生み出すことなく2016年12月に廃炉が正式決定されました。このポストは技術がなぜ失敗したかについてではありません。修正がまだ可能だったときに制度がなぜ自己修正に失敗したかについてです。</p>
+
+    <h2>構造的起源：Layer Aの不安の上に構築された「夢の原子炉」</h2>
+    <p>Post 029〜032は日本のオイルショックへの対応を記録しました：99%の輸入依存が構造的な脆弱性であるという認識と、「国産エネルギー」としての原子力への系統的な多様化。高速増殖炉はこの論理をもう一歩進めました。RBMの含意は明示的でした：永続的にSat_j = 1.0のある完全に自立したエネルギー供給。</p>
+    <p>これは単なるエンジニアリングの志向ではありませんでした。Layer Bの国家のアイデンティティとして埋め込まれました：「夢の原子炉」は日本がエネルギー自立を達成できるという技術的証明でした。ナラティブはプロジェクトのアーキテクチャ全体を構造化するほど強力でした——致命的なことに、どの省庁がそれを監督するかという選択を含めて。</p>
+
+    <h2>RSM：設計に組み込まれたExecutor欠損</h2>
+    <p>日本の商用原子力発電所は通商産業省（後の経産省）が監督していました。経産省の制度的文化は産業管理に最適化されていました：厳格な運用基準・商業的な規律・電力産業とのインターフェース。</p>
+    <p>もんじゅは「研究用原子炉」に分類されました——つまり科学技術庁（後の文部科学省）が監督しました。科学技術庁の制度的文化は学術研究に最適化されていました：長い時間軸・不確実性への許容・運用パフォーマンスのインセンティブではなく出版インセンティブ。</p>
+    <p>結果はRSMの用語で最初から構造的なExecutor欠損でした。空気中で自然発火し水と爆発的に反応するナトリウムを使用する産業施設を運転するタスクを与えられた組織は、学術研究を管理する能力のために選ばれていました。Architect機能（文部科学省所管の研究者）とExecutor機能（プラント運転者）が間違った制度的機関にあり、Integrator機能（動力炉産業の専門知識）は構造的に排除されていました。</p>
+
+    <h2>1995年のナトリウム火災：役割奪取と幽霊のObserver</h2>
+    <p>1995年12月8日、もんじゅの二次冷却ループの温度計のさや管が折損し、約700キロのナトリウムが漏洩して発火しました。火は消火されました。原子炉自体は損傷しませんでした。物理的な意味で深刻でしたが壊滅的ではありませんでした。</p>
+    <p>制度的対応は壊滅的でした。動燃が公開のために事故現場の映像を準備したとき、最も警戒すべき部分——ナトリウム燃焼の損傷の範囲を示す——が編集されました。編集されたバージョンがメディアと規制当局に公開されました。元の映像は隠蔽されました。</p>
+    <p>RSMの用語で、これはIntegrator機能（組織のコミュニケーション・管理層）がObserver機能（実際に起きたことの物理的証拠）の役割奪取を実行したことでした。Observerのアウトプット——未編集のビデオ——はAuditor（規制当局と公衆）またはDecider（政府）に届く前にIntegratorによって傍受されました。修正ループは単に遅くまたは弱かっただけではありませんでした。内側から積極的に覆されました。</p>
+    <p>編集は最終的に発覚しました。続いたスキャンダルは主にナトリウム火災についてではありませんでした——欺瞞についてでした。原子力安全委員会がもんじゅの運転許可を取り消しました。原子炉は2010年まで続く停止に入りました。</p>
+
+    <div class="pullquote">
+      「ナトリウム火災はもんじゅの二次冷却系を損傷させました。ビデオの編集はもんじゅの社会的運転許可を破壊しました。物理的な損傷は数ヶ月で修理できたかもしれません。制度的な損傷には15年かかりました——そして最終的に修復不可能であることが証明されました。」
+    </div>
+
+    <h2>CPM：問いかけを不可能にした「夢の原子炉」ナラティブ</h2>
+    <p>15年間の停止中（1995〜2010年）、もんじゅの実行可能性の根本的な再評価を妨げた構造的ダイナミクスは「夢の原子炉」ナラティブの神聖化でした。</p>
+    <p>Layer Bのアイデンティティ——「日本は技術的な卓越性によってエネルギー安全保障を達成する資源制約国家」——はオイルショック後の30年の制度的投資の上に構築されていました。高速増殖炉はそのアイデンティティの技術的王冠でした。もんじゅの実行可能性を疑うことは、エンジニアリングプロジェクトだけでなく日本の基盤的エネルギーナラティブを疑うことでした。</p>
+    <p>これはPost 032が「成功ナラティブの罠」として特定したCPMの配置です：一つの文脈（オイルショック後のエネルギー独立の推進）で正確だったナラティブが、十分な成功と神聖化の後、異なる文脈（1990〜2000年代、ウラン価格が安定していてナトリウム冷却高速炉の技術的困難が明確になってきた時代）での質問抑圧のメカニズムになりました。</p>
+    <p>組織的な結果は後継者不足でした。もんじゅを設計したエンジニアと科学者——ナトリウム冷却システムを理解し、特定の技術的トレードオフを知り、アプローチを再設計できた人々——は15年の停止期間中に退職しました。後継者はもんじゅを維持して最終的に再稼働させるという制度的使命を引き継ぎましたが、その使命がまだ適切かどうかを問うために必要だった深い文脈的理解は引き継ぎませんでした。</p>
+
+    <warning><strong>Architect崩壊状態：</strong>2010年にもんじゅが再起動されたとき、組織はプロジェクトを維持すること（手続き的にはできた）とプロジェクトが継続すべきかどうかを評価すること（後継者不足で失われた文脈的知性を必要とした）を区別できなくなっていました。Architect機能は形式的に占有されていましたが実質的に不在でした。</warning>
+
+    <h2>2010年：炉内中継装置の落下</h2>
+    <p>2010年8月、祝福されたもんじゅの再起動から3ヶ月も経たないうちに、3.3トンの炉内中継装置——原子炉容器内で燃料集合体を扱うために使用される——が落下して原子炉内に引っかかりました。回収には約1年かかり、炉内設備に大きな損傷を与えました。</p>
+    <p>このイベントは核物理の失敗ではありませんでした。機械的なメンテナンスの失敗でした：装置が通常の操作中に適切に固定されていませんでした。RSMの用語で、これは純粋なExecutor欠損でした——15年の準備期間中に開発されるべきだった運用能力がそこにありませんでした。</p>
+    <p>2010年の事故からの回復でさらなる問題が明らかになりました：検査記録が不完全または偽造であることが判明し、メンテナンスのスケジュールが怠慢にされ、組織はナトリウム冷却炉を安全に運転するために必要な基本的な運用能力を持っていることを規制当局に示すことができませんでした。</p>
+
+    <h2>2015年の規制委員会の勧告：Auditorがシステムを上書きする</h2>
+    <p>Post 038（金融ビッグバン）はガバナンス選択を説明しました：1997年を生き延びた会社は機能する修正ループを持つものでした。福島後の原子力規制委員会（NRA）の設立は同じ原則を日本の原子力セクターに導入しました。</p>
+    <p>NRAの権限は明示的に独立していました——経産省ではなく環境省に報告し、運転を禁止する権限は明確でした。RSMの用語で、それは数十年間実質的な修正ループの執行なしに動作していたセクターへの外部Auditorのインポートでした。</p>
+    <p>2015年11月、NRAはJAEA（動燃を吸収した組織）を「もんじゅを安全に運転する資質がない」として運営主体の変更を文部科学省に勧告するという異例の措置に出ました。これは技術認証の拒否ではありませんでした。構造的能力の評決でした——AuditorがExecutorが根本的にExecutor機能を果たす能力がないと宣言した。</p>
+    <p>代替組織は特定されませんでした。勧告は最終的なRBMの診断を生み出しました：Supply_capabilityはDemand_compliance（NRAの新基準）をあまりにも大きく下回っており、ギャップはいかなる実現可能な制度的再構成の中でも埋められませんでした。</p>
+
+    <h2>廃炉決定と前提条件の再調整</h2>
+    <p>2016年12月21日、政府はもんじゅの廃止措置を正式に決定しました。日本原子力産業協会の声明は正確なCPMの文書です：安定したウラン市場を考えると高速増殖炉の即座の技術的要件はないと認めながら、フランスのASTRID計画への参加へと目標をスライドさせることで「技術立国・日本は国際協力を通じた高速炉研究を継続すべき」というLayer Bのアイデンティティを完全には捨てませんでした。</p>
+    <p>構造的なガバナンスの変更も同様に正確でした：もんじゅ廃止措置推進チームの事務局は文部科学省ではなく内閣官房の下に置かれました——プロジェクトを誤管理した省庁からDecider権限を事実上剥奪し、以前のナラティブに何も負わない中央調整機関に委ねました。</p>
+
+    <div class="insight">
+      <strong>Post 043の構造的まとめ：</strong>もんじゅはナトリウム冷却高速炉が不可能だから失敗したのではありません——フランス・ロシア・中国は継続して開発しています。修正ループが1995年の重大な瞬間に無効化され（ビデオ編集）、制度的配置が最初から構造的Executor欠損を作り出し（産業プラントを管理する文部科学省）、後継者不足が正直な再評価に必要な文脈的知性を妨げ、NRAの福島後の監査が内部の修正ループが20年間隠蔽してきたものを最終的に可視化したから失敗しました。1.1兆円は機能することを許されなかった修正ループの累積コストです。
+    </div>
+  <div class="nav-post"><span><a href="/blog/042/">← Post 042</a></span><span><a href="/blog/044/">Post 044 →</a></span></div>
+</div></div></main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer></body></html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>緊急地震速報——不完全なシステムが全国的なNarrative Lockを達成した方法 | SANA OS ブログ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style></head><body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+<div class="nav-right"><a href="/blog/042/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#b84040;">日本 · 災害アーク · 第2部</p>
+  <p class="hero-tag">Post 042 — 実例分析 · 防災技術</p>
+  <h1>緊急地震速報——不完全なシステムが全国的なNarrative Lockを達成した方法</h1>
+  <p class="hero-dek">段階的なGMM管理を通じて技術的に不完全な早期警報システムを展開した方法——そして同調圧力が積極的な懐疑主義を条件付けされた全国的な従順へと変換した方法。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Post 041は阪神大震災後の4つの構造的修正で終わりました。第2の修正——機関間の地震観測データの一元化——が2007年10月から一般提供が始まった緊急地震速報（EEW）の直接的な前身でした。</p>
+    <p>EEWは技術的な成功の物語に見えます：地震の初期微動（P波）を検出し、差し迫る強い揺れ（S波）を計算し、揺れの数秒前に警報を届けるシステム。日本はこのシステムの世界で最も先進的な運用者です。</p>
+    <p>しかし、EEWがどのように実装されたかの構造的歴史——そして特に、人々が積極的に疑問を呈するシステムから全国民的な自動的従順を生み出すシステムへどのように移行したか——は分析的に注目すべきです。技術的に不完全なシステムが、精密に管理された段階的な展開と日本の同調圧力の特定のダイナミクスを通じて、社会的なNarrative Lockを達成した事例研究です。</p>
+
+    <h2>GMM：即座の一般提供を不可能にしたLayer Bのギャップ</h2>
+    <p>気象庁が2000年代初頭に機能するEEWアルゴリズムを開発したとき、問いは技術が機能するかどうかではありませんでした——重要な限界はありながらも機能しました。問いは、即座の一般提供が防ごうとした結果を生み出すかどうかでした。</p>
+    <p>日本社会のLayer B配置には特定の文化的期待が含まれていました：政府の技術は信頼できるべき。誤報を出すシステムは技術的な限界として経験されません——国家と公衆の間の暗黙の社会契約の違反として経験されます。</p>
+    <p>GMMの診断：Supply_C（技術が実際に提供できるもの）は、Demand_B（公衆の文化的期待が必要とするもの）を大幅に下回っていました。そのギャップに展開することは不安定性を生み出すでしょう——システムが必要とした保護的な従順ではなく、重要なときにシステムの正当性への積極的な疑問。</p>
+    <p>解決策は段階的な展開でした：</p>
+    <table class="data-table">
+      <thead><tr><th>フェーズ</th><th>年</th><th>範囲</th><th>GMM的論理</th></tr></thead>
+      <tbody>
+        <tr><td><strong>試験提供</strong></td><td>2004年</td><td>研究機関のみ</td><td>公衆の誤報への露出なしにアルゴリズムを較正</td></tr>
+        <tr><td><strong>先行提供</strong></td><td>2006年</td><td>設備制御のみ——エレベーター・列車・産業機械</td><td>人間が対応ループから除去された場所に展開：パニック不可能、誤報によるLayer Bへのダメージなし</td></tr>
+        <tr><td><strong>一般提供</strong></td><td>2007年</td><td>携帯電話・放送を通じた一般公衆</td><td>Layer Bの準備後：「利用の心得」が不完全性を事前に承認し、正しい期待を設定した</td></tr>
+      </tbody>
+    </table>
+    <p>2006年の「先行提供」フェーズは構造的に見事です：EEWは一般的な誤報によるLayer Bへのダメージなしに価値を実証できる領域（列車が速く止まる、エレベーターが乗客を保護する）に展開されました。システムは支持者を構築する前に実績を構築しました。</p>
+
+    <h2>RBM：3.11の地震が露出したもの</h2>
+    <p>2011年3月11日、マグニチュード9.0の東北地方太平洋沖地震は一般提供以来最大のEEWのテストを生み出しました——そして元のアルゴリズムが対処するよう設計されていなかった3つの特定のRBMのボトルネックを露出しました。</p>
+    <table class="data-table">
+      <thead><tr><th>ボトルネック</th><th>性質</th><th>何が起きたか</th></tr></thead>
+      <tbody>
+        <tr><td><strong>震源の分離</strong></td><td>論理的——処理能力</td><td>複数の同時地震が単一の巨大地震として解釈され；マグニチュードを過大評価；過剰な警報が発令された</td></tr>
+        <tr><td><strong>巨大地震の震度予測</strong></td><td>構造的——モデルの限界</td><td>同心円状の減衰モデルが500kmの断層破壊を考慮できなかった；点源から遠くても断層に近い地域での揺れを過小評価</td></tr>
+        <tr><td><strong>海域地震の検知</strong></td><td>物理的——センサー網の範囲</td><td>陸上ベースのセンサー網が海底の震源から警報までに遅延を導入；沿岸部のリードタイムを削減</td></tr>
+      </tbody>
+    </table>
+    <p>これらは実施の失敗ではありませんでした。範囲の失敗でした：システムは3.11がそうでなかったタイプの地震のために設計されていました。RBMはここで非難を割り当てません——それは需要が設計された供給を超えた場所を特定します。</p>
+
+    <h2>技術的再構築：3つの具体的な解決策</h2>
+    <div class="tech-grid">
+      <div class="tech-card"><p class="tech-year">2016年</p><p class="tech-name">IPF法</p><p class="tech-desc">確率的に同時発生する震源を分離するパーティクルフィルター（ベイズ推論）。震央推定の点源アルゴリズムを置き換えた。</p></div>
+      <div class="tech-card"><p class="tech-year">2018年</p><p class="tech-name">PLUM法</p><p class="tech-desc">波動場ベースの震度予測：推定された震央ではなく観測された波の伝播から揺れを予測。震央推定誤差を排除。</p></div>
+      <div class="tech-card"><p class="tech-year">2015年〜</p><p class="tech-name">S-net / DONET</p><p class="tech-desc">EEWシステムに統合された海底地震計ネットワーク。最初の検知点を震源に近づけることで海域地震の物理的リードタイムのボトルネックを削減。</p></div>
+    </div>
+
+    <h2>CPM：積極的な疑問から全国的なNarrative Lockへ</h2>
+    <div class="cpm-grid">
+      <div class="cpm-card"><p class="cpm-num">01</p><p class="cpm-name">積極的（2007〜08）</p><p class="cpm-desc">誤報が激しい批判を引き起こす。メディアと公衆が気象庁の能力に疑問。個々の警報の評価がまだ可能。</p></div>
+      <div class="cpm-card"><p class="cpm-num">02</p><p class="cpm-name">偽装（2008〜10）</p><p class="cpm-desc">個人的な疑念が残る。同調圧力の下で公的な従順が増加：警報が鳴るときに従わないと社会的制裁。表面の行動が内部評価から切り離される。</p></div>
+      <div class="cpm-card"><p class="cpm-num">03</p><p class="cpm-name">同化（2011年）</p><p class="cpm-desc">3.11が実際の惨事でEEWが機能するという大量の共有体験を提供。疑念が構造的に弱体化。実際の危機でのシステムの部分的な有効性が誤報の記憶を上書き。</p></div>
+      <div class="cpm-card"><p class="cpm-num">04</p><p class="cpm-name">Narrative Lock（現在）</p><p class="cpm-desc">全国的に条件付け。音が鳴れば：止まる・スマホを確認・頭を守る。「この警報は正確か？」という問いはもはや問われない。自動的な従順が社会のデフォルト。</p></div>
+    </div>
+
+    <div class="pullquote">
+      「EEWが成功したのは日本が完璧な早期警報システムを構築したからではありません——明らかにそうではない。全国的な条件付けされた従順を生み出すシステムを構築し、その従順の枠組みの中で基盤となる技術を改善したから成功しました。」
+    </div>
+
+    <div class="insight">
+      <strong>Post 043への構造的接続：</strong>EEWは日本が管理されたLayer Bのダイナミクスを通じて不完全な安全システムを国民的行動に組み込むことに成功した物語です。同じ時代に運転していた別の不完全なシステム——高速増殖原型炉もんじゅ——は、日本が異なる不完全なシステムのための制度的修正ループを維持することに失敗した物語です。両方とも阪神後でした。両方とも技術的な限界が含まれていました。違いは修正ループが機能することを許されたかどうかでした。
+    </div>
+
+    <div class="next-box">
+      <p class="next-label">Post 043 — もんじゅ廃炉</p>
+      <p>1995年12月——阪神大震災と同じ年——日本の高速増殖原型炉がナトリウム火災を起こしました。物理的なイベントは管理可能でした。証拠映像の意図的な編集を含む制度的対応が、プロジェクトを救ったかもしれない修正ループを破壊しました。原子炉はその後15年間電気を生み出さず、設計目的を達成することなく2016年に廃炉が決定されました。</p>
+    </div>
+  <div class="nav-post"><span><a href="/blog/041/">← Post 041</a></span><span><a href="/blog/043/">Post 043 →</a></span></div>
+</div></div></main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer></body></html>

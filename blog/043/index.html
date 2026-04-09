@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monju: the ¥1.1 trillion cost of a correction loop that was not allowed to function | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:20px;}
+h2{font-family:'Lora',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style></head><body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+<div class="nav-right"><a href="/blog/043/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#b84040;">Japan · Disaster Arc · Part 3 of 7</p>
+  <p class="hero-tag">Post 043 — Case Study · Energy Policy</p>
+  <h1>Monju: the ¥1.1 trillion cost of a correction loop that was not allowed to function</h1>
+  <p class="hero-dek">The prototype fast-breeder reactor that spent fifteen years in shutdown and was decommissioned without generating commercial electricity. The structural failure was not the sodium fire — it was the video editing that destroyed the correction loop in 1995.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>In December 1995 — the same month that the Kobe earthquake's aftershocks were still being counted — Japan's prototype fast-breeder reactor at Monju, Fukui Prefecture, suffered a sodium coolant leak and fire. The physical event did not threaten the reactor core. Sodium fires can be controlled. The damage was contained.</p>
+    <p>What was not contained was the institutional response. When the organisation operating Monju (the Power Reactor and Nuclear Fuel Development Corporation, 動燃) discovered that a videotape of the accident site had been edited to remove the most graphic footage before release to the public and regulators, the scandal that followed destroyed something that the sodium fire had not: the correction loop.</p>
+    <p>Monju did not generate electricity for the next fifteen years. It was formally decommissioned in December 2016, after spending approximately ¥1.1 trillion in public funds without producing a single kilowatt-hour of commercial electricity. This post is not about why the technology failed. It is about why the institution failed to correct itself when correction was still possible.</p>
+
+    <h2>The structural origin: a "dream reactor" built on a Layer A anxiety</h2>
+    <p>To understand Monju's institutional failure, you need to understand what it was built to resolve. Posts 029–032 documented Japan's response to the oil shocks: the recognition that 99% import dependency was a structural vulnerability, and the systematic diversification toward nuclear power as an "indigenous energy option."</p>
+    <p>The fast-breeder reactor took this logic one step further. A conventional reactor consumes fissile material — you put in enriched uranium and you get electricity and waste. A fast-breeder reactor, in theory, produces more fissile material than it consumes: you put in uranium or plutonium and you get electricity plus more fuel for future reactors. For a resource-scarce nation, the RBM implications were explicit: a perfectly self-sustaining energy supply with Sat_j = 1.0 in perpetuity.</p>
+    <p>This was not merely an engineering aspiration. It was embedded as a Layer B national identity: 夢の原子炉 (the dream reactor) was the technological proof that Japan could achieve energy independence. The narrative was so powerful that it structured the institutional architecture of the entire project — including, fatally, the choice of which ministry would oversee it.</p>
+
+    <h2>RSM: the Executor Deficit built into the design</h2>
+    <p>Commercial nuclear power plants in Japan were overseen by the Ministry of International Trade and Industry (MITI, later METI). MITI's institutional culture was optimised for industrial management: tight operational standards, commercial discipline, interface with the electric utility industry.</p>
+    <p>Monju was classified as a "research reactor" — which meant it was overseen by the Science and Technology Agency (later MEXT). The Science and Technology Agency's institutional culture was optimised for academic research: long timescales, tolerance for uncertainty, publication incentives rather than operational performance incentives.</p>
+    <p>The result, in RSM terms, was a structural Executor Deficit from the beginning. The organisation tasked with operating an industrial facility that used sodium — a metal that burns spontaneously in air and reacts explosively with water — had been selected for its ability to manage academic research, not industrial plant operations. The Architect function (MEXT-affiliated researchers) and the Executor function (plant operators) were in the wrong institutional bodies, and the Integrator function (power reactor industry expertise) was structurally excluded.</p>
+
+    <h2>The 1995 sodium fire: Role Capture and the phantom Observer</h2>
+    <p>On 8 December 1995, a thermocouple sheath broke in Monju's secondary cooling loop, allowing approximately 700 kilograms of sodium to leak and ignite. The fire was extinguished. The reactor itself was undamaged. The event was, in physical terms, serious but not catastrophic.</p>
+    <p>The institutional response was catastrophic. When 動燃 prepared the footage of the accident site for public release, the most alarming sections — showing the extent of the sodium burn damage — were edited out. The edited version was released to media and regulators. The original footage was concealed.</p>
+    <p>In RSM terms, this was the Integrator function (the organisation's communications and management layer) performing a Role Capture of the Observer function (the physical evidence of what had actually happened). The Observer's output — the unedited video — was intercepted before it could reach the Auditor (regulators and the public) or the Decider (the government). The correction loop was not just slow or weak. It was actively subverted from within.</p>
+    <p>The editing was eventually discovered. The resulting scandal was not primarily about the sodium fire — it was about the deception. The Nuclear Safety Commission of Japan revoked Monju's operating permission. The reactor entered a shutdown that would last until 2010.</p>
+
+    <div class="pullquote">
+      "The sodium fire damaged Monju's secondary cooling system. The video editing destroyed Monju's social operating licence. The physical damage could have been repaired in months. The institutional damage took fifteen years — and ultimately proved irreparable."
+    </div>
+
+    <h2>CPM: the "dream reactor" narrative that made questioning impossible</h2>
+    <p>During the fifteen-year shutdown (1995–2010), the structural dynamic that prevented any fundamental reassessment of Monju's viability was the sanctification of the "夢の原子炉" narrative.</p>
+    <p>The Layer B identity — "Japan is a resource-constrained nation that achieves energy security through technological excellence" — had been built over thirty years of post-oil-shock institutional investment. The fast-breeder reactor was the technological crown of that identity. To question Monju's viability was to question not just an engineering project but Japan's foundational energy narrative.</p>
+    <p>This is the CPM configuration that Post 032 identified as the "success narrative trap": a narrative that was accurate in one context (the post-oil-shock drive for energy independence) became, after sufficient success and sanctification, a Question Suppression mechanism in a different context (the 1990s and 2000s, when uranium prices were stable and the technical difficulties of sodium-cooled fast reactors were becoming clear).</p>
+    <p>The organisational consequence was Succession Deficit. The engineers and scientists who had designed Monju — who understood sodium coolant systems, who knew the specific technical tradeoffs, who could have redesigned the approach — retired over the fifteen-year shutdown period. Their replacements inherited the institutional mandate to maintain and eventually restart Monju, but not the deep contextual understanding that would have been necessary to ask whether that mandate was still appropriate.</p>
+    <warning><strong>The Architect Collapsed state:</strong> by the time Monju was restarted in 2010, the organisation could no longer distinguish between maintaining the project (which it could do procedurally) and evaluating whether the project should continue (which required the contextual intelligence that had been lost through Succession Deficit). The Architect function was formally occupied but substantively absent.</warning>
+
+    <h2>2010: the fuel handling device falls</h2>
+    <p>In August 2010, less than three months after Monju's celebrated restart, a 3.3-tonne in-vessel transfer machine (炉内中継装置) — used to handle fuel assemblies inside the reactor vessel — fell and became lodged inside the reactor. Recovery required nearly a year and caused significant damage to in-vessel equipment.</p>
+    <p>The event was not a nuclear physics failure. It was a mechanical maintenance failure: the device was improperly secured during a routine operation. In RSM terms, this was a pure Executor Deficit — the operational capability that should have been developed during fifteen years of preparation was not there. The organisation had been focused on the political event of restarting (the symbolic Decider output) rather than on the operational capability that a restart actually required.</p>
+    <p>The recovery from the 2010 incident revealed additional problems: inspection records were found to be incomplete or falsified, maintenance schedules had been neglected, and the organisation could not demonstrate to regulators that it had the basic operational competence necessary to run a sodium-cooled reactor safely.</p>
+
+    <h2>The NRA ruling of 2015: an Auditor overrides the system</h2>
+    <p>Post 038 (Financial Big Bang) described governance selection: the firms that survived 1997 were those with functioning correction loops. The post-Fukushima creation of the Nuclear Regulation Authority (NRA) introduced the same principle into Japan's nuclear sector.</p>
+    <p>The NRA's mandate was explicitly independent — it reported to the Environment Ministry rather than METI, and its authority to prohibit operation was unambiguous. In RSM terms, it was the importation of an external Auditor into a sector that had been running without substantive correction-loop enforcement for decades.</p>
+    <p>In November 2015, the NRA issued an extraordinary ruling: it recommended to MEXT that JAEA (which had absorbed 動燃) should be replaced as the operating organisation because JAEA "lacked the qualifications to safely operate Monju." This was not a technical certification refusal. It was a structural competence verdict — the Auditor declaring that the Executor was fundamentally incapable of performing the Executor function.</p>
+    <p>No replacement organisation was ever identified. The ruling produced the final RBM diagnosis: Supply_capability had fallen so far below Demand_compliance (the NRA's new standards) that the gap was not closable within any feasible institutional reconfiguration.</p>
+
+    <h2>Decommissioning and the Premise Alignment</h2>
+    <p>On 21 December 2016, the Japanese government formally decided to decommission Monju. The Japan Atomic Industrial Forum's statement at the time is a precise CPM document: it acknowledged that there was no immediate technical requirement for fast breeders given stable uranium markets, while preserving the Layer B identity ("energy-scarce Japan should continue fast reactor research through international cooperation") by pivoting to participation in France's ASTRID programme.</p>
+    <p>The structural governance change was equally precise: the Monju Decommissioning Promotion Team's secretariat was placed under the Cabinet Secretariat, not MEXT — effectively removing the Decider authority from the ministry that had mismanaged the project, and vesting it in a central coordinating body that owed nothing to the previous narrative.</p>
+
+    <div class="insight">
+      <strong>The structural summary of Post 043:</strong> Monju failed not because sodium-cooled fast reactors are impossible — France, Russia, and China continue to develop them. It failed because the correction loop was disabled at the critical moment in 1995 (video editing), the institutional configuration created a structural Executor Deficit from the beginning (MEXT managing an industrial plant), Succession Deficit prevented the contextual intelligence necessary for honest reassessment, and the NRA's post-Fukushima audit finally made visible what the internal correction loop had concealed for twenty years. The ¥1.1 trillion is the accumulated cost of a correction loop that was not allowed to function.
+    </div>
+  <div class="nav-post"><span><a href="/blog/042/">← Post 042</a></span><span><a href="/blog/044/">Post 044 →</a></span></div>
+</div></div></main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+  <span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer></body></html>

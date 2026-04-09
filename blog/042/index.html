@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earthquake Early Warning: the imperfect system that achieved nationwide Narrative Lock | SANA OS Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.82;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.88;margin-bottom:20px;}
+h2{font-family:'Lora',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style></head><body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
+<div class="nav-right"><a href="/blog/042/ja.html">日本語</a><a href="/blog/">All posts</a><a href="/">Home</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#b84040;">Japan · Disaster Arc · Part 2 of 7</p>
+  <p class="hero-tag">Post 042 — Case Study · Disaster Technology</p>
+  <h1>Earthquake Early Warning: the imperfect system that achieved nationwide Narrative Lock</h1>
+  <p class="hero-dek">How Japan deployed a technically imperfect early warning system through staged GMM management — and how conformity pressure converted active scepticism into conditioned nationwide compliance.</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Post 041 ended with four structural corrections Japan made after the Kobe earthquake. The second correction — the unification of seismic observation data across agencies — was the direct precursor to the Earthquake Early Warning system (緊急地震速報, EEW) that began public operation in October 2007.</p>
+    <p>EEW looks like a technical success story: a system that detects the initial P-wave of an earthquake, calculates the imminent stronger S-wave, and delivers warnings seconds before shaking arrives. Japan is the world's most advanced operator of such a system.</p>
+    <p>But the structural history of how EEW was implemented — and especially how it moved from a system that people actively questioned to one that produces nationwide automatic compliance — is analytically remarkable. It is a case study in how a technically imperfect system achieved societal Narrative Lock through precisely managed staged deployment and the specific dynamics of Japanese conformity pressure.</p>
+
+    <h2>GMM: the Layer B gap that made immediate public deployment impossible</h2>
+    <p>When Japan's Meteorological Agency had developed a working EEW algorithm in the early 2000s, the question was not whether the technology worked — it did, with important limitations. The question was whether immediate public deployment would produce the outcome it was designed to prevent.</p>
+    <p>The Layer B configuration of Japanese society included a specific cultural expectation: government technology should be reliable. A system that issued false alarms would not be experienced as a technical limitation — it would be experienced as a betrayal of the implicit social contract between the state and the public. The criticism would be intense, and it would erode the trust that the system needed to function when it mattered.</p>
+    <p>The GMM diagnosis: Supply_C (what the technology could actually deliver) was significantly below Demand_B (what the public's cultural expectations required). Deploying into that gap would produce instability — not the protective compliance the system needed, but an active questioning of the system's legitimacy precisely when acceptance was critical.</p>
+    <p>The solution was staged deployment. Rather than resolving the Layer B gap, the government designed around it:</p>
+    <table class="data-table">
+      <thead><tr><th>Phase</th><th>Year</th><th>Scope</th><th>GMM logic</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Test provision</strong></td><td>2004</td><td>Research institutions only</td><td>Calibrate algorithm without public exposure to false alarms</td></tr>
+        <tr><td><strong>Prior provision (先行提供)</strong></td><td>2006</td><td>Equipment control only — elevators, trains, industrial machinery</td><td>Deploy where humans are removed from the response loop: no panic possible, no Layer B damage from false alarms</td></tr>
+        <tr><td><strong>Public provision</strong></td><td>2007</td><td>General public via mobile phones and broadcast</td><td>After Layer B preparation: "利用の心得" (usage guidelines) pre-acknowledged imperfection and set correct expectations</td></tr>
+      </tbody>
+    </table>
+    <p>The 2006 "prior provision" phase is structurally elegant: EEW was deployed in a domain where it could demonstrate value (trains stop faster, elevators protect passengers) without the Layer B damage of public false alarms. The system built a track record before it built a constituency.</p>
+
+    <h2>RSM: the Role Coupling that made the system work</h2>
+    <p>EEW's production loop required three organisations to function as a single integrated system, each performing a distinct role without which the others were useless.</p>
+    <p>The Japan Meteorological Agency (JMA) held the Architect and Observer functions: developing the algorithm, running the sensors, producing the warning. But a warning that stays in JMA's database produces no protective effect. The warning had to reach people in seconds — which required the Integrator function to be performed by a completely different institutional set.</p>
+    <p>The Fire and Disaster Management Agency's J-Alert system (全国瞬時警報システム) performed the Integrator function for public infrastructure: outdoor warning speakers, municipal broadcast systems, and — critically — the interface to private communications networks. NTT DoCoMo's "Area Mail" service (launched December 2007), followed by the equivalent services from au and SoftBank, performed the Executor function for the public: delivering the distinctive warning tone to every mobile phone in an affected area simultaneously.</p>
+    <p>This Role Coupling meant that a failure in any link destroyed the entire value of the others. JMA's perfect detection was worthless if J-Alert was slow. J-Alert's perfect routing was worthless if the mobile carriers had not implemented the broadcast standard. The production loop had no redundancy — which is why the government's tax incentive for EEW receiver installation (2009) and the mandatory integration into mobile standards were not optional enhancements but structural requirements.</p>
+
+    <h2>RBM: what the 3.11 earthquake exposed</h2>
+    <p>On 11 March 2011, the magnitude 9.0 Tōhoku earthquake produced the most significant test of EEW since its public deployment — and exposed three specific RBM bottlenecks that the original algorithm had not been designed to handle.</p>
+    <p>The initial warning was issued and contributed to train stops and some protective action across the affected area. But the earthquake was not a single event in the way the algorithm assumed. It was a rupture extending approximately 500 kilometres along the fault. After the main shock, hundreds of strong aftershocks occurred across a vast area simultaneously. The point-source algorithm (Supply_j) met a demand (Demand_j) it had never been calibrated for.</p>
+    <table class="data-table">
+      <thead><tr><th>Bottleneck</th><th>Nature</th><th>What happened</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Source separation</strong></td><td>Logical — processing capacity</td><td>Multiple simultaneous earthquakes interpreted as a single giant event; overestimated magnitude; excessive warnings issued</td></tr>
+        <tr><td><strong>Large-earthquake intensity prediction</strong></td><td>Structural — model limitation</td><td>Concentric-decay model couldn't account for a 500km fault rupture; underestimated shaking in areas near the fault but distant from the point-source epicentre</td></tr>
+        <tr><td><strong>Oceanic earthquake detection</strong></td><td>Physical — sensor coverage</td><td>Land-based sensor network introduced delay between offshore rupture and warning; reduced lead time for coastal areas</td></tr>
+      </tbody>
+    </table>
+    <p>These were not failures of implementation. They were failures of scope: the system had been designed for a type of earthquake that 3.11 was not. RBM does not assign blame here — it identifies where demand exceeded designed supply, which is the accurate description of what happened.</p>
+
+    <h2>The technical rebuilding: three specific solutions</h2>
+    <div class="tech-grid">
+      <div class="tech-card"><p class="tech-year">2016</p><p class="tech-name">IPF method</p><p class="tech-desc">Particle filter (Bayesian inference) that separates simultaneous earthquake sources probabilistically. Replaced the point-source algorithm for epicentre estimation.</p></div>
+      <div class="tech-card"><p class="tech-year">2018</p><p class="tech-name">PLUM method</p><p class="tech-desc">Wave-field based intensity prediction: forecasts shaking from observed wave propagation rather than inferred epicentre. Eliminates epicentre estimation errors for intensity prediction.</p></div>
+      <div class="tech-card"><p class="tech-year">2015+</p><p class="tech-name">S-net / DONET</p><p class="tech-desc">Seafloor sensor networks integrated into the EEW system. Reduces the physical lead-time bottleneck for offshore earthquakes by moving the first detection point closer to the source.</p></div>
+    </div>
+
+    <h2>CPM: from active questioning to nationwide Narrative Lock</h2>
+    <p>The most analytically distinctive feature of EEW's history is the trajectory of public cognitive response — from active criticism to what is now effectively unconditional compliance.</p>
+    <div class="cpm-grid">
+      <div class="cpm-card"><p class="cpm-num">01</p><p class="cpm-name">Active (2007–2008)</p><p class="cpm-desc">False alarms trigger fierce criticism. Media and public question JMA's competence. Architect function under threat. Individual evaluation of each warning still possible.</p></div>
+      <div class="cpm-card"><p class="cpm-num">02</p><p class="cpm-name">Camouflaged (2008–2010)</p><p class="cpm-desc">Private doubts remain. Public compliance increases under conformity pressure: not complying when the warning sounds draws social sanction. Surface behaviour decoupled from internal evaluation.</p></div>
+      <div class="cpm-card"><p class="cpm-num">03</p><p class="cpm-name">Assimilating (2011)</p><p class="cpm-desc">3.11 provides mass shared experience of EEW functioning in a real catastrophe. Doubts structurally undermined. The system's partial effectiveness in the actual crisis overrides memory of false alarms.</p></div>
+      <div class="cpm-card"><p class="cpm-num">04</p><p class="cpm-name">Narrative Lock (now)</p><p class="cpm-desc">Conditioned nationwide. When the tone sounds: stop, check phone, protect head. The question "is this warning accurate?" is no longer asked. Automatic compliance is the societal default.</p></div>
+    </div>
+    <p>The mechanism that produced this transition was not primarily the technical improvements (which are real and significant). It was the combination of Japanese conformity pressure with the specific design choice of the warning tone. The J-Alert chime is unmistakable and urgent — it activates survival compression immediately. Once in survival compression, the individual calculates risk by proximity: complying with the warning costs seconds; ignoring it and being wrong costs everything. The asymmetry drives compliance even in the presence of false-alarm history.</p>
+    <p>The international dimension reinforced the domestic Narrative Lock from a different direction. Japan's EEW system became a global standard — referenced by the World Economic Forum and the World Bank as a model for disaster risk reduction. This international recognition gave the domestic Deciders (politicians and bureaucrats who approved the observation network budgets) a Layer B incentive independent of the system's direct protective value: maintaining Japan's identity as 防災先進国 (disaster preparedness leader) required sustained investment regardless of its domestic cost-benefit calculation.</p>
+
+    <div class="pullquote">
+      "EEW succeeded not because Japan built a perfect early warning system — it demonstrably isn't. It succeeded because Japan built a system that produced nationwide conditioned compliance, and then improved the underlying technology within that compliance framework."
+    </div>
+
+    <div class="insight">
+      <strong>The structural connection to Post 043:</strong> EEW is the story of how Japan successfully embedded an imperfect safety system into national behaviour through managed Layer B dynamics. Monju — the prototype fast-breeder reactor that was operating in the same era — is the story of how Japan failed to maintain the institutional correction loop for a different imperfect system. Both were post-Kobe. Both involved technical limitations. The difference was whether the correction loop was allowed to function.
+    </div>
+
+    <div class="next-box">
+      <p class="next-label">Post 043 — Monju</p>
+      <p>In December 1995 — the same year as the Kobe earthquake — Japan's prototype fast-breeder reactor suffered a sodium fire. The physical event was manageable. The institutional response — including the deliberate editing of evidence footage — destroyed the correction loop that might have saved the project. The reactor would not generate electricity for another fifteen years, and was decommissioned in 2016 without ever achieving its design purpose.</p>
+    </div>
+  <div class="nav-post"><span><a href="/blog/041/">← Post 041</a></span><span><a href="/blog/043/">Post 043 →</a></span></div>
+</div></div></main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS · sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">← Blog</a></span>
+  <span class="footer-copy">Understanding is not agreement.</span>
+</div></div></footer></body></html>

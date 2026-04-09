@@ -1,314 +1,40 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — SANA OS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.75;}
-a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
-.container{max-width:720px;margin:0 auto;padding:0 28px;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
-.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
-.nav-back{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-back a{color:var(--amber);}
-.hero{padding:100px 0 48px;border-bottom:1px solid var(--border);}
-.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
-.hero h1{font-family:'Lora',serif;font-size:clamp(26px,4vw,38px);font-weight:400;line-height:1.22;color:var(--ink);margin-bottom:14px;}
-.hero p{color:var(--ink3);font-size:15px;font-style:italic;}
-.posts{padding:48px 0 96px;}
-.post-card{display:block;padding:24px 0;border-bottom:1px solid var(--border);transition:padding-left .15s;}
-.post-card:hover{padding-left:6px;text-decoration:none;}
-.post-meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--ink3);text-transform:uppercase;margin-bottom:8px;display:flex;gap:14px;flex-wrap:wrap;}
-.post-title{font-family:'Lora',serif;font-size:clamp(16px,2.4vw,20px);font-weight:400;color:var(--ink);line-height:1.35;margin-bottom:5px;}
-.post-dek{font-size:13px;color:var(--ink3);line-height:1.6;}
-.post-langs{display:flex;gap:8px;margin-top:9px;}
-.lang-chip{font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 9px;border-radius:4px;background:var(--bg2);border:1px solid var(--border2);color:var(--ink3);}
-footer{padding:28px 0;border-top:1px solid var(--border);}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
-.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
-@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 36px;}}
-</style></head><body>
-<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div>
-<div class="nav-back"><a href="/">← Home</a></div></nav>
-<main>
-<div class="hero"><div class="container">
-<p class="hero-tag">SANA OS Blog</p>
-<h1>Notes on structure,<br>dialogue, and alignment.</h1>
-<p>Thirty-eight posts. One question: why does dialogue break — and what can we do about it?</p>
-</div></div>
-<div class="posts"><div class="container">
-    <a class="post-card" href="/blog/001/">
-      <div class="post-meta"><span>Post 001</span><span>2025</span><span>Origin</span></div>
-      <p class="post-title">Why dialogue drifts</p>
-      <p class="post-dek">SANA OS誕生の記録</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/002/">
-      <div class="post-meta"><span>Post 002</span><span>2025</span><span>Variable X</span></div>
-      <p class="post-title">Why we cannot resist deciding who is to blame</p>
-      <p class="post-dek">なぜ私たちは「犯人」を決めつけずにいられないのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/003/">
-      <div class="post-meta"><span>Post 003</span><span>2025</span><span>Three Layers</span></div>
-      <p class="post-title">Why people follow the atmosphere</p>
-      <p class="post-dek">なぜ、人は「法律」よりも「職場の空気」を優先するのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/004/">
-      <div class="post-meta"><span>Post 004</span><span>2025</span><span>Worksheet 01</span></div>
-      <p class="post-title">Why the most rational meetings end in deadlock</p>
-      <p class="post-dek">なぜ「正しい会議」ほど、決裂するのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/005/">
-      <div class="post-meta"><span>Post 005</span><span>2025</span><span>Worksheet 02</span></div>
-      <p class="post-title">Before you decide you are weak</p>
-      <p class="post-dek">「自分が弱い」と思い込む前に</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/006/">
-      <div class="post-meta"><span>Post 006</span><span>2025</span><span>Worksheet 03</span></div>
-      <p class="post-title">Why logically correct reforms die</p>
-      <p class="post-dek">論理的に正しい改革が、なぜ「現場」で死ぬのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/007/">
-      <div class="post-meta"><span>Post 007</span><span>2025</span><span>Groupthink</span></div>
-      <p class="post-title">Why appointing a devil's advocate never fixes groupthink</p>
-      <p class="post-dek">なぜ「あえて反対意見を言う人」を置いても、チームは救われないのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/008/">
-      <div class="post-meta"><span>Post 008</span><span>2025</span><span>Dream Team</span></div>
-      <p class="post-title">Why the dream team produces nothing new</p>
-      <p class="post-dek">なぜ「ドリームチーム」から、凡庸なアイデアすら出ないのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/009/">
-      <div class="post-meta"><span>Post 009</span><span>2025</span><span>RBM · RSM</span></div>
-      <p class="post-title">Why adding people makes projects worse</p>
-      <p class="post-dek">なぜ「人手を増やしたプロジェクト」ほど、不祥事や隠蔽が起きるのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/010/">
-      <div class="post-meta"><span>Post 010</span><span>2025</span><span>Pluralistic Ignorance</span></div>
-      <p class="post-title">Why everyone disagrees but nobody says so</p>
-      <p class="post-dek">なぜ「全員が反対」なのに、プロジェクトは止まらないのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/011/">
-      <div class="post-meta"><span>Post 011</span><span>2025</span><span>Moral Compression</span></div>
-      <p class="post-title">Why righteous anger becomes so cruel</p>
-      <p class="post-dek">なぜ「正義感」は、これほどまで残酷になれるのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/012/">
-      <div class="post-meta"><span>Post 012</span><span>2025</span><span>Frameworks</span></div>
-      <p class="post-title">Reading the world's health</p>
-      <p class="post-dek">世界の「健康状態」を数値化する</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/013/">
-      <div class="post-meta"><span>Post 013</span><span>2025</span><span>History Mystery</span></div>
-      <p class="post-title">Why rational people kept burning witches</p>
-      <p class="post-dek">なぜ、理性的な人々が「魔女」を焼き続けたのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/014/">
-      <div class="post-meta"><span>Post 014</span><span>2025</span><span>Zero-Doubt</span></div>
-      <p class="post-title">Why SANA OS begins without doubt</p>
-      <p class="post-dek">なぜSANAは「疑うこと」を禁じているのか？</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/015/">
-      <div class="post-meta"><span>Post 015</span><span>2025</span><span>Understanding ≠ Agreement</span></div>
-      <p class="post-title">You can understand your opponent without agreeing</p>
-      <p class="post-dek">敵を「理解」しても、「同意」する必要はない</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/016/">
-      <div class="post-meta"><span>Post 016</span><span>2026</span><span>Case Study</span></div>
-      <p class="post-title">Why 'justified culling' was ruled illegal</p>
-      <p class="post-dek">砂川ヒグマ訴訟</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/017/">
-      <div class="post-meta"><span>Post 017</span><span>2026</span><span>Case Study · Subprime</span></div>
-      <p class="post-title">The 2008 crisis was not caused by greed</p>
-      <p class="post-dek">2008年の危機は強欲が原因ではなかった</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/018/">
-      <div class="post-meta"><span>Post 018</span><span>2026</span><span>Case Study · Lehman</span></div>
-      <p class="post-title">Inside Lehman Brothers</p>
-      <p class="post-dek">リーマン破綻の解剖</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/019/">
-      <div class="post-meta"><span>Post 019</span><span>2026</span><span>Case Study · KDDI</span></div>
-      <p class="post-title">Why a ¥246bn fraud ran for seven years</p>
-      <p class="post-dek">なぜ2,461億円の不正が7年間見逃されたのか</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/020/">
-      <div class="post-meta"><span>Post 020</span><span>2026</span><span>Comparative Analysis</span></div>
-      <p class="post-title">The same failure, twice</p>
-      <p class="post-dek">同じ失敗が、二度</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/021/">
-      <div class="post-meta"><span>Post 021</span><span>2026</span><span>Framework Guide</span></div>
-      <p class="post-title">A beginner's guide to reading organisational failure</p>
-      <p class="post-dek">組織分析入門ガイド</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/022/">
-      <div class="post-meta"><span>Post 022</span><span>2026</span><span>Risk Management</span></div>
-      <p class="post-title">Preventing deep organisational collapse</p>
-      <p class="post-dek">組織の深層崩壊を防ぐ</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/023/">
-      <div class="post-meta"><span>Post 023</span><span>2026</span><span>Case Study · Financial Crime</span></div>
-      <p class="post-title">Why a ¥100m check fraud bypassed every layer</p>
-      <p class="post-dek">なぜ約1億円の小切手詐欺がすべての層をバイパスできたのか</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/024/">
-      <div class="post-meta"><span>Post 024</span><span>2026</span><span>Case Study · Pyramid Fraud</span></div>
-      <p class="post-title">The structure that never changes</p>
-      <p class="post-dek">変わらない構造</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/025/">
-      <div class="post-meta"><span>Post 025</span><span>2026</span><span>Case Study · Financial Fraud</span></div>
-      <p class="post-title">¥85 billion in mud: World Ocean Farm</p>
-      <p class="post-dek">850億円と泥水</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/026/">
-      <div class="post-meta"><span>Post 026</span><span>2026</span><span>Case Study · Crypto Fraud</span></div>
-      <p class="post-title">OneCoin: when the compliance officer launders the money</p>
-      <p class="post-dek">OneCoin：コンプライアンス責任者が資金を洗浄するとき</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/027/">
-      <div class="post-meta"><span>Post 027</span><span>2026</span><span>Comparative Analysis · Applied</span></div>
-      <p class="post-title">Shrimp and cheques: the same structural bug</p>
-      <p class="post-dek">エビと小切手——同じ「システムのバグ」</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/028/">
-      <div class="post-meta"><span>Post 028</span><span>2026</span><span>Strategic Framework</span></div>
-      <p class="post-title">Rebuilding the defence</p>
-      <p class="post-dek">防衛の再設計</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/029/">
-      <div class="post-meta"><span>Post 029</span><span>2026</span><span>Case Study · Economic History</span></div>
-      <p class="post-title">The 1973 oil shock</p>
-      <p class="post-dek">第一次オイルショック（1973年）</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/030/">
-      <div class="post-meta"><span>Post 030</span><span>2026</span><span>Case Study · Economic History</span></div>
-      <p class="post-title">The 1979 oil shock: why Japan succeeded where the US failed</p>
-      <p class="post-dek">第二次オイルショック（1979年）</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/031/">
-      <div class="post-meta"><span>Post 031</span><span>2026</span><span>Case Study · Resource Diplomacy</span></div>
-      <p class="post-title">Arabian Oil: Japan's only 'rising sun oilfield'</p>
-      <p class="post-dek">アラビア石油：日本唯一の「日の丸油田」</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/032/">
-      <div class="post-meta"><span>Post 032</span><span>2026</span><span>Strategic Analysis · Industrial History</span></div>
-      <p class="post-title">Japan's energy success — and the success that became a constraint</p>
-      <p class="post-dek">日本の省エネ成功体験</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/033/">
-      <div class="post-meta"><span>Post 033</span><span>2026</span><span>Case Study · Infrastructure Policy</span></div>
-      <p class="post-title">Why Japan could not build a hub port</p>
-      <p class="post-dek">日本はなぜハブ港を作れなかったのか</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/034/">
-      <div class="post-meta"><span>Post 034</span><span>2026</span><span>Case Study · Financial History</span></div>
-      <p class="post-title">Yamaichi Securities: why the most powerful firm died in a single night</p>
-      <p class="post-dek">山一証券破綻——なぜ名門は一夜で消えたか</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/035/">
-      <div class="post-meta"><span>Post 035</span><span>2026</span><span>Comparative Analysis · Financial History</span></div>
-      <p class="post-title">Nomura and Yamaichi: the structure of 'barbaric courage'</p>
-      <p class="post-dek">野村証券と山一——生き残った構造</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/036/">
-      <div class="post-meta"><span>Post 036</span><span>2026</span><span>Comparative Analysis · Financial History</span></div>
-      <p class="post-title">Daiwa and Yamaichi: importing the correction loop you cannot build</p>
-      <p class="post-dek">大和証券と山一——生き残った構造</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/037/">
-      <div class="post-meta"><span>Post 037</span><span>2026</span><span>Comparative Analysis · Financial History</span></div>
-      <p class="post-title">Nikko and Yamaichi: breaking the lock before rebuilding</p>
-      <p class="post-dek">日興証券と山一——生き残った構造</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-
-    <a class="post-card" href="/blog/038/">
-      <div class="post-meta"><span>Post 038</span><span>2026</span><span>Strategic Synthesis · Financial History</span></div>
-      <p class="post-title">Financial Big Bang: what the comparison of four firms reveals</p>
-      <p class="post-dek">金融ビッグバン——三社の比較が教えた「パラダイムシフトの正体」</p>
-      <div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div>
-    </a>
-</div></div>
-</main>
-<footer><div class="container"><div class="footer-inner">
-<span class="footer-copy">SANA OS · sana-os.org</span>
-<span class="footer-copy"><a href="/" style="color:var(--amber);">← Home</a></span>
-<span class="footer-copy">Understanding is not agreement.</span>
-</div></div></footer>
-</body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog — SANA OS</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.75;}a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}.container{max-width:720px;margin:0 auto;padding:0 28px;}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}.nav-back{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-back a{color:var(--amber);}.hero{padding:100px 0 48px;border-bottom:1px solid var(--border);}.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}.hero h1{font-family:'Lora',serif;font-size:clamp(26px,4vw,38px);font-weight:400;line-height:1.22;color:var(--ink);margin-bottom:14px;}.hero p{color:var(--ink3);font-size:15px;font-style:italic;}.posts{padding:48px 0 96px;}.post-card{display:block;padding:24px 0;border-bottom:1px solid var(--border);transition:padding-left .15s;}.post-card:hover{padding-left:6px;text-decoration:none;}.post-meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--ink3);text-transform:uppercase;margin-bottom:8px;display:flex;gap:14px;flex-wrap:wrap;}.post-title{font-family:'Lora',serif;font-size:clamp(16px,2.4vw,20px);font-weight:400;color:var(--ink);line-height:1.35;margin-bottom:5px;}.post-dek{font-size:13px;color:var(--ink3);line-height:1.6;}.post-langs{display:flex;gap:8px;margin-top:9px;}.lang-chip{font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 9px;border-radius:4px;background:var(--bg2);border:1px solid var(--border2);color:var(--ink3);}footer{padding:28px 0;border-top:1px solid var(--border);}.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 36px;}}</style></head><body><nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ Blog</span></div><div class="nav-back"><a href="/">← Home</a></div></nav><main><div class="hero"><div class="container"><p class="hero-tag">SANA OS Blog</p><h1>Notes on structure,<br>dialogue, and alignment.</h1><p>Thirty-nine posts. One question: why does dialogue break — and what can we do about it?</p></div></div><div class="posts"><div class="container">
+    <a class="post-card" href="/blog/001/"><div class="post-meta"><span>Post 001</span><span>2025</span><span>Origin</span></div><p class="post-title">Why dialogue drifts</p><p class="post-dek">SANA OS誕生の記録</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/002/"><div class="post-meta"><span>Post 002</span><span>2025</span><span>Variable X</span></div><p class="post-title">Why we cannot resist deciding who is to blame</p><p class="post-dek">なぜ私たちは「犯人」を決めつけずにいられないのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/003/"><div class="post-meta"><span>Post 003</span><span>2025</span><span>Three Layers</span></div><p class="post-title">Why people follow the atmosphere</p><p class="post-dek">なぜ、人は「法律」よりも「職場の空気」を優先するのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/004/"><div class="post-meta"><span>Post 004</span><span>2025</span><span>Worksheet 01</span></div><p class="post-title">Why the most rational meetings end in deadlock</p><p class="post-dek">なぜ「正しい会議」ほど、決裂するのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/005/"><div class="post-meta"><span>Post 005</span><span>2025</span><span>Worksheet 02</span></div><p class="post-title">Before you decide you are weak</p><p class="post-dek">「自分が弱い」と思い込む前に</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/006/"><div class="post-meta"><span>Post 006</span><span>2025</span><span>Worksheet 03</span></div><p class="post-title">Why logically correct reforms die</p><p class="post-dek">論理的に正しい改革が、なぜ「現場」で死ぬのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/007/"><div class="post-meta"><span>Post 007</span><span>2025</span><span>Groupthink</span></div><p class="post-title">Why appointing a devil's advocate never fixes groupthink</p><p class="post-dek">なぜ「あえて反対意見を言う人」を置いても、チームは救われないのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/008/"><div class="post-meta"><span>Post 008</span><span>2025</span><span>Dream Team</span></div><p class="post-title">Why the dream team produces nothing new</p><p class="post-dek">なぜ「ドリームチーム」から、凡庸なアイデアすら出ないのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/009/"><div class="post-meta"><span>Post 009</span><span>2025</span><span>RBM · RSM</span></div><p class="post-title">Why adding people makes projects worse</p><p class="post-dek">なぜ「人手を増やしたプロジェクト」ほど、不祥事や隠蔽が起きるのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/010/"><div class="post-meta"><span>Post 010</span><span>2025</span><span>Pluralistic Ignorance</span></div><p class="post-title">Why everyone disagrees but nobody says so</p><p class="post-dek">なぜ「全員が反対」なのに、プロジェクトは止まらないのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/011/"><div class="post-meta"><span>Post 011</span><span>2025</span><span>Moral Compression</span></div><p class="post-title">Why righteous anger becomes so cruel</p><p class="post-dek">なぜ「正義感」は、これほどまで残酷になれるのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/012/"><div class="post-meta"><span>Post 012</span><span>2025</span><span>Frameworks</span></div><p class="post-title">Reading the world's health</p><p class="post-dek">世界の「健康状態」を数値化する</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/013/"><div class="post-meta"><span>Post 013</span><span>2025</span><span>History Mystery</span></div><p class="post-title">Why rational people kept burning witches</p><p class="post-dek">なぜ、理性的な人々が「魔女」を焼き続けたのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/014/"><div class="post-meta"><span>Post 014</span><span>2025</span><span>Zero-Doubt</span></div><p class="post-title">Why SANA OS begins without doubt</p><p class="post-dek">なぜSANAは「疑うこと」を禁じているのか？</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/015/"><div class="post-meta"><span>Post 015</span><span>2025</span><span>Understanding ≠ Agreement</span></div><p class="post-title">You can understand your opponent without agreeing</p><p class="post-dek">敵を「理解」しても、「同意」する必要はない</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/016/"><div class="post-meta"><span>Post 016</span><span>2026</span><span>Case Study</span></div><p class="post-title">Why 'justified culling' was ruled illegal</p><p class="post-dek">砂川ヒグマ訴訟</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/017/"><div class="post-meta"><span>Post 017</span><span>2026</span><span>Case Study · Subprime</span></div><p class="post-title">The 2008 crisis was not caused by greed</p><p class="post-dek">2008年の危機は強欲が原因ではなかった</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/018/"><div class="post-meta"><span>Post 018</span><span>2026</span><span>Case Study · Lehman</span></div><p class="post-title">Inside Lehman Brothers</p><p class="post-dek">リーマン破綻の解剖</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/019/"><div class="post-meta"><span>Post 019</span><span>2026</span><span>Case Study · KDDI</span></div><p class="post-title">Why a ¥246bn fraud ran for seven years</p><p class="post-dek">なぜ2,461億円の不正が7年間見逃されたのか</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/020/"><div class="post-meta"><span>Post 020</span><span>2026</span><span>Comparative Analysis</span></div><p class="post-title">The same failure, twice</p><p class="post-dek">同じ失敗が、二度</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/021/"><div class="post-meta"><span>Post 021</span><span>2026</span><span>Framework Guide</span></div><p class="post-title">A beginner's guide to reading organisational failure</p><p class="post-dek">組織分析入門ガイド</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/022/"><div class="post-meta"><span>Post 022</span><span>2026</span><span>Risk Management</span></div><p class="post-title">Preventing deep organisational collapse</p><p class="post-dek">組織の深層崩壊を防ぐ</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/023/"><div class="post-meta"><span>Post 023</span><span>2026</span><span>Case Study · Financial Crime</span></div><p class="post-title">Why a ¥100m check fraud bypassed every layer</p><p class="post-dek">なぜ約1億円の小切手詐欺がすべての層をバイパスできたのか</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/024/"><div class="post-meta"><span>Post 024</span><span>2026</span><span>Case Study · Pyramid Fraud</span></div><p class="post-title">The structure that never changes</p><p class="post-dek">変わらない構造</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/025/"><div class="post-meta"><span>Post 025</span><span>2026</span><span>Case Study · Financial Fraud</span></div><p class="post-title">¥85 billion in mud: World Ocean Farm</p><p class="post-dek">850億円と泥水</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/026/"><div class="post-meta"><span>Post 026</span><span>2026</span><span>Case Study · Crypto Fraud</span></div><p class="post-title">OneCoin: when the compliance officer launders the money</p><p class="post-dek">OneCoin：コンプライアンス責任者が資金を洗浄するとき</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/027/"><div class="post-meta"><span>Post 027</span><span>2026</span><span>Comparative Analysis · Applied</span></div><p class="post-title">Shrimp and cheques: the same structural bug</p><p class="post-dek">エビと小切手——同じ「システムのバグ」</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/028/"><div class="post-meta"><span>Post 028</span><span>2026</span><span>Strategic Framework</span></div><p class="post-title">Rebuilding the defence</p><p class="post-dek">防衛の再設計</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/029/"><div class="post-meta"><span>Post 029</span><span>2026</span><span>Case Study · Economic History</span></div><p class="post-title">The 1973 oil shock</p><p class="post-dek">第一次オイルショック（1973年）</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/030/"><div class="post-meta"><span>Post 030</span><span>2026</span><span>Case Study · Economic History</span></div><p class="post-title">The 1979 oil shock: why Japan succeeded where the US failed</p><p class="post-dek">第二次オイルショック（1979年）</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/031/"><div class="post-meta"><span>Post 031</span><span>2026</span><span>Case Study · Resource Diplomacy</span></div><p class="post-title">Arabian Oil: Japan's only 'rising sun oilfield'</p><p class="post-dek">アラビア石油：日本唯一の「日の丸油田」</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/032/"><div class="post-meta"><span>Post 032</span><span>2026</span><span>Strategic Analysis · Industrial History</span></div><p class="post-title">Japan's energy success — and the success that became a constraint</p><p class="post-dek">日本の省エネ成功体験</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/033/"><div class="post-meta"><span>Post 033</span><span>2026</span><span>Case Study · Infrastructure Policy</span></div><p class="post-title">Why Japan could not build a hub port</p><p class="post-dek">日本はなぜハブ港を作れなかったのか</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/034/"><div class="post-meta"><span>Post 034</span><span>2026</span><span>Case Study · Financial History</span></div><p class="post-title">Yamaichi Securities: why the most powerful firm died in a single night</p><p class="post-dek">山一証券破綻——なぜ名門は一夜で消えたか</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/035/"><div class="post-meta"><span>Post 035</span><span>2026</span><span>Comparative Analysis · Financial History</span></div><p class="post-title">Nomura and Yamaichi: the structure of 'barbaric courage'</p><p class="post-dek">野村証券と山一——生き残った構造</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/036/"><div class="post-meta"><span>Post 036</span><span>2026</span><span>Comparative Analysis · Financial History</span></div><p class="post-title">Daiwa and Yamaichi: importing the correction loop you cannot build</p><p class="post-dek">大和証券と山一——生き残った構造</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/037/"><div class="post-meta"><span>Post 037</span><span>2026</span><span>Comparative Analysis · Financial History</span></div><p class="post-title">Nikko and Yamaichi: breaking the lock before rebuilding</p><p class="post-dek">日興証券と山一——生き残った構造</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/038/"><div class="post-meta"><span>Post 038</span><span>2026</span><span>Strategic Synthesis · Financial History</span></div><p class="post-title">Financial Big Bang: what the comparison of four firms reveals</p><p class="post-dek">金融ビッグバン——三社の比較が教えた「パラダイムシフトの正体」</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a>
+    <a class="post-card" href="/blog/039/"><div class="post-meta"><span>Post 039</span><span>2026</span><span>Case Study · Political Economy</span></div><p class="post-title">Postal privatisation: ¥350 trillion and the election that simplified everything</p><p class="post-dek">郵政民営化——350兆円と、すべてを単純化した選挙</p><div class="post-langs"><span class="lang-chip">EN</span><span class="lang-chip">日本語</span></div></a></div></div></main><footer><div class="container"><div class="footer-inner"><span class="footer-copy">SANA OS · sana-os.org</span><span class="footer-copy"><a href="/" style="color:var(--amber);">← Home</a></span><span class="footer-copy">Understanding is not agreement.</span></div></div></footer></body></html>

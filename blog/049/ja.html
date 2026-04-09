@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本の洋上風力——2019年のガバナンスのブレークスルーと残るボトルネック | SANA OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/049/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#2a7a5e;">日本 &middot; エネルギー政策アーク &middot; 第2部</p>
+  <p class="hero-tag">Post 049 &mdash; 実例分析 &middot; エネルギー政策</p>
+  <h1>日本の洋上風力——2019年のガバナンスのブレークスルーと残るボトルネック</h1>
+  <p class="hero-dek">2019年の海域利用法がプロジェクトファイナンスが必要とする30年間の海域使用権を作り出すまで、日本の商業的な洋上風力はほぼゼロでした。ガバナンスアーキテクチャは今や存在します。残るのは物理的な供給制約——SEP船・基地港湾・系統——です。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Post 048は日本のエネルギー転換における繰り返し現れる構造的特徴を特定しました：新しいエネルギー源はそれらのリソースがどのように管理されるかに正当な利害を持つ既存ユーザーとリソースを共有することを必要とします。地熱については、共有リソースは地下熱であり、既存ユーザーは温泉コミュニティであり、ガバナンスの失敗は仲介できたかもしれない不在のIntegrator機関でした。</p>
+    <p>洋上風力は異なるリソース（海面とその上の空域）、異なる既存ユーザー（漁業協同組合）、そして異なるガバナンスアーキテクチャを含みます——日本が2019年の再エネ海域利用法から始まる特定の歴史的シーケンスを通じて構築したもの。しかし根本的な構造的課題は同じです：既存ユーザーが依存する価値を破壊することなく、共有リソースの大きな新しい使用をどのように導入するか？</p>
+    <p>日本がこの問いにどのように答えたか——そしてそれに答えられなかった特定の方法——がPost 049の主題です。</p>
+
+    <h2>GMM：2019年まですべての開発を妨げたガバナンスのギャップ</h2>
+    <p>洋上風力はガバナンスの質を開発が実際に起きるかどうかの主要な決定要因にする特定の資本構造を持っています。単一の大型洋上風力タービンは数十億円のコストがかかります。商業的な洋上風力ファームは数百億から数千億円の投資を表しています。これらの投資は長期的なリスク評価を行っている銀行や機関投資家からの資金調達を必要とします。彼らが尋ねる根本的な問いは：開発者は投資を返済するのに十分な期間、海域への保証されたアクセスを持っているか？</p>
+    <p>2019年以前、日本での答えは：いいえ、でした。日本には洋上風力設備のための海域の長期使用を具体的に管理する全国的な法律がありませんでした。タービンを設置したい開発者は都道府県の条例のもとで使用許可を申請できましたが、これらの許可は通常3〜5年の有効期間で設定されており——プロジェクトファイナンスが必要とする20年以上の操業期間にはほど遠い。2000億円の洋上風力投資を5年間の使用許可で評価している銀行は、資産が負債を賄うのに十分な収益を生み出す前に解体を要求されるかもしれないプロジェクトを評価しています。銀行は資金を提供しません。プロジェクトは起きません。</p>
+    <p>これが2010年代の大部分を通じた日本の洋上風力の状態でした。英国がギガワットの洋上風力容量を展開している間、デンマークとドイツが洋上電力のコストを化石燃料発電のレベルに引き下げる設備を開発している間、日本は約70メガワットの洋上風力——主に小規模な実証プロジェクト——を持ち、商業規模のパイプラインを持ちませんでした。ガバナンスのギャップがこの遅延の近因でした。</p>
+    <p>2019年の再エネ海域利用法はGMMのブレークスルーでした。それは同時に3つのことを確立しました：洋上風力開発のための「促進区域」を指定する国の権限；それらの区域で開発者を選定するための競争的な入札プロセス；そして選定された開発者のための保証された30年間の海域使用権。これら3つの要素が合わさってプロジェクトファイナンスのための最低限のガバナンスアーキテクチャを構成しました。</p>
+    <p>法律の制度的アーキテクチャも注目に値します：エネルギー政策を管轄する経産省と、港湾と沿岸地域を管轄する国土交通省の共管として運営されました。この省庁間の協力——時に管轄権を巡って競合する機関——はそれ自体ガバナンスの達成であり、開発者が潜在的に矛盾する要件を持つ2つの別々の承認プロセスを管理することなくナビゲートできる方法で規制の枠組みを統合しました。</p>
+
+    <h2>歴史的基盤：701年からの海のコモンズガバナンス</h2>
+    <p>洋上風力の特定の制度的課題——何世紀もの間海のアクセスを管理してきた漁業協同組合があるシステムに新しい大規模な海の使用を導入すること——は日本の海ガバナンスの歴史的深さへの言及なしには理解できません。</p>
+    <p>日本の沿岸漁業管理枠組みは701年の大宝律令に遡り、「山川藪澤之利、公私共之」——自然資源のコモンズは純粋な国家や純粋な私的支配ではなく共同管理を必要とするという認識——という原則を確立しました。1741年、徳川幕府は今日まで沿岸漁業を支配する運用原則を定式化しました：「磯猟は地付根付次第、沖は入会」——沿岸水域は地元の漁業コミュニティの優先的な領域であり、沖合の水域はコモンズとして管理されます。</p>
+    <p>漁業コミュニティ自体がますます洗練された自己ガバナンスを発展させました。1816年、東京湾周辺の44の漁村の代表が「内湾漁業議定一札」に署名しました——漁業アクセスを管理し、破壊的な新しい漁法を禁止し、年次会合を通じて紛争を解決するための自主的な枠組み。これはコミュニティが設計した役割システムでした。</p>
+    <p>Post 047は明治政府が1875年に海を国有化し既存の使用権を無視した手数料構造を課そうとすることでこのシステムをほぼ破壊したことを示しました。その結果生じた紛争・対立・コミュニティの崩壊は1年以内に政策の撤回を強いました。教訓——海ガバナンスシステムは既存ユーザーと共に構築されなければならず、彼らの上に課されることはできない——は1886年の漁業組合準則に符号化され、日本の沿岸管理の基本的な原則になりました。</p>
+    <p>この歴史的深さが2019年の法律が洋上風力開発の法的要件として漁業協同組合の「協議会」プロセスへの参加を義務付けるという設計上の選択のコンテクストです。法律は漁業の利益への協議を単に推奨したのではありません——ガバナンスプロセスへの彼らの正式な参加を指定と開発の前提条件にしました。これは1875年の教訓の制度的反映でした：海のコモンズの新しい使用は課せられることができません；それらは管理してきた人々と交渉されなければなりません。</p>
+
+    <h2>RSM：漁業コモンズの対立と協議会システム</h2>
+    <p>2019年の法律が確立した協議会システムは洋上風力ガバナンスのための正式なRSMアーキテクチャを作り出します。各提案された促進区域は国（経産省と国交省）・関連する都道府県と市町村の政府・学術・技術の専門家——そして決定的に——関連する海域に漁業権を確立している地元の漁業協同組合組織を含む協議会を必要とします。</p>
+    <p>RSMの用語で、協議会システムは漁業協同組合に洋上風力の生産ループにおける正式なAuditorとIntegratorの役割を与えます。彼らは単に協議の対象ではありません；彼らは意思決定プロセスの制度的参加者です。これは地熱のケース（Post 048）とは構造的に異なります、そこでは日本温泉協会のAuditor機能が主に政治的圧力と規制上の異議申し立てを通じて動作していました。</p>
+    <p>洋上風力における漁業RSMのダイナミクスはPost 047の漁業RSMのダイナミクスと構造的に類似していますが、制度的権力の方向性は逆転しています。Post 047の分析では、漁業協同組合は資源管理改革を阻んでいるほどのDecider権力を蓄積していました。洋上風力では、協同組合は新規参入者が使用しようとしているコモンズの正当な守護者であり、彼らのAuditor機能は適切です——問いはそれが正しく較正されているかどうかです。</p>
+    <p>漁業の利益からの特定の懸念は主に経済的競争（魚と洋上タービンは直接代替可能ではありません）ではなく、移転とアクセス制限についてです。洋上風力の設備はナビゲーションの安全のためにタービン周辺の排除ゾーンを必要とします。浮体式ケーブルと基礎は特定の漁法にとってギアの絡み付きの危険を生み出します。これらは漁業協同組合の歴史的な海の使用権を行使する能力に影響する現実の運用上の影響です。</p>
+    <p>協議会システムが可能にする交渉は基本的に補償と共同便益の設計についてです：開発者はどんな相殺価値を提供して、漁業コミュニティにとって運用上の影響を受け入れられるものにするか？成功した欧州の先例——洋上風力のサービスハブになり1つの港湾都市で約8,000人の雇用を創出したデンマークのエスビアウ港——はこの取引の最も有利なバージョンを示しています：漁業コミュニティが風力エネルギー経済によって移転されるのではなくその一部になる場合。</p>
+
+    <h2>RBM：野心・サプライチェーン・インフラのボトルネック</h2>
+    <p>日本の洋上風力の野心は相当なものです。2020年の洋上風力産業ビジョンは2030年に10GW、2040年に30〜45GWの目標を設定しました。現在の商業的な洋上風力の設備容量が事実上ゼロであることを考えると、これはグローバルな風力エネルギー史上最も積極的な展開スケジュールの一つを表しています。</p>
+    <p>この野心が実際に達成できるかどうかのRBM分析は、ガバナンスの枠組みとは独立して動作する3つの特定の供給制約を検討する必要があります。</p>
+    <p>第1はSEP船の可用性です。大型の洋上風力タービンの設置には自己昇降式作業船（SEP船）——開海水での100メートル超の構造物の精密な組み立てに必要な安定した高架のプラットフォームを提供するために海底上に自分を位置づけることができる特殊なジャックアップバージ——が必要です。日本は現在国内のSEP船の能力が非常に限られています。複数の大規模プロジェクトが同時に進行すると——2030年の目標が要求するように——船の可用性が拘束制約になります、許可でも、資金でも、部品でもなく。日本は国内のSEP船建造プログラムを開始しましたが、専門船の建造のリードタイムは数年です。</p>
+    <p>第2の制約は港湾インフラです。大型洋上風力タービンの部品——100メートルまでのブレード・同等の高さのタワー・数百トンのナセル——は普通の商業港湾では扱えません。基地港湾は並外れた地耐力・非常に大きな開放的な保管ヤード・重量物揚重機器を必要とします。日本は2020年の改正港湾法の後に最初の基地港湾を指定しましたが、適格な基地港湾の総数は日本の沿岸地形によって制限されています——日本の景観を際立たせる急峻な沿岸地形は洋上風力物流が必要とする平坦で広大な港湾ヤードを希少にします。</p>
+    <p>第3の制約は系統です。日本の最良の洋上風力資源は北海道・東北・九州の一部にあります。日本の最高の電力需要は首都圏と関西にあります。資源と需要を接続するには長距離高圧送電が必要です——政府が2023年に発表した「系統マスタープラン」はこれに対処していますが、必要な送電インフラは数十年・数兆円の投資であり、そのタイムラインは洋上風力が実際に電力ミックスに貢献できる速さの拘束制約です。</p>
+
+    <h2>CPM：入札スキャンダルと制度的信頼の問題</h2>
+    <p>日本の洋上風力ガバナンスは最初の競争的な入札ラウンドでCPMの失敗を経験し、2019年の法律が構築するよう設計していた制度的信頼を損なう恐れがありました。</p>
+    <p>2021年、日本は最初の大規模洋上風力入札の結果を発表しました——秋田と千葉県の合計約1.7GWの3つのプロジェクト。三菱商事と他の企業が主導するコンソーシアムが非常に低い入札価格で3つのプロジェクトすべてを落札し、当初入札の信頼性について懸念を引き起こしました。2022年、オークションルール草案を担当していた期間中に大手風力エネルギー開発業者から支払いを受けていた元経産省の官僚が明らかになり、刑事訴追とオークションプロセスの再検討につながりました。</p>
+    <p>CPMの用語で、スキャンダルは制度的信頼についての特定の生存不安を生み出しました。日本は2019年の法律を透明な競争的プロセスのためのクリーンな制度的枠組みとして構築していました。規制プロセスが汚職によって侵害されたという開示は、Disaster Arcが繰り返し記録したのと同じタイプのNarrative Lockの混乱を生み出しました：安定した制度的ナラティブ（入札プロセスは公正で透明）が突然証拠によって矛盾されました。政府の対応——オークション評価ルールの再設計・利益相反条項の強化・その後のラウンドでのより透明な評価プロセス——は露出した特定の失敗モードの標的化された修正でした。</p>
+    <p>構造的なCPMの観察は正確です：規制プロセスの汚職は単なる倫理的違反ではありません。それはガバナンス能力の失敗です。競争的入札システムの全価値——投資家が取得される権利が現実で法的に安全だと信じるからプロジェクトファイナンスが利用可能になるメカニズム——は市場の入札プロセスが正当であるという信念に依存しています。その信念が中断されると、2019年のガバナンスアーキテクチャ全体の制度的価値が危機に瀕します。</p>
+
+    <div class="pullquote">日本の洋上風力プログラムは主に技術の物語でも経済学の物語でもありません。ガバナンスの物語です：2019年の法律はプロジェクトファイナンスが必要とする制度的アーキテクチャを作り出しました；協議会システムは海のコモンズが既存ユーザーから横領できないという歴史的教訓を埋め込みました；そして入札プロセスのスキャンダルはガバナンスアーキテクチャはそれを維持する制度的信頼と同じ強さしかないことを明らかにしました。</div>
+
+    <div class="insight"><strong>Post 049の構造的まとめ：</strong>日本の洋上風力ガバナンスは2019年の海域利用法のプロジェクトファイナンスが必要とする30年間の海域使用権の作成によって可能にされた2019年の事実上のゼロから2021年の機能する競争的入札システムに進みました。協議会システムは1875年以来日本の海のコモンズガバナンスが符号化してきた歴史的教訓を埋め込みました：新しい使用は既存ユーザーの上に課されるのではなく、彼らと交渉されなければなりません。3つの物理的な供給制約——SEP船の希少性・限られた基地港湾容量・長距離系統送電投資——は2030年と2040年の目標が達成できるかどうかに運用上の拘束力があります。入札スキャンダルは、ガバナンスアーキテクチャは初期の構築だけでなく継続的な制度的信頼の維持を必要とすることを明らかにしました。日本の洋上風力プログラムは構造的に実行可能ですが、容易なタイムラインではありません。</div>
+  <div class="nav-post">
+    <span><a href="/blog/048/">&larr; Post 048</a></span>
+    <span></span>
+  </div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS &middot; sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">&larr; ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

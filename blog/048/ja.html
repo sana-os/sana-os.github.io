@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本の地熱パラドックス——世界クラスの資源と0.2%の利用率 | SANA OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/048/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#2a7a5e;">日本 &middot; エネルギー政策アーク &middot; 第1部</p>
+  <p class="hero-tag">Post 048 &mdash; 実例分析 &middot; エネルギー政策</p>
+  <h1>日本の地熱パラドックス——世界クラスの資源と0.2%の利用率</h1>
+  <p class="hero-dek">日本は世界第3位の地熱資源を保有し、電力の0.2%を地熱から発電しています。ギャップは技術的ではありません。エネルギー安全保障と温泉コミュニティのアイデンティティの間の真のLayer対立の産物です——そしてそれを解決できるIntegrator機関の不在。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>災害アーク（Post 041〜047）は、日本のガバナンスシステムが壊滅的な失敗にどのように対応するかを追跡しました。Post 044は福島を示しました：規制の虜が数十年間にわたって原子力ガバナンスの修正ループを無効化しており、津波の到来は事故の原因ではなく失敗が世界に可視化された瞬間でした。</p>
+    <p>Post 044は福島がNRAを生み出したという観察で締めくくりました——露出した特定の失敗モードを標的にした制度的対応。しかし福島はPost 044が対処しなかった第2の結果を生み出しました：日本のベースロード電力供給の30%を占める約50基の原子炉の突然の停止です。日本の電力網は緊急の石油・ガス輸入・効率化対策・需要管理を通じてこの損失を乗り越えました——しかしそのエピソードはエネルギー安全保障の計算を永続的に変えました。</p>
+    <p>原子力がLayer Bが主張していた安全で安定したベースロード電源でないとしたら、何が代替するのか？エネルギー計画者が手を伸ばした答え——地熱エネルギー——は他のすべての再生可能エネルギーとは分析的に異なる構造的特質を持っています：天気・時刻・季節に依存しません。北海道で1月に稼働する地熱発電所は九州で8月に稼働する地熱発電所と同一のパフォーマンスを発揮します。ベースロードの脆弱性がどのようなものかを経験した国にとって、これは説得力のある特性でした。</p>
+    <p>日本はまた米国とインドネシアに次ぐ世界第3位の地熱資源を有しています。Post 048の構造的パラドックスは、この資源を保有する日本が約520メガワットの地熱設備容量のみを運転しており——電力発電の0.2%を占める——、より小さな資源を持つ国々が桁違いに多くを発電しているということです。このポストが検討する問いは日本が資源を欠いている理由ではなく、資源が地中に留まっている理由です。</p>
+
+    <h2>地理的なロック：80%が国立公園内に</h2>
+    <p>日本の地熱開発に対する第1の構造的制約は制度的ではありません——それは地理的であり、制度的対立を生み出します。</p>
+    <p>日本の地熱資源は温泉と同じ場所に集中しています。これは偶然ではありません：両方とも日本を地熱的に豊かにする火山地質の産物です。温泉を動かすのと同じマグマ性の熱源が地熱貯留層を動かします。最も深く商業的に実行可能な地熱資源を持つ地域は、最も長い期間温泉を持ってきた地域です——多くの場合、1000年以上。</p>
+    <p>日本の商業的に実行可能な地熱資源の約80%が指定された国立公園または国定公園内にあります——例外的な自然環境・生態系・景観の保護のために自然公園法のもとで保護された地域。残りの20%は温泉地の近郊にあり、形式的に保護された土地ではありませんが、住民は温泉法のもとで法的保護を持ち、より実際的には開発への政治的な反対が一貫して効果的でした。</p>
+    <p>この地理的事実はGMMのLayer対立を生み出します。福島では、Layer B（安全神話）とLayer C（規制アーキテクチャ）が正確なLayer Aのリスク情報に対して整合していました。地熱においては、Layer Bの対立は2つの正当なLayer Aの利益の間にあります：エネルギー安全保障機能（地熱開発を必要とする）と地域経済機能（日本の最も経済的に周辺的な地域の一部のコミュニティを支える温泉観光経済の保護を必要とする）。両方ともLayer Aの機能です。両方とも現実のものです。その間の対立は本物です。</p>
+
+    <h2>GMM：神聖化されたLayer Bとしての温泉文化</h2>
+    <p>日本の温泉文化はほとんどの資源管理紛争とは区別するLayer Bの深さを持っています。温泉は単なる経済的資産ではありません——それが生み出す観光収入は相当なものですが、その文化的な意味を過小評価しています。温泉は健康・コミュニティ・季節のリズム・場所についての日本の概念に埋め込まれています。特定の温泉の特定のミネラル含有量・温度・性格は、それを中心に構築されたコミュニティのアイデンティティの一部です。500年間同じ場所で営業してきた温泉は、どんな経済的評価も把握できないLayer Bの重要性を蓄積しています。</p>
+    <p>日本温泉協会——温泉業界の主要な制度的声——は日本全国の約3,000の温泉地を代表します。その主な議論は経済的ではありません：それは潜在的な損害の不可逆性についてです。地熱掘削が既存の温泉の流量を減少させ、化学組成を変化させ、温度を下げると、失われたものを回復する救済策はありません。掘削前に存在していた温泉は消えています。それを中心に構築されたコミュニティのアイデンティティは金融的な移転によって補償できない方法で損傷されています。</p>
+    <p>これが地熱ガバナンスを独自に困難にするCPMのダイナミクスです：地熱開発に反対するコミュニティはNarrative Lockや安全神話の下で動作していません。彼らは非対称のリスクを正確に計算しています：地熱開発は潜在的なダウンサイド（主要な経済的資産と文化的アイデンティティへの不可逆的な損害）を提供し、本質的にアップサイドはありません（生成された電力は彼らにではなく国家の電力網に届きます）。非対称性は現実であり、想像ではありません。</p>
+    <p>福島後の緊急性は反対側からの圧力を加えました。国家のエネルギー安全保障（Layer A）のニーズは2011年以降大幅により急性化しました。政府の対応——2012年と2015年の自然公園法の部分的な緩和——は以前に禁止されていた国立公園の特別地域での地熱開発を許可するよう設計されたLayer Cの書き換えでした。日本温泉協会の2021年の正式な異議申し立ては構造的な緊張を正確に捉えていました：Layer Cの変更は行われていましたが、Layer Bの抵抗は解決されておらず、その解決なしに開発は停滞し続けるでしょう。</p>
+
+    <h2>RSM：Auditorの過剰優位と不在のIntegrator</h2>
+    <p>日本の地熱ガバナンスのRSM配置はRSMがAuditorの過剰優位と呼ぶものを生み出しています——修正ループの監視・監査機能が、生産ループのアウトプットを効果的に拒否するのに十分な制度的力を蓄積し、システムが必要とするバランスの取れた相互的な制約ではなく系統的な麻痺を生み出す状態。</p>
+    <p>日本温泉協会は、地熱ガバナンスにおいてAuditor機能をかなりの効果性をもって果たしています。彼らは規制プロセスにおける公式の地位、地熱による温泉への損害の実際の過去の事例から得られた歴史的信頼性、そしてPost 047で記述された漁業協同組合の結びつきと同様の自民党農村選挙区管理への政治的つながりを持っています。</p>
+    <p>Executor機能——プラントを建設しようとする地熱開発業者——はこの配置で構造的に弱いです。個々の開発業者はプロジェクトが進行する社会的許可を受けるかどうかがわかる前に、資源特性化と環境影響評価に重大な投資をしなければなりません。失敗した開発の試みのコストは完全にExecutorに落ちます；Auditorはそれを負担しません。</p>
+    <p>日本の地熱ガバナンスで最も構造的に重要なRSMの失敗は、機能するIntegratorの不在です。日本温泉協会自体が2021年の環境大臣への手紙でこのギャップを特定しました：手紙は「客観性が担保された相互の情報公開と第三者機関の創設」を求めました。この要求は制限のための要求ではありません——正当なIntegratorが存在することへの要求です：開発者と温泉の利益の両方から独立した科学的信頼性を持つ機関。</p>
+    <p>現在そのような機関は両側が正当と受け入れる形では存在していません。国のREPOSシステムはデータを提供しますが判断を提供しません。地方自治体は地熱と温泉の地質学的主張を裁定する技術的専門知識を欠いています。Integrator機能——地熱井が近くの温泉に実際に影響しているかどうかを監視し、地下接続についての争われた主張を裁定し、権威ある科学的仲介を提供することを含む——は幽霊状態にあります。</p>
+
+    <h2>RBM：物理的資源と実施可能な資源の間のギャップ</h2>
+    <p>日本が世界第3位の地熱資源保有国であるという地位は、地中に何が存在するかについての声明です。日本の地熱ガバナンスのRBM分析は、この物理的資源を現在の制度的環境の運用上のSupply制約のもとで実際に開発できるものと区別する必要があります。</p>
+    <p>地熱容量へのDemand_jは明確で政府によって定義されています：第6次エネルギー基本計画は2030年までに1.6GWの地熱容量を目標としており、現在の520MWの約3倍です。この目標はLayer Aのエネルギー安全保障要件を反映しています——福島が停止させた一部の原子力容量を置き換えるベースロードとしての地熱。</p>
+    <p>有効なSupply_jは物理的資源が示唆するものよりはるかに小さいです。国立公園の境界内の約80%の資源は自然公園法の許可プロセスの対象であり、2015年の緩和後でも開発が公園の景観・生態学的・景観的価値を損なわないことを実証することを要求します。残りの20%は社会的許可が保証されていない温泉コミュニティに隣接しています。</p>
+    <p>温泉協会の5条件フレームワーク——継続的な環境モニタリング・第三者機関の創設・損害回復の法的保証——が開発業者に課す追加的需要は現実の相当なコストを表しています。これらの条件はそれ自体では不合理ではありません：それらは非対称のダウンサイド露出を考えると開発リスクを合理的に受け入れるためのコミュニティの最低要件です。しかしそれらを満たすことは——資本・技術能力・監視インフラ・法的専門知識——単独で動作するほとんどの民間開発業者の能力を超えるリソースを必要とします。</p>
+    <p>いくつかの成功した日本の地熱プロジェクトが実証してきた構造的解決策はリスクの再分配です：成功したプロジェクトは、国が探査リスクを吸収し（開発業者が特定される前の掘削）、地域政府が調整インフラを提供し、地元の温泉事業者が地熱運転から直接の便益共有を受ける（入浴施設への蒸気や温水の無償提供、温熱副産物の農業利用）ことを含んでいました。Integrator機能が十分に果たされると——通常は正直なブローカーとして機能する地方自治体によって——プロジェクトは進行できます。それが不在のとき、停止します。</p>
+
+    <div class="pullquote">日本の地熱ガバナンスのジレンマは、間違った側が勝っているということではありません。両側——エネルギー安全保障の利益と温泉コミュニティの利益——は正当なLayer Aの目標を正当なLayer Bの議論で追求しています。構造的な問題は、両者が双方に役立つ合意を見つけることを可能にするIntegratorの不在です。そのIntegratorなしには、対立は麻痺を生み出し、資源は地中に留まります。</div>
+
+    <div class="insight"><strong>Post 048の構造的まとめ：</strong>日本は世界第3位の地熱資源を保有し、電力の0.2%を地熱から発電しています。ギャップは技術的ではありません——技術は機能します。それは構造的です：物理的資源は国立公園内と温泉コミュニティに隣接して地理的に集中しており、彼らのLayer Bの抵抗は合理的でAuditor機能は十分な力を持って開発を阻んでいます。福島後のエネルギー安全保障の緊急性はLayer Cの緩和（自然公園法の改正）を可能にしましたが、Layer Bのコミュニティのアイデンティティダイナミクスに対処しませんでした。Integrator機能——地熱と温泉の地質学的主張を裁定し、開発リスクを分配し、コミュニティの共同便益枠組みを提供できる独立した技術的に信頼できる機関——は幽霊状態で不在です。それが作られるまで、日本の地熱資源は主に地中に留まります。</div>
+  <div class="nav-post">
+    <span><a href="/blog/047/">&larr; Post 047</a></span>
+    <span><a href="/blog/049/">Post 049 &rarr;</a></span>
+  </div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS &middot; sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">&larr; ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

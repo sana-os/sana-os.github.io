@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東日本大震災と日本の漁業政策——70年の機能不全とそれを破った強制関数 | SANA OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/047/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#b84040;">日本 &middot; 災害アーク &middot; 第7部</p>
+  <p class="hero-tag">Post 047 &mdash; 実例分析 &middot; 資源政策</p>
+  <h1>東日本大震災と日本の漁業政策——70年の機能不全とそれを破った強制関数</h1>
+  <p class="hero-dek">津波は28,000隻の漁船を破壊し、同時に70年間の証拠に基づく提唱が生み出せなかったガバナンス改革の政治的条件を作り出しました。日本の漁業の構造的物語——そして2018年の漁業法改正が実際に何を変えたか。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Post 046は、災害アーク全体を貫く構造的問いで締めくくりました：制度的学習はそれを強制する災害に先行できるか？アークが一貫して生み出してきた答えは：信頼性をもってはそうできない、です。アークの各主要な改革は、既存の制度的配置の不十分さを否定できなくした災害によって可能にされました。NPO法は神戸に続きました。NRAは福島に続きました。小田川合流点の移設は2018年の洪水に続きました。</p>
+    <p>日本の漁業ガバナンスの物語は、前のどのポストも示していなかった時間的次元をこのパターンに加えます。改革を必要としていた資源枯渇・人口統計の崩壊・制度的機能不全は、3.11の何十年も前から展開していました。改革は知識の欠如によって遅延していませんでした——構造的問題はよく文書化されていました。それは1949年の枠組みを中心に固化した制度的配置によって遅延しており、平時の改革の政治的条件はそれを克服できませんでした。2011年3月11日の津波が提供したのは新しい情報ではありませんでした。それは50年間の証拠に基づく提唱が生み出せなかった政治的強制関数を提供しました。</p>
+    <p>このポストはその強制関数の構造を検討します：日本の漁業ガバナンスが持っていた配置の理由、その配置が明らかな機能不全に対して70年間維持された方法、そして2018年の漁業法改正——1949年以来初の主要改革——が構造レベルで実際に何を変えたか。</p>
+
+    <h2>1949年の基盤：解体した社会的現実のために構築されたガバナンスアーキテクチャ</h2>
+    <p>3.11が最終的に破った制度的構造は、1948〜1949年にGHQの占領下で作られていました。それがなぜ70年続いたかを理解するには、それが達成するよう設計されていたことを理解する必要があります——そして設計が管理していた社会的現実がその70年間に何をしていたか。</p>
+    <p>戦前の日本の漁業は所有権と経済力の大きな集中が特徴でした：大型漁業資本（「網元」）が漁場と加工インフラへのアクセスを支配し、小規模漁業者を経済的に脆弱な立場に置きました。GHQは民主的な分権化の論理を一貫して適用しました：農地改革が大規模な土地保有を解体して耕作農家に分配したように、漁業改革は集中した漁業資本を解体して漁業コミュニティに漁業権を分配することを意図していました。</p>
+    <p>RSMの用語で、1949年の設計は集中を防ぐための特定の役割分配を作り出しました。都道府県知事が漁業権配分に対する公式のDecider権限を保持しました。海区漁業調整委員会がIntegratorとAuditorの機能を保持しました——競合する利益を調整し、公式の配分プロセスが遵守されているかを確認するよう設計されていました。漁業協同組合（漁協）がExecutorの機能を保持しました：漁業コミュニティが共有コモンズへの共有アクセスを組織する集合的な組織体でした。構造は設計上、反独占的でした：単一の大型資本体が海へのアクセスを支配してはなりませんでした。</p>
+    <p>この設計は1949年の日本の社会的現実に較正されていました：集中した資本による搾取の構造的リスクにある貧しい沿岸漁業コミュニティ。それはLayer Cにその社会的現実の保護を符号化しました——漁業権配分の制度的設計・調整委員会の構成・漁協の公式な役割に。</p>
+    <p>その後の70年間で、社会的現実は根本的に変化しました。1949年改革の標的だった大型漁業資本は、より収益性の高い産業・サービスの機会が発展するにつれて沿岸漁業セクターから大きく撤退しました。1949年の設計が保護していた漁業コミュニティは、搾取されているためではなく沿岸漁業が労働市場での競争力を失っているため、漸進的に高齢化し、縮小し、経済的に活力を失っていきました。2000年代までに、日本の沿岸セクターの漁業者の平均年齢は60歳に近づいていました。多くの漁村が深刻な過疎を経験していました。協同組合システムが保護するよう設計されていた「搾取的大型資本」は、ほとんどの地域で単純に存在しなくなっていました。</p>
+    <p>しかしLayer C——制度的アーキテクチャ——は、それが記述していた社会的現実が解体した後も長い間、1949年のLayer Bのナラティブ（「大型資本の搾取から小規模漁業コミュニティを保護する」）と整合したままでした。保護の枠組みにおけるExecutorとして設計されていた漁協は、70年間の政治的・制度的統合のプロセスを通じて漁業権配分のDecider機能を蓄積していました。調整委員会はRSMが幽霊Integratorと呼ぶものになっていました：形式的に存在し、定期的に会議を開き、文書を作成しましたが、配分プロセスにおいて漁協の選好に異議を唱えるという実質的な機能は運用上不在でした。</p>
+
+    <h2>役割奪取：漁協がどのようにDeciderになったか</h2>
+    <p>日本の漁業協同組合がExecutorからDeciderへと変容したことは、単一の政策決定の結果ではありませんでした。漁協が構造的に特権的な地位を占めるシステムの制度的論理の累積的産物でした。</p>
+    <p>1949年の枠組みは特定の漁場での漁業権申請において漁協に優先権を与えました。漁協申請は非漁協申請より優先されるべきで、他の条件が等しければ。この優先権——小規模漁業コミュニティを大型資本から保護することを意図した——は、漁協の組合員資格を法的な漁業アクセスへの主要経路にするという構造的効果を持っていました。漁協はしたがってコモンズの制度的ゲートキーパーになりました。</p>
+    <p>数十年にわたって、このゲートキーパーとしての立場は包括的な政治的影響力に転換されました。漁協は自民党の農村選挙区管理に深く埋め込まれるようになりました：漁協の指導者たちは政党と漁業コミュニティの間の重要な仲介者であり、漁協の選好は候補者選定と政策開発において重大な重みを持っていました。結果として古典的なRSMの役割奪取の配置が生まれました。公式のDecider（漁業権を配分する権限を持つ都道府県知事）が漁協の選好に一貫して従いました——法律がそれを要求したからではなく、漁協の選好を無視する政治的コストが黙認するコストより系統的に高かったから。Auditor機能（調整委員会）は漁協の利益に同情的な代表者で漸進的にスタッフが揃えられていました。Observer機能（漁業科学）は存在しましたが、そのアウトプットは公式のDeciderレベルに達する前に漁協が支配する交渉プロセスを通じてフィルタリングされていました。</p>
+
+    <h2>RBM：スローモーションの資源崩壊</h2>
+    <p>日本の総漁獲量は1984年に約1,200万トンでピークに達しました。2010年までに約500万トンに低下しました。この26年間での58%の減少は先進国における最大規模の継続的な漁業崩壊の一つを表しています——そして国家的な漁業管理枠組みの存在にもかかわらず、あるいは場合によってはそのために起きました。</p>
+    <p>資源崩壊は主に違法漁業や意図的な過剰搾取によって引き起こされませんでした。持続可能な漁獲のSupply_j（枯渇なしに永続的に生み出せるもの）が系統的に過大評価され、生態系へのDemand_j（実際の漁獲量プラス減少する資源を追求するための漁業努力量）が系統的に規制不足だった管理システムの構造的アウトプットでした。</p>
+    <p>日本は1997年に7つの主要魚種について漁獲可能量（TAC）規制を導入しました。しかしTACシステムには構造的な欠陥がありました：TAC水準を設定するプロセスが漁協ネットワークに支配されており、科学的に推奨された水準より高い限度を設定する構造的インセンティブを持っていました。漁業研究者が生み出した資源評価は交渉プロセスが生み出した制限より一貫して低い持続可能な収量を示していました。Observer機能は正確なデータを生み出しました。Integrator機能（交渉プロセス）はそのデータを、より低い制限を生み出したはずの形でDecider機能に届く前にフィルタリングしました。修正ループは形式的に存在していました；実質的には機能していませんでした。</p>
+
+    <h2>3.11の強制関数：復興がなぜ制度的失敗を露出させたか</h2>
+    <p>2011年3月11日、津波は岩手・宮城・福島県の沿岸地域で約28,000隻の漁船を破壊しました——日本の太平洋岸で最も重要な3つの漁業地域の漁船団の大半。319の漁港と関連する加工・保管・流通インフラを破壊しました。世界で最も生産性の高い漁業の一つだったサケの孵化場・カキ養殖場・海藻農場・養殖事業を一掃しました。</p>
+    <p>RBMの用語で、津波は（数十年間蓄積していた）漁船代替への潜在的需要を即座の極端な顕在的需要に転換しました：漁業コミュニティは今すぐ漁船を必要としていました、さもなければ漁業できず、漁業できなければ最も経済的に依存した沿岸コミュニティの漁業セクターは存在を停止するでしょう。破壊は壊滅的でした。しかし復興プロセスの中で、それはまた平時の政策が作り出せなかったものを作り出しました：既存の制度的配置が構造的変化なしには復興を生み出せないことが明白な状況。</p>
+    <p>制度的失敗を可視化した具体的なメカニズムは漁船代替市場でした。復興補助金が新しい漁船への購買力を作り出しました。しかし新しい漁船は漁業権を必要としていました——漁協システムを通じて配分された漁業権で、このシステムは非効率性を含む震災前の配置を回復するのではなく最も生産的で有望な新しい事業に権利をルーティングするメカニズムを持っていませんでした。復興プロセスが提起した問い——被災地域で最も生産的な漁業セクターを再構築するために漁業権をどのように配分するか？——は既存の制度的枠組みが構造的に答えられない問いでした。枠組みは既存の権利保有者を保護するよう設計されており、再構築された景観全体で配分を最適化するよう設計されていませんでした。</p>
+    <p>漁船市場レベルでの復興のボトルネックはまた造船業の構造的問題を露出させました。約28,000隻の代替船への同時需要は、数十年の平時の需要低下の後に業界が残していた統合・縮小した造船能力を圧倒しました。需要が供給を超えるにつれて漁船価格が急激に上昇しました。漁業能力の回復を意図した復興補助金は、集中した供給に急激な需要スパイクが出会った価格効果に部分的に吸収されていました。</p>
+
+    <h2>2018年漁業法改正：3つの構造的変化</h2>
+    <p>2018年の漁業法改正——1949年以来日本の漁業枠組みの初の主要改革——は3.11が政治的に回避不可能にした制度的失敗モードを直接標的にする3つの構造的変化を導入しました。</p>
+    <p>第1の変化は資源管理改革でした。TAC制度が段階的なスケジュールで7魚種から約30の魚種・漁業種類に拡大され、最終的に日本の商業的に重要な漁業の大半をカバーするという目標が設定されました。TAC範囲の拡大よりも構造的に重要だったのはTAC水準を設定するプロセスの変化でした：改訂された枠組みは科学的な資源評価プロセスに、以前に漁獲限度を決定していた利益ベースの交渉より明示的な優先権を与えました。Observer機能——資源評価を生み出す漁業科学——が制度的ヒエラルキーにおいてIntegrator機能——漁協が支配する交渉プロセス——に対して公式にアップグレードされました。科学的観察と管理決定の間の修正ループがその最も弱い点で強化されました。</p>
+    <p>第2の変化は漁業権配分改革でした。都道府県知事は生産性と資源管理の考慮事項が正当化すると判断した場合、漁協以外の事業者——法人体や個人事業者を含む——に漁業権を配分する明示的な法定権限を与えられました。2018年改革前には、漁業権申請での漁協の優先権は（法的には絶対ではないが）実際にはそれほど強く、非漁協申請者は事実上沿岸漁業権へのアクセスを持っていませんでした。改革は、十分に動機付けられた都道府県知事によって漁協のゲートキーパー機能を迂回できるルートを作り出しました。</p>
+    <p>第3の変化は養殖の促進でした。沿岸養殖の枠組みが長期的な事業ライセンス（定置漁業については最大5年から10年に延長、養殖については新しい長期ライセンスを創設）を可能にし、伝統的な漁協のメンバーでない新規参入者が養殖権にアクセスできるよう再設計されました。これは3.11が露出した特定の復興ボトルネックに対処しました：既存の制度的チャンネルが被災地域で最も生産的な新しい養殖事業に復興資本をルーティングできない状況。</p>
+
+    <div class="pullquote">2018年の漁業法改正は3.11によって引き起こされませんでした。3.11によって可能にされました——3.11が既存の制度的枠組みの不十分さが可視化された政治的瞬間を作り出し、復興の至上命令が改革者に70年間の平時の提唱では持てなかったレバレッジを与えたから。</div>
+
+    <h2>改革が変えなかったもの——そしてそれが構造的に意味すること</h2>
+    <p>2018年の改革は重要でした。また部分的でもありました。ガバナンスの機能不全に貢献した1949年の枠組みのいくつかの構造的特徴が改革後も実質的に変わらずに残りました。そしてその持続性を理解することは、災害が可能にする改革が達成できることの限界を明確にします。</p>
+    <p>漁業権申請での漁協の優先権は削減されましたが排除されませんでした。都道府県知事は今、漁協の選好を迂回する明確な権限を持っていますが、その権限の行使は農村LDPの政治に深く埋め込まれたままの利害関係者ネットワークに対する政治的意志を必要とします。実際には、ほとんどの都道府県の知事は主に漁協のチャンネルを通じて漁業権を配分し続けています。形式的な権限は存在しています；漁協の選好に反したその日常的な行使は存在しません。</p>
+    <p>TAC拡大は即座の要件ではなく段階的なスケジュールとして構成されていました。2020年代半ばの時点で、拡大は進んでいますがまだ日本の商業的に重要な漁業の大半には到達していません。科学的観察と管理決定の間の修正ループはカバーされている魚種のレベルで強化されました；まだカバーされていない魚種については改革前の配置が持続します。</p>
+    <p>これらの限界は改革が失敗したという証拠ではありません。強制関数によって可能にされた制度改革は本質的に部分的であるという証拠です：それはシステムを異なる均衡に向けて動かしますが、古い均衡を維持した力——漁協の政治的影響力・農村LDPの選挙区管理・確立された慣行の惰性——は改革法が制定されたからといって消えません。改革は新しい制度的能力と権限を作り出しました。それらの行使は政治的意志・行政能力・2018年改革が可視化するよう設計した資源管理の必要性の継続的な圧力に依存します。</p>
+
+    <div class="insight"><strong>Post 047と災害アークの構造的総括：</strong>東日本大震災と津波は70年間の漁業ガバナンス改革を3年で可能にする強制関数を作り出しました。改革は現実で構造的に重要でした。数十年間にわたって漁協の制度的利益が資源管理科学を無効にすることを可能にしてきた役割奪取の配置を直接標的にしました。しかしその配置を維持してきた構造的特徴は排除しませんでした——それに対して機能する制度的ツールを作り出しました。災害アークの最終的な構造的観察：日本のガバナンスシステムは測定可能な精度で災害から学び、真の構造的野心をもって改革し、そして機能不全な配置を維持していた政治的・社会的力が災害がその不十分さを否定できなくしたからといって消えるわけではないという持続的な課題に直面します。</div>
+  <div class="nav-post">
+    <span><a href="/blog/046/">&larr; Post 046</a></span>
+    <span></span>
+  </div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS &middot; sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">&larr; ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

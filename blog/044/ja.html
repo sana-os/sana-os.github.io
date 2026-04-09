@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東日本大震災——福島事故が制度的失敗の構造について明らかにしたこと | SANA OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+  <div class="nav-right"><a href="/blog/044/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div>
+</nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#b84040;">日本 &middot; 災害アーク &middot; 第4部</p>
+  <p class="hero-tag">Post 044 &mdash; 実例分析 &middot; 原子力政策</p>
+  <h1>東日本大震災——福島事故が制度的失敗の構造について明らかにしたこと</h1>
+  <p class="hero-dek">メルトダウンは津波によって引き起こされませんでした。地震が到来する何十年も前から日本の原子力修正ループを無効化していた規制の虜のアウトプットでした。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Post 043は、もんじゅが消費した1.1兆円について「機能することを許されなかった修正ループの累積コスト」という言葉で締めくくりました。1995年の映像編集は、ナトリウム冷却高速炉の真実が軌道修正の権限を持つ人々に届く必要があったまさにその瞬間に、制度的な免疫システムを無効化しました。</p>
+    <p>2011年3月11日14時46分18秒、マグニチュード9.0の地震が東北沖を直撃しました——日本史上最も強力な記録。続いた津波が福島第一原子力発電所の海壁を圧倒しました。3基の炉心がメルトダウンしました。チェルノブイリ以来最大の原子力事故になりました。</p>
+    <p>国会事故調（国会東京電力福島原子力発電所事故調査委員会）は10ヶ月間をかけて何が起きたかを検証しました。2012年7月に公表された640ページの最終報告書は、近代日本史で最もよく引用される評決の一つで締めくくられています：「この事故は、政府、規制当局、東京電力の共謀と、それらによるガバナンスの欠如の結果としての、人災でした。」</p>
+    <p>このポストはその評決を生み出した構造的メカニズムについてです——原子炉自体の技術的失敗ではなく、それらの技術的失敗を不可避にした制度的失敗について。</p>
+
+    <h2>GMM：50年間で、都合の悪い事実を聞けないシステムを作った</h2>
+    <p>日本の原子力ガバナンスシステムは50年かけて、GMMが「閉じた成熟状態」と呼ぶものに構築されていました：内部的に一貫して自己強化的なLayer Cの配置で、外部からの修正シグナルが浸透できないほどに。</p>
+    <p>構造的アーキテクチャは「鉄の三角形」でした——政界・官界・財界の同盟。その論理は循環的で相互強化的でした：自民党の政治的支援が有利な規制処遇を可能にし；有利な規制処遇が電力会社の収益性とスムーズなプラント運転を可能にし；電力会社の収益性が政治献金と退職官僚の天下りポストを生み出しました。各ノードが他を支えていました。三角形は内部の全員がその安定性から利益を得ていたので安定していました。</p>
+    <p>Layer Cへの結果は特定の種類の制度的硬直性でした。日本の原子力規制枠組みは、既に起きた事故に対応して更新されました——まだ起きていないシナリオを予測してではなく。スリーマイル島（1979年）とチェルノブイリ（1986年）の後、国際原子力機関は過酷事故管理・深層防護の原則・設計基準を超える事象の管理について指針を大幅に改訂しました。日本の原子力機関はこれらの更新を認識していました。しかしそれらを国内規制に組み込むことは、既に稼働中で収益を上げている既存の日本の施設が改訂された基準を満たしていないことを示唆するでしょう。この示唆は制度的に受け入れられませんでした。だから国際基準は注目され、承認され、採用されませんでした。</p>
+    <p>国会事故調はこの志向性を「内向きの態度」と表現しました——外部からの挑戦に免疫がある組織。GMMの用語で：原子力機関のLayer Bのアイデンティティ（「日本の原子力技術は世界最高の安全性を持つ」）がナラティブの神聖化を経ていました——それに矛盾する証拠が証拠として処理されず、制度的アイデンティティへの脅威として抑圧が必要なものとして扱われる段階に達していました。</p>
+    <p>これを具体的にする特定の例：2006年、内閣府の原子力安全委員会は更新された津波安全評価を発表し、福島第一を含むいくつかの沿岸地点での推定波高を大幅に引き上げました。東電は内部でその新しい評価を検討しました。エンジニアたちは改訂された推計がプラントの海壁設計に重大な変更を必要とすることを特定しました。「海壁を再建する必要がある」という結論には至りませんでした。「評価方法論に欠陥があり、下方修正されるべきだ」という結論に至りました。最終的にプラントを壊滅させた津波リスクが識別され、検討され、技術的な理由からではなく制度的な理由から退けられていたのです。</p>
+
+    <h2>CPM：4つの認知フェーズが積み重なって——そして崩壊の瞬間</h2>
+    <p>日本の原子力プログラムを包んでいた「安全神話」は突然の発明ではありませんでした。それは互いの上に積み重なった4つの異なる認知フェーズの産物で、各フェーズが制度的に許された思考の範囲を狭めていきました。</p>
+    <p>導入期（1950〜70年代）において、日本の原子力プログラムは真に探索的でした。エンジニアと官僚たちは米国の指導のもとで新しい技術を学び、国内の規制枠組みを発展させ、国際的な技術コミュニティと関与していました。認知モードはCPMが探索的シミュレーションと呼ぶものでした：真の不確実性が認められ、安全に関する議論が内部で起き、技術は限界があると理解されていました。Architect機能は活発でした——人々は実際に設計し、テストし、疑問を呈していました。</p>
+    <p>成長・安定期（1980〜90年代）において最初の重大な認知のシフトが起きました。炉は稼働していました。電力は供給されていました。原子力電気が支える経済成長は続いていました。CPMの枠組みでは、成功自体が認知のトリガーです：ナラティブ安定化を活性化し、成功した戦略が挑戦不可能なアイデンティティに固まり始めるプロセス。「日本のアプローチは機能する」が「日本のアプローチは優れている」になり、「日本のアプローチは外部からの検証を必要としない」になりました。Architect状態は活発から同化へと移行しました——組織はもはやシステムを設計せず、維持していました。</p>
+    <p>2000年代の固定化状態が崩壊したArchitect——CPMで最も危険な配置——を生み出しました。質問の抑圧が系統的になっていました。東電の本社のエンジニアたちが2008年に福島第一で15メートルを超える津波が起こりうることを示す内部計算を実行したとき、その結果は規制当局や原子力安全委員会に共有されませんでした。内部にファイルされました。ある副社長は後の証言で、その結果が「外部への公開に適していなかった」と認めました。組織は自らの修正メカニズムに対する機能的な免疫反応を発達させていました。</p>
+    <p>この沈黙を強制する同調圧力と帰属圧力は具体的で文書化されています。「原子力ムラ」——電力会社・規制当局・政府省庁・学術研究者・建設会社の相互接続されたネットワーク——の中では、安全上の懸念を公的に提起することは個人のキャリアだけでなく日本の原子力エネルギー全体のプロジェクトを脅かすと理解されていました。これは偏執狂的な認識ではありませんでした；正確でした。機関の合意と矛盾する調査結果を発表した研究者は資金が途絶えました。より強力な規制を推進した当局者はより影響力の低いポジションに異動させられました。システムは自らの生存に対して強い好みを持つ生命体になっていました。</p>
+    <p>2011年3月11日、この4十年の蓄積が物理的なテストに出会いました。認知的な移行は瞬時でした：安定から断片化へ、安定したナラティブが圧倒的な矛盾する現実に出会ったときにCPMが予測する通りに。「日本の原子力発電所での過酷事故は不可能だ」という前提の中で何年も動作してきた当局者たちは、突然それを管理することを求められました。混乱は制度的であって個人的ではありませんでした——システムは今経験しているシナリオのための運用プロトコルを持っていませんでした。</p>
+
+    <h2>RSM：なぜNISAは自らの明記された機能を果たせなかったか</h2>
+    <p>日本の福島前の原子力ガバナンスにおける核心的なRSMの失敗は、単一の構造的事実に捉えられています：日本の指定された原子力安全規制当局である原子力安全・保安院（NISA）が、経済産業省（経産省）の外局として設置されていたという事実です。</p>
+    <p>経産省の使命には日本の産業・エネルギー政策の中核部分として原子力エネルギーを推進することが含まれていました。NISAの使命には原子力運転の独立した安全監督が含まれていました。これら2つの使命は単一の組織的ヒエラルキーの中で構造的に相容れませんでした——そして相容れない使命が同じヒエラルキーを占めると、ヒエラルキーの生存利益に近い方が勝ちます。</p>
+    <p>RSMの用語で、これは支配の失敗モードでした：生産ループ（産業政策として原子力エネルギーを推進・拡大する）が修正ループ（安全上の欠陥を特定して是正を求める）に対して構造的な支配を持っていました。NISAは東電の安全提出物に効果的に異議を唱えることができませんでした、なぜならそうすることは経産省の産業推進のアジェンダとの摩擦を生み出したからです。</p>
+    <p>国会事故調はこれを「規制の虜」と呼びました——規制当局が規制対象に捕捉されていました。RSMの用語では役割奪取です：Executor（収益性を持って電力を生成するという役割を持つ電力会社）が実質的にAuditor機能（Executorのチェックとして機能すべき独立した安全確認）を吸収していました。AuditorはNISAが検査官を持ち、コンプライアンス証明書を発行し、年次報告書を生産するという意味で形式的に存在していました。しかしその実質的な機能——危険な逸脱を特定して事故の前に是正措置を求める——は独立性を不可能にした組織的ヒエラルキーによって無効化されていました。</p>
+    <p>Observer機能は並行した失敗に苦しんでいました。2000年代を通じて日本の地震・津波研究コミュニティは沿岸原子力施設のリスクについてますます警戒すべき評価を生産していました。2006年の内閣府の評価は科学的知見のより広いパターンの一部でした。しかしObserver機能のアウトプット——リスク評価——は、Executorの行動（電力会社の設計基準）に変化を生み出す修正ループを通じて流れていませんでした。代わりにIntegrator機能（NISAと電力会社の間の規制交渉プロセス）に吸収されて中和されており、このプロセスは争われているデータの電力会社の好む解釈に対応するという系統的な傾向を発達させていました。</p>
+
+    <h2>RBM：物理的・情報的欠損の連鎖</h2>
+    <p>2011年3月11日の福島第一での物理的な出来事は、拡大する需要に対する供給の欠損の連鎖でした——各ボトルネックが次の防衛ラインを無効化し、各失敗が次の失敗をより起こりやすくしました。</p>
+    <p>最初で最も重要なボトルネックは冷却でした。津波が到来したとき、タービン建屋の地下階に浸水しました、そこには非常用ディーゼル発電機と関連する配電盤が設置されていました。発電機は破壊されました。バッテリーが約8時間の電力を供給しました。バッテリーが死ぬと、炉心の冷却システムは電源を失いました——継続的な冷却がなければメルトダウンを防げない炉心が制御なしに加熱し始めました。</p>
+    <p>地下への発電機の設置は既知の設計上の決定でした。福島第一の設計は1960年代に遡り、海面からのプラントの標高——約10メートル——が十分な保護と考えられていたときでした。2006年の津波リスク再評価（東電のエンジニアが計算して抑圧していた）は、この前提が誤りであることを特定していました。冷却能力の Supply_j（緊急電源）は、規制システムが集団的に更新しないことに合意していた津波シナリオのDemand_jを満たすよう設計されていました。</p>
+    <p>第2のボトルネックは格納容器のベントでした。設計限界を超えて炉心が加熱すると、格納容器の内部圧力が構造的な破壊の点に向かって上昇しました。設計された対応はベント——放射性蒸気を制御された方法で大気に放出し、制御されない構造的破裂を防ぐ——でした。ベントには電源が必要でした。電源はありませんでした。作業員たちは手動工具を持って、増加する放射線レベルの中、暗闇の中で、電気的に動作するよう設計されたベントを手動で開けようとしながら原子炉建屋に降りていきました。いくつかの重要なベントは間に合いませんでした。</p>
+    <p>第3のボトルネックは情報的で、民間人への被害を直接拡大させました。SPEEDIシステム（緊急時迅速放射能影響予測ネットワークシステム）は1986年から運用されており、まさにこのシナリオのために設計されていました：気象データと炉の放出推計に基づいて放射性物質がどこに拡散しているかを計算し、当局が避難を汚染地域から誘導できるようにするシステムです。</p>
+    <p>SPEEDIは危機の間データを持っていました。そのデータは10日間、公衆や避難計画者に公開されませんでした。表明された理由は放出源の項についての不確実性——確認された放出率なしに、予測は信頼できないと考えられていました。しかし汚染の確率的な方向を指し示す不完全な予測は、実際の状況で生じた指針の不在よりも良かったでしょう：原発の北東に位置するコミュニティの住民——汚染の方向——は、それと逆の指針が存在しなかったため、汚染に向かってその方向に避難しました。</p>
+    <p>第4のボトルネックは指揮系統でした。首相官邸（決定者）とプラント（実行者）の間の有効なIntegrator機能の不在は、具体的でよく文書化された失敗モードを生み出しました：直接介入。菅直人首相が3月12日の朝にプラントに飛んだ決断は、東電から政府に流れている情報が不完全で遅延しているという正確な認識によって動かされていました。しかし、原子力発電所の緊急運転に国の首脳が直接介入することは情報の流れを改善しません——それは3つの炉心のメルトダウンを同時に防ごうとしているプラント人員の注意と競合する報告需要を作り出します。RBMの診断：指揮系統の情報処理需要は利用可能な注意の供給を超えていました。</p>
+
+    <h2>福島後の修正：特定の失敗モードを標的にして</h2>
+    <p>福島第一への制度的対応は、Post 041が神戸の対応に特定したのと同じ構造的パターンに従いました：修正は災害が露出した特定の失敗モードを標的にしていました。3つの変化がアーキテクチャ上決定的でした。</p>
+    <p>2012年9月に創設された原子力規制委員会（NRA）はNISAの捕捉を構造的にしていた制度的従属を断ち切りました。NRAは経産省ではなく環境省に報告しました——規制当局を産業推進の利益を持つ機関から物理的に分離しました。初代委員長の田中俊一は規制の虜の再発防止を明示的にNRAの創設使命として枠組みました：「最も重要なのは規制対象に捕捉されることを避けることです。」国会事故調が失敗を診断するのに使った言語がそのまま新しい機関の自己理解に組み込まれました。</p>
+    <p>NRAの福島後の安全基準は初めて過酷事故管理措置の体系的な要件を含みました——日本が1990〜2000年代を通じて採用を断っていた国際指針のまさにそのカテゴリーです。既存の炉は再稼働前に新しい基準への適合を実証することを求められました。以来17基が再稼働しており；日本の福島前の炉団の大半は停止したままです。2011年以前は制度的に不可能だったバックフィット要件が法的義務になりました。</p>
+    <p>第3のアーキテクチャ上の変更はSPEEDIの失敗に対処しました：緊急時の放射線監視・予測システムはリアルタイムで機能し、すべての関連当局への自動的なデータ共有を伴うよう再設計されました、危機の間のその使用を遅延させた裁量的な情報管理を除去して。Observer機能のアウトプットが決定者機能の意思決定パイプラインに直接接続されました。</p>
+
+    <div class="pullquote">津波が福島事故を引き起こしたのではありませんでした。津波は制度的な修正メカニズムがいかに完全に無効化されていたかを明らかにしたストレステストでした。メルトダウンは地震の何十年も前から進行中だった修正ループの失敗のアウトプットでした。</div>
+
+    <h2>このアークを貫く構造的パターン</h2>
+    <p>Post 043（もんじゅ）は後継者不足とナラティブの神聖化によってArchitect機能が空洞化されたため、プロジェクトを手続き的に維持することとプロジェクトが継続すべきかどうかを評価することを区別できなくなった組織を描写しました。国家規模の同じ構造的配置が福島第一での規制の失敗を生み出しました。</p>
+    <p>具体的なメカニズムは異なりました：もんじゅの失敗は組織の自己修正の不能力でした；福島の失敗は規制システムが規制対象の行動を外部から修正する不能力でした。しかし両方とも同じ根本的なダイナミクスに遡ります：修正しないことに投資された制度的利益の蓄積によって数十年にわたって漸進的に弱体化された修正ループ。もんじゅの1995年の映像編集はNRAの2015年の勧告まで続いた修正ループの失敗の可視的な症状でした。福島の2011年前の津波リスクデータの抑圧はNRAの2012年の創設まで続いた修正ループの失敗の可視的な症状でした。</p>
+    <p>各失敗のコストはその領域の特定の通貨で測定されました：もんじゅには1.1兆円と15年の停止。福島には15万人の避難者、推定21.5兆円の廃炉費用、そして今も結果が出続けている日本のエネルギー政策の恒久的な再構造化。</p>
+
+    <div class="insight"><strong>Post 045への構造的接続：</strong>福島後の改革——NRAの独立・新しい安全基準・SPEEDIデータのプロトコル——は3.11が露出した特定の失敗モードのために設計されていました。それらは日本の原子力修正ループを大幅に強化しました。5年後の2016年4月、全く異なる種類の災害が全く異なる領域での失敗モードを露出させました：「本震」という分類が間違っていたことが判明したイベントへの緊急対応の認知アーキテクチャ。</div>
+
+    <div class="next-box"><p class="next-label">Post 045 — 熊本地震</p><p>2016年4月14日21時26分、M6.5の地震が熊本を直撃しました。気象庁はそれを本震と分類しました。専門家が分類を確認しました。住民は帰宅を始めました。28時間後、M7.3の地震が同じ地域を直撃しました——最初のものより大きい。分類は間違っていました。そしてその分類を前提にした行動が、前震で既に損傷していた構造物の中に人々を置きました。</p></div>
+
+  <div class="nav-post">
+    <span><a href="/blog/043/">&larr; Post 043</a></span>
+    <span><a href="/blog/045/">Post 045 &rarr;</a></span>
+  </div>
+</div></div>
+</main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS &middot; sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">&larr; ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer>
+</body></html>

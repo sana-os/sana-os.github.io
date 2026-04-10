@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>日本の漁業ガバナンス：1741年の原則とそれを変えるのに大惨事が必要だった理由 | SANA OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0ea;--ink:#1a1814;--ink2:#4a4640;--ink3:#8a857c;--amber:#c47c20;--amber-l:#fdf3e3;--teal:#2a7a5e;--teal-l:#eaf4f0;--red:#b84040;--red-l:#fdf0f0;--blue:#2e5f9e;--blue-l:#eef3fb;--border:rgba(26,24,20,0.10);--border2:rgba(26,24,20,0.16);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:17px;line-height:1.9;}
+a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:720px;margin:0 auto;padding:0 28px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:54px;display:flex;align-items:center;padding:0 28px;justify-content:space-between;}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:0.06em;}.nav-logo span{color:var(--amber);}
+.nav-right{display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}.nav-right a{color:var(--amber);}
+.hero{padding:100px 0 52px;border-bottom:1px solid var(--border);}
+.hero-series{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px;}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+.hero-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:20px;}
+.hero h1{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(22px,3.5vw,34px);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:20px;}
+.hero-dek{font-size:16px;color:var(--ink2);line-height:1.75;font-style:italic;}
+.body{padding:52px 0 80px;}
+p{color:var(--ink2);line-height:1.92;margin-bottom:20px;}
+h2{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(18px,2.6vw,23px);font-weight:400;line-height:1.3;color:var(--ink);margin:48px 0 14px;}
+h3{font-size:15px;font-weight:500;color:var(--ink);margin:28px 0 10px;}
+strong{color:var(--ink);font-weight:500;}em{color:var(--amber);font-style:normal;}
+.pullquote{font-family:'Lora','Hiragino Mincho ProN',serif;font-size:clamp(16px,2.3vw,20px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.5;padding:22px 0;margin:26px 0;border-top:2px solid var(--amber);border-bottom:1px solid var(--border);}
+.insight{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.insight strong{color:var(--ink);}
+.warning{background:var(--red-l);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:14px 18px;margin:24px 0;font-size:15px;color:var(--ink2);line-height:1.78;}.warning strong{color:var(--red);}
+.cpm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0;}
+.cpm-card{border-radius:8px;padding:12px 12px 10px;background:var(--bg2);border-top:3px solid var(--amber);}
+.cpm-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);margin-bottom:4px;}
+.cpm-name{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.cpm-desc{font-size:11px;color:var(--ink2);line-height:1.55;}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0;}
+.tech-card{border-radius:8px;padding:13px 15px;background:var(--teal-l);border-top:3px solid var(--teal);}
+.tech-year{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-bottom:4px;}
+.tech-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.tech-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--bg2);color:var(--ink);font-weight:500;padding:9px 12px;text-align:left;border:1px solid var(--border2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;}
+.data-table td{padding:9px 12px;border:1px solid var(--border);color:var(--ink2);vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background:var(--bg);}
+.next-box{background:var(--red-l);border-radius:10px;padding:24px 24px 20px;margin:48px 0 0;border-top:3px solid var(--red);}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.next-box p{font-size:15px;color:var(--ink2);margin-bottom:8px;}.next-box p:last-child{margin-bottom:0;}
+.nav-post{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-top:1px solid var(--border);margin-top:16px;flex-wrap:wrap;gap:12px;}
+.nav-post a{font-size:13px;}
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);}
+@media(max-width:640px){.container{padding:0 16px;}nav{padding:0 16px;}.hero{padding:84px 0 40px;}.body{padding:36px 0 60px;}.cpm-grid{grid-template-columns:1fr 1fr;}.tech-grid{grid-template-columns:1fr;}}
+</style></head><body>
+<nav><div class="nav-logo">SANA<span> OS</span> <span style="color:var(--ink3);margin-left:6px;font-weight:400;">/ ブログ</span></div>
+<div class="nav-right"><a href="/blog/052/">English</a><a href="/blog/">一覧</a><a href="/ja/">ホーム</a></div></nav>
+<main>
+<div class="hero"><div class="container">
+  <p class="hero-series" style="color:#2e5f9e;">日本 &middot; 漁業アーク &middot; 第1部</p>
+  <p class="hero-tag">Post 052 &mdash; 実例分析 &middot; 漁業政策</p>
+  <h1>日本の漁業ガバナンス：1741年の原則とそれを変えるのに大惨事が必要だった理由</h1>
+  <p class="hero-dek">日本の漁業崩壊につながったガバナンスの失敗は悪意・無能・無知によって引き起こされませんでした。1741年に前科学的な資源管理のために設計された制度的アーキテクチャ——財産権法として形式化され、1949年に民主化され、行動を制約すべき機関の蓄積した政治的権力によって維持された——によって引き起こされました。</p>
+</div></div>
+<div class="body"><div class="container">
+    <p>Post 047は3.11を強制関数として検討しました：28,000隻の漁船を同時に破壊した津波が、2018年漁業法改正——1949年以来初の日本漁業枠組みの主要改革——のための政治的条件を作り出しました。Post 051は農業ガバナンスがいかにして国内選挙システムにおけるDecider-Executor結合を通じて失敗したかを示しました。</p>
+    <p>Post 052はその前の問いを尋ねます：日本の漁業ガバナンスはなぜそのように配置されていたのか？なぜ協同組合ネットワークが漁業権配分に対してそれほど多くのDecider権力を蓄積したのか？なぜ科学的な資源管理が数十年にわたって制度的に周辺化されていたのか？そしてなぜそれを終わらせるのに3.11の規模の大惨事が必要だったのか？</p>
+    <p>答えは1949年より遡ることを必要とします——今日でも日本の沿岸漁業を形作る1741年の徳川ガバナンスに符号化された原則：<em>磯は地付き根付き次第、沖は入会</em>——沿岸水域はそこに根付いた人々に属し、沖合水域はすべての人にとってのコモンズ。</p>
+
+    <h2>基本原則：リソースの生物学ではなく権利の地理</h2>
+    <p>日本の沿岸漁業管理は、3世紀以上にわたって、科学的なものではなく空間的な原則の上に構築されてきました。1741年の徳川の裁定——先行する世紀にわたって進化した慣行を形式化した——は海を生態学的特性ではなく岸からの近接性に基づく2つのガバナンスゾーンに分けました。沿岸域（沿岸水域）は歴史的にそこで漁業を行ってきた地元の漁業コミュニティの優先的な領域でした；沖合域（沖合水域）はどの漁船にもアクセス可能な開かれたコモンズとして管理されました。</p>
+    <p>この原則は恣意的ではありませんでした。沿岸資源管理における集団行動問題への洗練された理解を反映していました。沿岸漁業コミュニティは地域の水域を持続可能に管理するために必要な特定の知識・インフラ・社会的組織に投資していました——季節的パターン・脆弱な産卵域・持続可能な収穫レベルについての知識。彼らの優先的アクセスを保護することはその投資を維持する誘因を与えました。</p>
+    <p>原則の限界は、それがガバナンス原則であってリソース管理原則でなかったことでした。それは誰が漁業権を持つかを決定しましたが、どのくらいの漁業が持続可能かは決定しませんでした。この区別は漁業技術が総漁獲量を持続可能な収量をはるかに下回るレベルに制限した近代以前の時代には重要ではありませんでした。技術が変わったとき重要になりました——そして1741年原則を中心に構築された制度的アーキテクチャは、技術が可能にした資源枯渇が必要とした新しい情報を組み込むメカニズムを持っていませんでした。</p>
+
+    <h2>明治期：伝統的権利を近代法として符号化する</h2>
+    <p>明治政府が1880年代と1890年代に日本の漁業のための近代的な法的枠組みを作る任務に着手したとき、伝統的なコミュニティ管理のあらゆる領域で直面したのと同じ構造的選択に直面しました：伝統的な慣行に埋め込まれた制度的知識と社会的組織を破壊することなく、現存するコミュニティの慣行を近代的な商業法が必要とする正式な財産権の枠組みにどのように翻訳するか。</p>
+    <p>1875年の海の国有化と手数料ベースの許可証を課そうとした試み（Post 049で説明）はこの問いを無視することのコストを実証していました。1901年明治漁業法は反対のアプローチをとりました：既存のコミュニティベースの権利を成文化し、<em>磯は地付き</em>の原則を、権利が個々の漁師や国家ではなく漁業協同組合に属する正式な漁業権システムとして符号化しました。</p>
+    <p>GMMの用語で、明治法はLayer Cレベルで特定の構造的選択を行いました：持続可能な収量を決定してそれに応じて漁業アクセスを配分するリソース管理の枠組みを作る代わりに、確立されたコミュニティのアクセスを混乱から保護する財産権の枠組みを作りました。この違いは重要です。リソース管理の枠組みは魚の資源を統治の主要な対象として扱います；財産権の枠組みはコミュニティのアクセスを統治の主要な対象として扱います。これら2つの枠組みは資源が豊富なとき共存できますが、資源が希少になると根本的に対立します——なぜならリソース管理の枠組みはアクセスの削減を必要とする一方で財産権の枠組みは既存のアクセスを保護するから。</p>
+
+    <h2>1949年「海の農地改革」：民主化とその構造的帰結</h2>
+    <p>1949年の漁業法改正——GHQの占領下で制定され、明示的に小作農業を解体した農地改革をモデルにした——は日本の最も抜本的な漁業ガバナンス再構造化でした。Post 047はその基本的なアーキテクチャを説明しました：都道府県知事が公式のDecider権限を保持；海区漁業調整委員会がIntegratorとAuditorの機能を保持；漁業協同組合がExecutorの機能を保持。</p>
+    <p>1949年改革の主な達成は真正でした：小規模漁師が事実上大型漁業資本の縛られた労働者として働いていた封建的な<em>網元</em>制度を排除しました。それに代わる協同組合中心のシステムは独立した漁業家族に法的アクセス権を与え、資本が容易に置き換えられないようにしました。これは小規模漁業コミュニティの制度的保護における重要な改善でした。</p>
+    <p>1949年改革の構造的限界はPost 047が特定したものでした：漁業権申請における協同組合の優先権は、7十年の政治的・制度的統合を通じて、協同組合を知事が設計したシステムにおけるExecutorから漁業権配分の事実上のDeciderへと変換したGatekeeperの役割を作り出しました。</p>
+    <p>RSMの用語で、1949年改革は最初から構造的なAuditor欠損を持つシステムを作り出しました。海区漁業調整委員会は公式にIntegratorとAuditorの機能として指定されていました——競合する利益のバランスをとり、配分プロセスが公益に役立っているかを評価する。しかし委員会は漁業コミュニティとその協同組合の代表者で構成されていました。Auditor機能を名目上果たす組織は、Auditorが評価すべき利益を持つ同じ組織でした。これは規制の虜（規制された産業が独立した規制当局を侵食する）ではありません；それはAuditor機能を監査すべき選挙区から分離しなかった構造的設計です。</p>
+
+    <h2>遠洋漁業の黄金時代：供給の論理がガバナンスの問題を隠蔽した</h2>
+    <p>1949年から1973年の間に、日本の総海面漁獲量は約200万トンから約1000万トンに成長しました。この拡大は主に遠洋漁業によって駆動されました——北太平洋・南大西洋・インド洋・日本の漁船が到達できるすべての生産的な漁場への大型漁船団の展開。1984年の最高漁獲量約1,280万トンは、世界に類を見ない工業規模の遠洋操業の産物でした。</p>
+    <p>RBMの用語で、これは供給拡大戦略でした：国内資源を低い量で持続可能に管理する代わりに、日本は増大する国内需要を満たすために遠い海域からの新しい供給を加えました。この戦略は利用可能な技術と遠洋アクセスを管理する国際規制の枠組みの不在を考えると合理的でした。また国内ガバナンスにとって構造的に便利でもありました：総供給が拡大している限り、国内資源管理の不十分さは消費者価格や食料安全保障の指標に可視化されませんでした。</p>
+    <p>この時期のCPMの配置はなぜガバナンスの問題がこれほど長い間対処されなかったかを理解するために重要です。支配的なナラティブ——「海洋国家としての日本、海の資源を収穫する自然の権利を行使する」——は国家的アイデンティティ・経済的成功・制度的インセンティブと強力に整合していました。国内の資源管理に疑問を呈することは技術的に不便なだけでなく、漁業産業の成長が構築したLayer Bのアイデンティティと対立しました。</p>
+
+    <h2>200海里EEZショック：供給拡大戦略が終わったとき</h2>
+    <p>排他的経済水域の200海里への拡大——1982年の国連海洋法条約とそれに先行した二国間協定によって駆動された——は日本の戦後漁業ガバナンスへの単一で最も重要な外部ショックでした。それは、国内ガバナンスの不十分さを不可視にしてきた空間的な戦略を、10年以内に排除しました。</p>
+    <p>日本の遠洋漁船団は今や、法的に他国のEEZ内にある水域で操業していました。米国は北太平洋から日本の漁船を排除しました。ソビエト連邦・カナダ・オーストラリア・ニュージーランドが厳しいアクセス制限を課しました。日本の遠洋漁獲量の大部分を供給していた漁場——そして1949年以来の日本の総供給成長の大部分——が漸進的に閉鎖されました。</p>
+    <p>RBMへの影響は突然で深刻でした。日本の総海面漁獲量は1984年の最高値約1,280万トンから2010年までに約500万トンへと低下しました——61%の減少。この減少の一部はアクセス可能な漁場のグローバルな縮小を反映しており；一部は不十分な管理が生み出した国内沿岸資源の真の枯渇を反映していました。</p>
+    <p>制度的対応は沿岸近海漁業努力量の増加でした——遠洋漁業に従事していた漁船と資本を既に圧力の下にある沿岸・近海資源に向けることでした。これは資源の状況が必要としていたことの反対でした。遠洋アクセスの喪失が沿岸資源をより重要にしていたまさにそのとき沿岸資源の枯渇を加速させました。RSMの分析は正確です：漁業権配分に対する協同組合のGatekeeper機能は、資源の減少に対応して漁業努力量を削減するメカニズムを持っていませんでした——漁業努力量の削減には既存の権利保有者のアクセス権の削減が必要で、これは協同組合ネットワークが制度的に防ぐよう構成されていたからです。</p>
+
+    <h2>科学と政策のギャップ：Auditor機能なしのObserverデータ</h2>
+    <p>日本の漁業科学能力は資源減少の期間中不在ではありませんでした。国の漁業研究機関が資源評価を作成し、個体群モデルを開発し、合理的な精度で持続不可能な収穫レベルを特定しました。Observer機能は存在して機能していました。不在だったのはObserverのアウトプットとDeciderの決定の間の制度的なつながりでした。</p>
+    <p>1997年に7つの主要魚種のために導入されたTAC（漁獲可能量）制度は資源評価科学を漁獲規制につなげる最初の正式な試みでした。しかしPost 047が記述したように、TAC設定プロセスは協同組合ネットワークによって支配されていました——その収穫レベルが評価されていたのと同じ制度的アクターによって。交渉のダイナミクスは予測可能でした：資源持続可能性に基づく科学的推奨が、公式な制限になる前に政治的交渉を通じて系統的に上方修正されました。Observer機能は正確なデータを生み出しました；Integrator機能はそのデータがExecutorの行動に対する有意義な制約を生み出す前にフィルタリングしました。</p>
+
+    <h2>2018年改革の具体的な標的</h2>
+    <p>2018年の改革は歴史的分析が特定する3つの特定の失敗モードを標的にしました：</p>
+    <p><strong>TAC範囲の失敗：</strong>1997年制度は7種をカバーしていました；2018年改革は科学的資源評価に利益ベースの交渉より明示的な優先権を与えながら、約30種への拡大にコミットしました。これは以前の20年間の「名目上のTAC、運用上の許可」システムを生み出したObserver-Auditorの断絶を直接対処しました。</p>
+    <p><strong>協同組合ゲートキーパーの失敗：</strong>都道府県知事は生産性の考慮事項が正当化するとき非協同組合オペレーターに漁業権を配分する明示的な権限を与えられました。これは1949年枠組みの協同組合優先の直接的な逆転でした——実際には部分的、原則的には重要——そして協同組合が事実上のDeciderとして知事を置き換えた役割奪取を標的にしました。</p>
+    <p><strong>養殖投資の障壁：</strong>長期的な投資計画を可能にするためにライセンス期間が延長され、非協同組合オペレーターに養殖アクセスの経路が与えられました。これは3.11が可視化した特定の復興ボトルネック——既存の制度的チャンネルが復興資本を新しい生産的な事業に向けられない状況——に対処しました。</p>
+
+    <div class="pullquote">日本の漁業ガバナンスの失敗は悪意・無能・無知によって引き起こされませんでした。それは1741年に前科学的な資源管理のために設計された制度的アーキテクチャ、1901年に財産権法として形式化され、1949年に独立した監視を排除しながらコミュニティのアクセスを保護する方法で民主化され、行動を制約すべき機関の蓄積した政治的権力によって7十年間維持された——によって引き起こされました。科学は常に存在していました。科学が管理行動を生み出せる制度的チャンネルは存在していませんでした。</div>
+
+    <div class="insight"><strong>Post 053への構造的接続：</strong>「海から収穫する権利」を管理する漁業協同組合は日本の漁業物語の半分です。もう半分は養殖業の発展——「海を育てる権利」です。Post 053は野生漁獲から養殖生産への転換がいかにして構造的に異なるガバナンスの課題・異なるCPMのナラティブ・異なる制度的アクターを作り出したか——そしてなぜ日本の養殖セクターが野生漁業改革が対処しない独特の構造的問題に直面しているかを検討します。</div>
+  <div class="nav-post">
+    <span><a href="/blog/051/">&larr; Post 051</a></span>
+    <span><a href="/blog/053/">Post 053 &rarr;</a></span>
+  </div>
+</div></div></main>
+<footer><div class="container"><div class="footer-inner">
+  <span class="footer-copy">SANA OS &middot; sana-os.org</span>
+  <span class="footer-copy"><a href="/blog/" style="color:var(--amber);">&larr; ブログ</a></span>
+  <span class="footer-copy">理解は、同意ではない。</span>
+</div></div></footer></body></html>
